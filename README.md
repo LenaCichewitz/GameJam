@@ -12,6 +12,8 @@
 - Simulation
 - Strategy
 - Sport
+- Turn-Based
+- Souls-Like
 
 ## Style
 - 2D
@@ -30,3 +32,5 @@
 - Mittelalter
 - Moderne
 - Fantasy
+- Horror
+- Dark
