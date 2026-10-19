@@ -14,6 +14,8 @@
 - Sport
 - Turn-Based
 - Souls-Like
+- Clicker
+- Idle
 
 ## Style
 - 2D
