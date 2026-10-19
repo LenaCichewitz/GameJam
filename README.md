@@ -36,3 +36,6 @@
 - Fantasy
 - Horror
 - Dark
+- Nostalgia
+- Melancholy
+- Rituals
