@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cmcge61w3y8mo"]
+
+[ext_resource type="Script" uid="uid://36m5t6rjwwfx" path="res://scenes/quests/quest.gd" id="1_bjfuw"]
+[ext_resource type="PackedScene" uid="uid://y7mpftcrg32p" path="res://scenes/stat_block/stats.tscn" id="2_u4fnb"]
+
+[node name="Quest" type="Node" unique_id=528668185]
+script = ExtResource("1_bjfuw")
+
+[node name="StatsRecommended" parent="." unique_id=329966221 instance=ExtResource("2_u4fnb")]
+
+[node name="DurationTimer" type="Timer" parent="." unique_id=1844009891]
+one_shot = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

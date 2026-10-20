@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnmw2hsv5qxvm"]
+
+[ext_resource type="Script" uid="uid://dgb8nsxhd06ro" path="res://scenes/quests/quest_manager.gd" id="1_4a2l1"]
+[ext_resource type="PackedScene" uid="uid://cmcge61w3y8mo" path="res://scenes/quests/quest.tscn" id="2_7xuob"]
+
+[node name="QuestManager" type="Node" unique_id=1796667383]
+script = ExtResource("1_4a2l1")
+
+[node name="AvailableQuests" type="Node" parent="." unique_id=1542190288]
+
+[node name="PlaceholderQuest#1" parent="AvailableQuests" unique_id=528668185 instance=ExtResource("2_7xuob")]
+quest_name = "Placeholder Quest #1"
+duration = 60.0
