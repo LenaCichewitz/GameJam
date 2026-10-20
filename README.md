@@ -45,4 +45,8 @@
 - Melancholy
 - Rituals
 - Mystery
-- Schiffe 
+- Schiffe
+
+## Planungsresourcen 
+- https://www.meistertask.com/de
+- https://kanbantool.com/de/
