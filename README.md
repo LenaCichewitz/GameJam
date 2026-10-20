@@ -51,7 +51,9 @@ https://www.matheretter.de/rechner/zufallsgenerator
 - Rituals
 - Mystery
 - Schiffe
-
+- Haunted House
+- Restaurierung
+  
 ## Planungsresourcen 
 - https://www.meistertask.com/de
 - https://kanbantool.com/de/
