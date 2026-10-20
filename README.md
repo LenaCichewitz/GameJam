@@ -16,7 +16,10 @@
 - Souls-Like
 - Clicker
 - Idle
-
+- Cozy
+- Management
+- Stealth
+  
 ## Style
 - 2D
 - 3D
@@ -24,6 +27,8 @@
 - Voxel
 - Comic-Shader
 - Noir
+- Low-Poly
+- Hybrid (2D/3D)
 
 ## Thema
 - Wald
@@ -39,3 +44,5 @@
 - Nostalgia
 - Melancholy
 - Rituals
+- Mystery
+- Schiffe 
