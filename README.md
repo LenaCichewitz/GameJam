@@ -56,6 +56,10 @@ https://www.matheretter.de/rechner/zufallsgenerator
 - Vivarium 
 - Stars
 - Gezeiten
+- Metamorphose
+- Märchen/ Fairytales
+- Hexerei/Witchcraft
+- Experiment
     
 ## Planungsresourcen 
 - https://www.meistertask.com/de
