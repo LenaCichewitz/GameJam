@@ -11,3 +11,12 @@ script = ExtResource("1_4a2l1")
 [node name="PlaceholderQuest#1" parent="AvailableQuests" unique_id=528668185 instance=ExtResource("2_7xuob")]
 quest_name = "Placeholder Quest #1"
 duration = 60.0
+
+[node name="ActiveQuests" type="Node" parent="." unique_id=1659325917]
+
+[node name="CompletedQuests" type="Node" parent="." unique_id=568808815]
+
+[node name="PostCompletionProcessingQuests" type="Node" parent="." unique_id=1004606060]
+
+[connection signal="quest_completed" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_quest_completed"]
+[connection signal="requesting_mermaid_data" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_requesting_mermaid_data"]
