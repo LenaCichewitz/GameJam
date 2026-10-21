@@ -7,7 +7,7 @@ const SAVE_VERSION := 1
 # Brauchen wir nicht unbedingt, aber ggf. ganz sinnvoll, weil ja die Quests auf Mermaids verweisen
 # So koennten wir zu Objekten linken
 # TODO: "Economy" ist immer noch in Frage gestellt. Nutzen wir noch Money? Wir wollten ja eig keinen Shop.
-const SAVE_ORDER: Array[String] = ["economy", "mermaids", "inventory", "quests"]
+const SAVE_ORDER: Array[String] = ["economy", "mermaids", "inventory", "quests", "shellcity"]
 
 # Hier kann alles rein gepumpt werden, was gespeichert werden soll
 var _saveables: Dictionary = {}  # key -> Node
