@@ -16,6 +16,7 @@ var is_active: bool = false
 var assigned_mermaid_id: int
 var assigned_mermaid_stats: Node
 
+#region save / load
 func save() -> QuestSaveData:
 	$DurationTimer.stop()
 	var data: QuestSaveData = QuestSaveData.new(quest_id, completed, is_active, assigned_mermaid_id, $DurationTimer.time_left)
@@ -32,8 +33,9 @@ func load(data: QuestSaveData):
 		$DurationTimer.wait_time = data.get_remaining_time_left()
 		assigned_mermaid_id = data.get_assigned_mermaid_id()
 		requesting_mermaid_data.emit(assigned_mermaid_id)
+#endregion
 
-
+#region getter/setter
 func assign_mermaid(mermaid_id: int):
 	assigned_mermaid_id = mermaid_id
 	requesting_mermaid_data.emit(assigned_mermaid_id)
@@ -45,8 +47,9 @@ func provide_mermaid_stats(mermaid_stat_block: Node):
 
 func get_remaining_duration() -> float:
 	return $DurationTimer.time_left
+#endregion
 
-
+#region quest progression loop
 func start_quest():
 	if not assigned_mermaid_id:
 		return
@@ -62,3 +65,4 @@ func _calculate_success() -> EnumConstants.QuestCompletionState:
 func _on_duration_timer_timeout() -> void:
 	is_active = false
 	quest_completed.emit(_calculate_success())
+#endregion
