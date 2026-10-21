@@ -4,17 +4,29 @@ const SAVE_PATH := "user://savegame.json"
 const TMP_PATH := "user://savegame.tmp"
 const SAVE_VERSION := 1
 
-func _ready() -> void:
-	get_tree().set_auto_accept_quit(false)  # damit wir beim Schließen speichern können
-	load_game()
+# Brauchen wir nicht unbedingt, aber ggf. ganz sinnvoll, weil ja die Quests auf Mermaids verweisen
+# So koennten wir zu Objekten linken
+# TODO: "Economy" ist immer noch in Frage gestellt. Nutzen wir noch Money? Wir wollten ja eig keinen Shop.
+const SAVE_ORDER: Array[String] = ["economy", "mermaids", "inventory", "quests"]
 
+# Hier kann alles rein gepumpt werden, was gespeichert werden soll
+var _saveables: Dictionary = {}  # key -> Node
+
+# Alle Klassen die Speichern/Laden koennen sollen, koennen sich hiermit registrieren
+func register(key: String, node: Node) -> void:
+	#Pruefen ob die Klassen save und load-Method haben
+	assert(node.has_method("save") and node.has_method("load_data"))
+	# Falls ja, uebernehmen
+	_saveables[key] = node
+
+# Eigentliches speichern
+# Diesmal dynamisch. Diese Klasse muss sich nur darauf verlassen koennen muessen, dass
+# die andere Klasse, wo das Speichern getriggert werden soll, eine entsprechende Methode hat.
 func save_game() -> void:
-	var data := {
-		"version": SAVE_VERSION,
-		"saved_at": Time.get_unix_time_from_system(),
-		"state": GameState.to_dict(),
-	}
-	# Erst Temp-Datei, danach Main-File
+	var state := {}
+	for key in _saveables:
+		state[key] = _saveables[key].save()
+	var data := {"version": SAVE_VERSION, "saved_at": Time.get_unix_time_from_system(), "state": state}
 	var f := FileAccess.open(TMP_PATH, FileAccess.WRITE)
 	if f == null:
 		push_error("Save fehlgeschlagen: %s" % FileAccess.get_open_error())
@@ -22,27 +34,17 @@ func save_game() -> void:
 	f.store_string(JSON.stringify(data))
 	f.close()
 	DirAccess.rename_absolute(TMP_PATH, SAVE_PATH)
-	
-func delete_save() -> bool:
-	#Save existiert nicht, also koennen wir bereits true zurueck geben
-	if not FileAccess.file_exists(SAVE_PATH):
-		return true
-	#File  existiert, also loeschen
-	DirAccess.remove_absolute(SAVE_PATH)
-	return true
 
-func load_game() -> bool:
+# Eigentliches laden
+# Diesmal dynamisch. Diese Klasse muss sich nur darauf verlassen koennen muessen, dass
+# die andere Klasse, wo das Laden getriggert werden soll, eine entsprechende Methode hat.
+func load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
-		return false
-	var text := FileAccess.get_file_as_string(SAVE_PATH)
-	var data = JSON.parse_string(text)
+		return
+	var data = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
 	if typeof(data) != TYPE_DICTIONARY:
-		push_warning("Savegame beschädigt, starte neu.")
-		return false
-	GameState.from_dict(data.get("state", {}))
-	return true
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		save_game()
-		get_tree().quit()
+		return
+	var state: Dictionary = data.get("state", {})
+	for key in SAVE_ORDER:
+		if _saveables.has(key) and state.has(key):
+			_saveables[key].load_data(state[key])
