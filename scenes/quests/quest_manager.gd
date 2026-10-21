@@ -1,5 +1,11 @@
 extends Node
 
+
+signal requesting_mermaid_data(mermaid_id: int)
+signal reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState)
+
+var quest_to_mermaid_request_mapping: Dictionary
+
 #region save / load
 func save() -> Array[QuestSaveData]:
 	var quest_data: Array[QuestSaveData]
@@ -36,3 +42,27 @@ func _get_all_quests() -> Array[Node]:
 	quests.append($CompletedQuests.get_children())
 	return quests
 #endregion
+
+
+func _find_node_with_id(quest_id: int) -> Node:
+	var quests = _get_all_quests()
+	var filtered_quests: Array[Node] = quests.filter(func(obj): return obj.quest_id == quest_id)
+	if filtered_quests.size() > 1:
+		push_error("[find_node_with_id]: Found multiple quests with given id. Can't uniquely identify a quest.")
+	return filtered_quests.front()
+
+
+func _get_requesting_quest_ids_for_mermaid_id(mermaid_id: int) -> Array[int]:
+	var requesting_quests: Array[int]
+	for quest: int in quest_to_mermaid_request_mapping:
+		if mermaid_id == quest_to_mermaid_request_mapping[quest]:
+			requesting_quests.append(quest)
+	return requesting_quests
+
+func _on_quest_completed(quest_id: int, state: EnumConstants.QuestCompletionState) -> void:
+	pass # Replace with function body.
+
+
+func _on_requesting_mermaid_data(quest_id: int, mermaid_id: int) -> void:
+	quest_to_mermaid_request_mapping[quest_id] = mermaid_id
+	requesting_mermaid_data.emit(mermaid_id)

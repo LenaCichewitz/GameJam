@@ -1,10 +1,16 @@
 extends Node
 
-signal quest_completed(state: EnumConstants.QuestCompletionState)
-signal requesting_mermaid_data(mermaid_id: int)
+signal quest_completed(quest_id: int, state: EnumConstants.QuestCompletionState)
+signal requesting_mermaid_data(quest_id: int, mermaid_id: int)
 
 @export var quest_id: int = 0
+@export_group("Flavour")
 @export var quest_name: String
+@export_multiline var quest_description: String
+@export_multiline var quest_success_outcome: String
+@export_multiline var quest_neutral_outcome: String
+@export_multiline var quest_failure_outcome: String
+@export_group("Mechanical Properties")
 @export var completed: bool = false
 @export var one_shot: bool = true
 @export var duration: float
@@ -32,16 +38,18 @@ func load(data: QuestSaveData):
 	if is_active:
 		$DurationTimer.wait_time = data.get_remaining_time_left()
 		assigned_mermaid_id = data.get_assigned_mermaid_id()
-		requesting_mermaid_data.emit(assigned_mermaid_id)
+		requesting_mermaid_data.emit(quest_id, assigned_mermaid_id)
 #endregion
 
 #region getter/setter
 func assign_mermaid(mermaid_id: int):
 	assigned_mermaid_id = mermaid_id
-	requesting_mermaid_data.emit(assigned_mermaid_id)
+	requesting_mermaid_data.emit(quest_id, assigned_mermaid_id)
 
 
-func provide_mermaid_stats(mermaid_stat_block: Node):
+func provide_mermaid_stats(mermaid_id: int, mermaid_stat_block: Node):
+	if mermaid_id != assigned_mermaid_id:
+		return
 	assigned_mermaid_stats = mermaid_stat_block
 
 
@@ -64,5 +72,5 @@ func _calculate_success() -> EnumConstants.QuestCompletionState:
 
 func _on_duration_timer_timeout() -> void:
 	is_active = false
-	quest_completed.emit(_calculate_success())
+	quest_completed.emit(quest_id, _calculate_success())
 #endregion
