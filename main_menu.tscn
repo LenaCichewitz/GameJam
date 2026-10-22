@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://01r313regslk"]
 
+[ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://main_menu.gd" id="1_06t4h"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
 bg_color = Color(0.29803923, 0.40784314, 0.52156866, 1)
 
@@ -16,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_06t4h")
 
 [node name="Panel" type="Panel" parent="." unique_id=1695591233]
 layout_mode = 1
@@ -44,7 +47,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
 text = "Start Game"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=903165930]
+[node name="Setting" type="Button" parent="VBoxContainer" unique_id=903165930]
 layout_mode = 2
 size_flags_vertical = 3
 accessibility_name = "Start Game"
@@ -54,7 +57,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
 text = "Setting"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=577767313]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=577767313]
 layout_mode = 2
 size_flags_vertical = 3
 accessibility_name = "Start Game"
@@ -77,3 +80,7 @@ text = "Unnamed Mermaid Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
