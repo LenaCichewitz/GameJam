@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dph6vkl23ntmu"]
+
+[ext_resource type="PackedScene" uid="uid://bygpcw47keabm" path="res://scenes/ui/components/quest_list_item.tscn" id="1_yn4a1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
+font_size = 67
+
+[node name="ManagementRoot" type="Control" unique_id=1842124898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1710992005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestInterfaceRoot" type="PanelContainer" parent="HBoxContainer" unique_id=2127973480]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestSelection" type="VBoxContainer" parent="HBoxContainer/QuestInterfaceRoot" unique_id=2120974534]
+layout_mode = 2
+
+[node name="QuestHeaderMargins" type="MarginContainer" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection" unique_id=1760647890]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+
+[node name="QuestListHeaderLabel" type="Label" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/QuestHeaderMargins" unique_id=394193140]
+layout_mode = 2
+text = "Quests"
+label_settings = SubResource("LabelSettings_77ro6")
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection" unique_id=566641994]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="QuestListScroll" type="ScrollContainer" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2" unique_id=230298608]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuestListContent" type="VBoxContainer" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll" unique_id=145894614]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestListItem" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent" unique_id=7110428 instance=ExtResource("1_yn4a1")]
+layout_mode = 2
+
+[node name="QuestListItem2" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent" unique_id=1603443418 instance=ExtResource("1_yn4a1")]
+layout_mode = 2
+
+[node name="Body" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent/QuestListItem2" index="1" unique_id=1765888300]
+visible = false
+
+[node name="QuestListItem3" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent" unique_id=1671983695 instance=ExtResource("1_yn4a1")]
+layout_mode = 2
+
+[node name="Body" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent/QuestListItem3" index="1" unique_id=1765888300]
+visible = false
+
+[node name="MermaidSelection" type="Control" parent="HBoxContainer/QuestInterfaceRoot" unique_id=1977102656]
+layout_mode = 2
+
+[node name="MermaidDetailsRoot" type="Control" parent="HBoxContainer" unique_id=448609858]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[editable path="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent/QuestListItem2"]
+[editable path="HBoxContainer/QuestInterfaceRoot/QuestSelection/MarginContainer2/QuestListScroll/QuestListContent/QuestListItem3"]

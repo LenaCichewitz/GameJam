@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bygpcw47keabm"]
+
+[ext_resource type="Script" uid="uid://bvqt6lbqxy4a" path="res://scenes/ui/components/quest_list_item.gd" id="1_qmdcg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_6rgs3"]
+font_size = 24
+
+[node name="QuestListItem" type="VBoxContainer" unique_id=7110428]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 350.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_qmdcg")
+
+[node name="Header" type="Button" parent="." unique_id=735170469]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+toggle_mode = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Header" unique_id=372699285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer" unique_id=821026240]
+layout_mode = 2
+
+[node name="ToggledIndicator" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=7364097]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+expand_mode = 3
+
+[node name="QuestTitle" type="Label" parent="Header/MarginContainer/HBoxContainer" unique_id=676541777]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_77ro6")
+
+[node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
+layout_mode = 2
+
+[node name="Body" type="PanelContainer" parent="." unique_id=1765888300]
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="Body" unique_id=995166297]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Content" type="HBoxContainer" parent="Body/Margins" unique_id=2002305566]
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="Body/Margins/Content" unique_id=239535548]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Lorem Ipsum"
+
+[node name="Data" type="VBoxContainer" parent="Body/Margins/Content" unique_id=2112563232]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Row" type="HBoxContainer" parent="Body/Margins/Content/Data" unique_id=483955483]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Body/Margins/Content/Data/Row" unique_id=520863696]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 15
+
+[node name="TimerLabel" type="Label" parent="Body/Margins/Content/Data/Row/MarginContainer" unique_id=848364871]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "X/Y"
+label_settings = SubResource("LabelSettings_6rgs3")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DropFrame" type="PanelContainer" parent="Body/Margins/Content/Data/Row" unique_id=1297156029]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Body/Margins/Content/Data/Row/DropFrame" unique_id=1005844761]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Overlay" type="Control" parent="Body" unique_id=495523894]
+layout_mode = 2
+
+[node name="TBD_StatShowcase" type="Control" parent="Body/Overlay" unique_id=301154092]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
