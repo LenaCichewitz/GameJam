@@ -22,7 +22,7 @@ func load(data: Array[QuestSaveData]):
 		if quest_data_for_quest_id.is_empty():
 			continue
 		if quest_data_for_quest_id.size() > 1:
-			push_error("[Loading]: Multiple quest save data for a given quest id were found. Can't uniquely identify which quest to load.")
+			push_error("[Loading]: Multiple quest save data for a given quest id were found. Can't uniquely identify which quest to load. ID:" + str(quest.quest_id))
 			continue
 		var quest_save_data: QuestSaveData = quest_data_for_quest_id.front()
 		quest.load(quest_save_data)
@@ -41,14 +41,26 @@ func _get_all_quests() -> Array[Node]:
 	quests.append($ActiveQuests.get_children())
 	quests.append($CompletedQuests.get_children())
 	return quests
+
+
+func _get_all_active_quests() -> Array[Node]:
+	var quests: Array[Node]
+	quests.append($ActiveQuests.get_children())
+	return quests
 #endregion
+
+
+func increment_progress():
+	var quests = _get_all_active_quests()
+	for quest in quests:
+		quest.increment_progress()
 
 
 func _find_node_with_id(quest_id: int) -> Node:
 	var quests = _get_all_quests()
 	var filtered_quests: Array[Node] = quests.filter(func(obj): return obj.quest_id == quest_id)
 	if filtered_quests.size() > 1:
-		push_error("[find_node_with_id]: Found multiple quests with given id. Can't uniquely identify a quest.")
+		push_error("[find_node_with_id]: Found multiple quests with given id. Can't uniquely identify a quest. ID:" + str(quest_id))
 	return filtered_quests.front()
 
 
