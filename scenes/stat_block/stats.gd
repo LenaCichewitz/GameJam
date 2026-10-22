@@ -1,17 +1,9 @@
 extends Node
 
-# strength, perception
-@export var strength: int = 0
-@export var perception: int = 0
-
-# potential to be collapsed
-@export var maneuverability: int = 0
-@export var height: float = 0
-
-# potentially on the chopping block
-@export var stamina: int = 0
-@export var speed: int = 0
-
-# darkness and resistance to darkness
-@export var resistance: float = 0 
-@export var darkness: int = 0
+@export var agility: Curve
+@export var combat: Curve
+@export var awareness: Curve
+@export var eldritch_knowledge: Curve
+@export var map_layout_knowledge: Curve
+@export var mental_clarity: Curve
+@export_range(0, 100) var corruption: float

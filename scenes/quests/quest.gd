@@ -14,8 +14,7 @@ signal requesting_mermaid_data(quest_id: int, mermaid_id: int)
 @export var completed: bool = false
 @export var one_shot: bool = true
 @export var duration: float
-#potentially to be unused
-@export var minimum_exploration_requirement: float = 0
+@export var quest_group: int = 0
 
 var is_active: bool = false
 #placeholder for now

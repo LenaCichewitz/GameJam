@@ -3,12 +3,13 @@ extends Node
 
 @export var mermaid_id: int = 0
 @export var mermaid_name: String
+@export_multiline var mermaid_description: String
 @export var alive: bool = true
 @export var recruited: bool = false
 
 #region save/load
 func save() -> MermaidSaveData:
-	return MermaidSaveData.new(mermaid_id, alive, recruited, $Stats.darkness)
+	return MermaidSaveData.new(mermaid_id, alive, recruited, $Stats.corruption)
 
 
 func load(data: MermaidSaveData):
@@ -18,5 +19,5 @@ func load(data: MermaidSaveData):
 	alive = data.is_alive()
 	recruited = data.is_recruited()
 	if !alive || recruited:
-		$Stats.darkness = data.get_darkness()
+		$Stats.corruption = data.get_corruption()
 #endregion
