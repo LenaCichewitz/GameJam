@@ -8,7 +8,7 @@ extends Node
 
 #region save/load
 func save() -> MermaidSaveData:
-	return MermaidSaveData.new(mermaid_id, alive, recruited)
+	return MermaidSaveData.new(mermaid_id, alive, recruited, $Stats.darkness)
 
 
 func load(data: MermaidSaveData):
@@ -17,4 +17,6 @@ func load(data: MermaidSaveData):
 	
 	alive = data.is_alive()
 	recruited = data.is_recruited()
+	if !alive || recruited:
+		$Stats.darkness = data.get_darkness()
 #endregion
