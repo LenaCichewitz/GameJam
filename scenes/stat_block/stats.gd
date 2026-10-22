@@ -83,3 +83,13 @@ func get_mental_clarity_for_zero_corruption() -> float:
 
 func get_corruption() -> float:
 	return _corruption
+
+
+func compared_against_stats(stats: Node, use_own_corruption_for_source_sampling: bool) -> bool:
+	var relevant_corruption = get_corruption() if use_own_corruption_for_source_sampling else stats.get_corruption()
+	return (get_agility() >= stats.get_agility_for_corruption(relevant_corruption) 
+		and get_combat() >= stats.get_combat_for_corruption(relevant_corruption)
+		and get_awareness() >= stats.get_awareness_for_corruption(relevant_corruption)
+		and get_eldritch_knowledge() >= stats.get_eldritch_knowledge_for_corruption(relevant_corruption)
+		and get_map_layout_knowledge() >= stats.get_map_layout_knowledge_for_corruption(relevant_corruption)
+		and get_mental_clarity() >= stats.get_mental_clarity_for_corruption(relevant_corruption))

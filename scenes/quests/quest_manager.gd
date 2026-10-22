@@ -2,7 +2,7 @@ extends Node
 
 
 signal requesting_mermaid_data(mermaid_id: int)
-signal reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState)
+signal final_quest_completed()
 
 var quest_to_mermaid_request_mapping: Dictionary
 
@@ -35,6 +35,10 @@ func load(data: Array[QuestSaveData]):
 #endregion
 
 #region getter / setter
+func is_action_available() -> bool:
+	return !$AvailableQuests.get_children().is_empty()
+
+
 func _get_all_quests() -> Array[Node]:
 	var quests: Array[Node]
 	quests.append($AvailableQuests.get_children())
@@ -72,7 +76,8 @@ func _get_requesting_quest_ids_for_mermaid_id(mermaid_id: int) -> Array[int]:
 	return requesting_quests
 
 func _on_quest_completed(quest_id: int, state: EnumConstants.QuestCompletionState) -> void:
-	pass # Replace with function body.
+	if state == EnumConstants.QuestCompletionState.FINAL_SUCCESS:
+		final_quest_completed.emit()
 
 
 func _on_requesting_mermaid_data(quest_id: int, mermaid_id: int) -> void:

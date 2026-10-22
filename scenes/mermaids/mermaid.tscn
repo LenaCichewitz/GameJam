@@ -3,7 +3,25 @@
 [ext_resource type="Script" uid="uid://b7dhf0n1pa4y1" path="res://scenes/mermaids/mermaid.gd" id="1_ale3k"]
 [ext_resource type="PackedScene" uid="uid://y7mpftcrg32p" path="res://scenes/stat_block/stats.tscn" id="2_q8r2k"]
 
+[sub_resource type="Curve" id="Curve_u4fnb"]
+
+[sub_resource type="Curve" id="Curve_pleko"]
+
+[sub_resource type="Curve" id="Curve_ubfai"]
+
+[sub_resource type="Curve" id="Curve_f8jch"]
+
+[sub_resource type="Curve" id="Curve_vvvow"]
+
+[sub_resource type="Curve" id="Curve_ibfwt"]
+
 [node name="Mermaid" type="Node" unique_id=1578086549]
 script = ExtResource("1_ale3k")
 
 [node name="Stats" parent="." unique_id=329966221 instance=ExtResource("2_q8r2k")]
+_agility = SubResource("Curve_u4fnb")
+_combat = SubResource("Curve_pleko")
+_awareness = SubResource("Curve_ubfai")
+_eldritch_knowledge = SubResource("Curve_f8jch")
+_map_layout_knowledge = SubResource("Curve_vvvow")
+_mental_clarity = SubResource("Curve_ibfwt")
