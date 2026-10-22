@@ -11,6 +11,31 @@ shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
 shadow_size = 3
 shadow_offset = Vector2(-3, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.54509807, 0.5647059, 0.62352943, 1)
+shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
+shadow_size = 3
+shadow_offset = Vector2(-3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6901961, 0.7019608, 0.7490196, 1)
+shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
+shadow_size = 3
+shadow_offset = Vector2(-3, 3)
+
 [node name="MainMenu" type="Control" unique_id=793280666]
 layout_mode = 3
 anchors_preset = 15
@@ -43,8 +68,12 @@ size_flags_vertical = 3
 accessibility_name = "Start Game"
 accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
 text = "Start Game"
 
 [node name="Setting" type="Button" parent="VBoxContainer" unique_id=903165930]
@@ -53,8 +82,12 @@ size_flags_vertical = 3
 accessibility_name = "Start Game"
 accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Setting"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=577767313]
@@ -63,8 +96,12 @@ size_flags_vertical = 3
 accessibility_name = "Start Game"
 accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Exit
 "
 
