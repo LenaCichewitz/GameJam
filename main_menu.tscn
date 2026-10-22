@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://01r313regslk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
+bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
+shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
+shadow_size = 3
+shadow_offset = Vector2(-3, 3)
+
+[node name="MainMenu" type="Control" unique_id=793280666]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=557731142]
+layout_mode = 1
+offset_left = 88.0
+offset_top = -20.0
+offset_right = 302.0
+offset_bottom = 57.0
+accessibility_name = "Start Game"
+accessibility_description = "This Button starts the game"
+theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+text = "Start Game"
+
+[node name="Button3" type="Button" parent="." unique_id=903165930]
+layout_mode = 1
+offset_left = 88.0
+offset_top = 78.0
+offset_right = 302.0
+offset_bottom = 155.0
+accessibility_name = "Start Game"
+accessibility_description = "This Button starts the game"
+theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+text = "Setting"
+
+[node name="Button2" type="Button" parent="." unique_id=577767313]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 177.0
+offset_right = 305.0
+offset_bottom = 254.0
+accessibility_name = "Start Game"
+accessibility_description = "This Button starts the game"
+theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
+text = "Exit
+"
