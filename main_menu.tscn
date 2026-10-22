@@ -2,40 +2,34 @@
 
 [ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_7vrkn"]
+[ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://cyruobvl3nbte" path="res://graphics/Button.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://bbx4w8qmmfjme" path="res://graphics/Button_focus.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://mlrowkyssph0" path="res://graphics/Button_hover.png" id="5_8qtwp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
-bg_color = Color(0.29803923, 0.40784314, 0.52156866, 1)
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
-bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
-shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
-shadow_size = 3
-shadow_offset = Vector2(-3, 3)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("3_nlkkf")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
-bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("4_qe12f")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
-bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.54509807, 0.5647059, 0.62352943, 1)
-shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
-shadow_size = 3
-shadow_offset = Vector2(-3, 3)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtwp"]
+texture = ExtResource("5_8qtwp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
-bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.6901961, 0.7019608, 0.7490196, 1)
-shadow_color = Color(0.078431375, 0.09411765, 0.18039216, 1)
-shadow_size = 3
-shadow_offset = Vector2(-3, 3)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("3_nlkkf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy7ct"]
+texture = ExtResource("4_qe12f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
+texture = ExtResource("5_8qtwp")
+
+[sub_resource type="FontVariation" id="FontVariation_7vrkn"]
+base_font = ExtResource("3_fu7sn")
 
 [node name="MainMenu" type="Control" unique_id=793280666]
 layout_mode = 3
@@ -63,7 +57,7 @@ offset_right = 327.0
 offset_bottom = 594.0
 theme_override_constants/separation = 16
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=557731142]
+[node name="NewGame" type="Button" parent="VBoxContainer" unique_id=969418529]
 layout_mode = 2
 size_flags_vertical = 3
 accessibility_name = "Start Game"
@@ -73,10 +67,25 @@ theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
-text = "Start Game"
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8qtwp")
+text = "New Game"
+
+[node name="Load Button" type="Button" parent="VBoxContainer" unique_id=557731142]
+layout_mode = 2
+size_flags_vertical = 3
+accessibility_name = "Start Game"
+accessibility_description = "This Button starts the game"
+theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8qtwp")
+text = "Load Game"
 
 [node name="Setting" type="Button" parent="VBoxContainer" unique_id=903165930]
 layout_mode = 2
@@ -88,9 +97,9 @@ theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8qtwp")
 text = "Setting"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=577767313]
@@ -103,9 +112,9 @@ theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0o4t1")
 text = "Exit
 "
 
@@ -116,13 +125,15 @@ offset_left = 52.0
 offset_top = 27.0
 offset_right = 345.0
 offset_bottom = 297.0
-theme_override_fonts/font = ExtResource("2_7vrkn")
-theme_override_font_sizes/font_size = 52
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = SubResource("FontVariation_7vrkn")
+theme_override_font_sizes/font_size = 64
 text = "Unnamed Mermaid Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
