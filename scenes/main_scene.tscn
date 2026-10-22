@@ -39,3 +39,5 @@ layer = 40
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=878110436]
 process_mode = 3
 layer = 100
+
+[connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_quest_outcome"]

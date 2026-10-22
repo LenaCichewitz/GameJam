@@ -7,8 +7,3 @@
 script = ExtResource("1_bjfuw")
 
 [node name="StatsRecommended" parent="." unique_id=329966221 instance=ExtResource("2_u4fnb")]
-
-[node name="DurationTimer" type="Timer" parent="." unique_id=1844009891]
-one_shot = true
-
-[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

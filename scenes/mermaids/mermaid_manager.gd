@@ -1,6 +1,8 @@
 extends Node
 
 
+signal no_mermaids_left()
+
 @export var quest_manager: Node
 
 #region save/load
@@ -37,4 +39,10 @@ func _get_all_mermaids() -> Array[Node]:
 	mermaids.append($AvailableMermaids.get_children())
 	mermaids.append($LostMermaids.get_children())
 	return mermaids
+
 #endregion
+
+
+func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
+	#
+	pass # Replace with function body.
