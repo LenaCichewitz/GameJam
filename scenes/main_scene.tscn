@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d23dwxoktmbuj"]
+
+[node name="MainScene" type="Node" unique_id=577158869]
+
+[node name="Systems" type="Node" parent="." unique_id=1282027253]
+
+[node name="RenovationRoot" type="Node2D" parent="." unique_id=1490714256]
+
+[node name="RenovationHudLayer" type="CanvasLayer" parent="." unique_id=1221930533]
+
+[node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
+
+[node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=720024113]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=878110436]
