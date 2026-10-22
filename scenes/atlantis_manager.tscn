@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://di6r21ly2ohk4"]
-
-[ext_resource type="Script" uid="uid://7mpoodbu2y3w" path="res://scenes/atlantis_manager.gd" id="1_6apbh"]
-
-[node name="AtlantisManager" type="Node" unique_id=92002772]
-script = ExtResource("1_6apbh")

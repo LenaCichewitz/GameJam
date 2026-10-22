@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d23dwxoktmbuj"]
 
 [ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_7ykc4"]
-[ext_resource type="PackedScene" uid="uid://di6r21ly2ohk4" path="res://scenes/atlantis_manager.tscn" id="2_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://main_menu.tscn" id="4_pu3yx"]
 
@@ -12,9 +11,6 @@ process_mode = 3
 process_mode = 3
 
 [node name="QuestManager" parent="Systems" unique_id=1796667383 instance=ExtResource("1_7ykc4")]
-
-[node name="AtlantisManager" parent="Systems" unique_id=92002772 node_paths=PackedStringArray("quest_manager") instance=ExtResource("2_pu3yx")]
-quest_manager = NodePath("../QuestManager")
 
 [node name="MermaidManager" parent="Systems" unique_id=836053267 node_paths=PackedStringArray("quest_manager") instance=ExtResource("3_gubc5")]
 quest_manager = NodePath("../QuestManager")
