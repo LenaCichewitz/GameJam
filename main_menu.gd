@@ -10,6 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_new_game_button_pressed() -> void:
+	pass # Replace with function body.
 
 func _on_start_pressed() -> void:
 	pass # Replace with function body.
