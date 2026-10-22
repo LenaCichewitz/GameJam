@@ -17,6 +17,11 @@ signal requesting_mermaid_data(quest_id: int, mermaid_id: int)
 @export var total_duration: int = 0
 @export var duration_decrement_step_size: float = 1.0
 @export var quest_group: int = 0
+@export_group("Rewards")
+@export var rewards_item: bool = false
+@export var item_id: int = -1
+@export var rewards_corruption_reduction: bool = false
+@export_range(-100, 100) var corruption_reduciton: float = 0.0
 
 var is_active: bool = false
 #placeholder for now

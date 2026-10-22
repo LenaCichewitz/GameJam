@@ -41,7 +41,19 @@ func _get_all_quests() -> Array[Node]:
 	quests.append($ActiveQuests.get_children())
 	quests.append($CompletedQuests.get_children())
 	return quests
+
+
+func _get_all_active_quests() -> Array[Node]:
+	var quests: Array[Node]
+	quests.append($ActiveQuests.get_children())
+	return quests
 #endregion
+
+
+func increment_progress():
+	var quests = _get_all_active_quests()
+	for quest in quests:
+		quest.increment_progress()
 
 
 func _find_node_with_id(quest_id: int) -> Node:

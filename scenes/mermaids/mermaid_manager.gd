@@ -40,7 +40,16 @@ func _get_all_mermaids() -> Array[Node]:
 	mermaids.append($LostMermaids.get_children())
 	return mermaids
 
+func _get_all_recruited_mermaids() -> Array[Node]:
+	var mermaids: Array[Node]
+	mermaids.append($RecruitedMermaids.get_children())
+	return mermaids
 #endregion
+
+func increment_progress():
+	var mermaids = _get_all_recruited_mermaids()
+	for mermaid in mermaids:
+		mermaid.increment_progress()
 
 
 func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
