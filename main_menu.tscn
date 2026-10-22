@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://01r313regslk"]
 
 [ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_7vrkn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
 bg_color = Color(0.29803923, 0.40784314, 0.52156866, 1)
@@ -70,7 +71,8 @@ accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
@@ -84,7 +86,8 @@ accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
@@ -98,7 +101,8 @@ accessibility_description = "This Button starts the game"
 theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_focus_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
 theme_override_colors/font_pressed_color = Color(0.8745098, 0.8784314, 0.9098039, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8y12")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
@@ -112,7 +116,8 @@ offset_left = 52.0
 offset_top = 27.0
 offset_right = 345.0
 offset_bottom = 297.0
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 52
 text = "Unnamed Mermaid Game"
 horizontal_alignment = 1
 vertical_alignment = 1
