@@ -63,6 +63,9 @@ func get_calculated_stats() -> Dictionary:
 	return output
 
 
+func reduce_corruption(amount: float):
+	$Stats.set_corruption(maxf(0.0, $Stats.get_corruption() - amount))
+
 #endregion
 
 func increment_progress():

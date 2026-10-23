@@ -1,44 +1,205 @@
 [gd_scene format=3 uid="uid://cuiyk2x7ivtrh"]
 
-[ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_m0tn0"]
-[ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="2_53f03"]
-[ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_x8uhn"]
-[ext_resource type="PackedScene" path="res://main_menu.tscn" id="4_y20ut"]
+[ext_resource type="Script" uid="uid://crbnh2pfiwr0m" path="res://scenes/items/item_manager.gd" id="1_eu8xw"]
+[ext_resource type="PackedScene" uid="uid://bwah0w48agrcc" path="res://scenes/items/item.tscn" id="2_qyosx"]
 
-[node name="MainScene" type="Node" unique_id=577158869]
-process_mode = 3
+[sub_resource type="Curve" id="Curve_mag0o"]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="Systems" type="Node" parent="." unique_id=1282027253]
-process_mode = 3
+[sub_resource type="Curve" id="Curve_m0tn0"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="QuestManager" parent="Systems" unique_id=1796667383 instance=ExtResource("1_m0tn0")]
+[sub_resource type="Curve" id="Curve_53f03"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="MermaidManager" parent="Systems" unique_id=836053267 node_paths=PackedStringArray("quest_manager") instance=ExtResource("2_53f03")]
-quest_manager = NodePath("../QuestManager")
+[sub_resource type="Curve" id="Curve_x8uhn"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="RenovationRoot" type="Node2D" parent="." unique_id=1490714256]
-process_mode = 1
+[sub_resource type="Curve" id="Curve_y20ut"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="RenovationHudLayer" type="CanvasLayer" parent="." unique_id=1221930533]
-process_mode = 1
-layer = 10
+[sub_resource type="Curve" id="Curve_sddch"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.2), 0.0, 0.0, 0, 0, Vector2(1, -0.2), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
-process_mode = 1
-layer = 20
+[sub_resource type="Curve" id="Curve_drem0"]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 instance=ExtResource("3_x8uhn")]
+[sub_resource type="Curve" id="Curve_yj2ag"]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
-process_mode = 2
-layer = 30
+[sub_resource type="Curve" id="Curve_408tu"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=720024113]
-process_mode = 3
-layer = 40
+[sub_resource type="Curve" id="Curve_j83i4"]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="MainMenu" parent="MainMenuLayer" unique_id=793280666 instance=ExtResource("4_y20ut")]
+[sub_resource type="Curve" id="Curve_eqg6k"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=878110436]
-process_mode = 3
-layer = 100
+[sub_resource type="Curve" id="Curve_2mltl"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_le8m6"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_dd81h"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ugc8l"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_amlwg"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_aeqls"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_dnkux"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_t6t7g"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ln53x"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.1), 0.0, 0.0, 0, 0, Vector2(0.61, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_818rb"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_maaxi"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.2), 0.0, 0.0, 0, 0, Vector2(0.51, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_4vggb"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(0.51, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_y4xog"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(0.51, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_n0is6"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rwu21"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.2), 0.0, 0.0, 0, 0, Vector2(0.5, -0.2), 0.0, 0.0, 0, 0, Vector2(0.51, -0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="ItemManager" type="Node" unique_id=1062156382]
+script = ExtResource("1_eu8xw")
+
+[node name="UnobtainedItems" type="Node" parent="." unique_id=711321597]
+
+[node name="Dagger" parent="UnobtainedItems" unique_id=1696573865 instance=ExtResource("2_qyosx")]
+item_id = 1
+item_name = "Dagger "
+
+[node name="Stats" parent="UnobtainedItems/Dagger" index="0" unique_id=329966221]
+_combat = SubResource("Curve_mag0o")
+_awareness = SubResource("Curve_m0tn0")
+_mental_clarity = SubResource("Curve_53f03")
+
+[node name="Artifact #1" parent="UnobtainedItems" unique_id=708708695 instance=ExtResource("2_qyosx")]
+item_id = 2
+item_name = "Artifact #1"
+
+[node name="Stats" parent="UnobtainedItems/Artifact #1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_x8uhn")
+_awareness = SubResource("Curve_y20ut")
+_eldritch_knowledge = SubResource("Curve_sddch")
+
+[node name="Artifact #2" parent="UnobtainedItems" unique_id=1379877076 instance=ExtResource("2_qyosx")]
+item_id = 3
+item_name = "Artifact #2"
+
+[node name="Stats" parent="UnobtainedItems/Artifact #2" index="0" unique_id=329966221]
+_combat = SubResource("Curve_drem0")
+_awareness = SubResource("Curve_yj2ag")
+_eldritch_knowledge = SubResource("Curve_408tu")
+_map_layout_knowledge = SubResource("Curve_j83i4")
+
+[node name="Artifact #3" parent="UnobtainedItems" unique_id=1706116071 instance=ExtResource("2_qyosx")]
+item_id = 4
+item_name = "Artifact #3"
+
+[node name="Stats" parent="UnobtainedItems/Artifact #3" index="0" unique_id=329966221]
+_agility = SubResource("Curve_eqg6k")
+_combat = SubResource("Curve_2mltl")
+_eldritch_knowledge = SubResource("Curve_le8m6")
+_mental_clarity = SubResource("Curve_dd81h")
+
+[node name="Cursed Item #1" parent="UnobtainedItems" unique_id=1062571730 instance=ExtResource("2_qyosx")]
+item_id = 5
+item_name = "Cursed Item #1"
+use_corruption_for_stat_changes = true
+
+[node name="Stats" parent="UnobtainedItems/Cursed Item #1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_ugc8l")
+_combat = SubResource("Curve_amlwg")
+_awareness = SubResource("Curve_aeqls")
+_eldritch_knowledge = SubResource("Curve_dnkux")
+_map_layout_knowledge = SubResource("Curve_t6t7g")
+_mental_clarity = SubResource("Curve_ln53x")
+
+[node name="Cursed Item #2" parent="UnobtainedItems" unique_id=573719340 instance=ExtResource("2_qyosx")]
+item_id = 6
+item_name = "Cursed Item #2"
+use_corruption_for_stat_changes = true
+
+[node name="Stats" parent="UnobtainedItems/Cursed Item #2" index="0" unique_id=329966221]
+_agility = SubResource("Curve_818rb")
+_combat = SubResource("Curve_maaxi")
+_awareness = SubResource("Curve_4vggb")
+_eldritch_knowledge = SubResource("Curve_y4xog")
+_map_layout_knowledge = SubResource("Curve_n0is6")
+_mental_clarity = SubResource("Curve_rwu21")
+
+[node name="UnrepairedItems" type="Node" parent="." unique_id=1853843324]
+
+[node name="UnequippedItems" type="Node" parent="." unique_id=527744419]
+
+[editable path="UnobtainedItems/Dagger"]
+[editable path="UnobtainedItems/Artifact #1"]
+[editable path="UnobtainedItems/Artifact #2"]
+[editable path="UnobtainedItems/Artifact #3"]
+[editable path="UnobtainedItems/Cursed Item #1"]
+[editable path="UnobtainedItems/Cursed Item #2"]
