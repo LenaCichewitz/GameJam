@@ -3,7 +3,25 @@
 [ext_resource type="Script" uid="uid://36m5t6rjwwfx" path="res://scenes/quests/quest.gd" id="1_bjfuw"]
 [ext_resource type="PackedScene" uid="uid://y7mpftcrg32p" path="res://scenes/stat_block/stats.tscn" id="2_u4fnb"]
 
+[sub_resource type="Curve" id="Curve_u4fnb"]
+
+[sub_resource type="Curve" id="Curve_pleko"]
+
+[sub_resource type="Curve" id="Curve_ubfai"]
+
+[sub_resource type="Curve" id="Curve_f8jch"]
+
+[sub_resource type="Curve" id="Curve_vvvow"]
+
+[sub_resource type="Curve" id="Curve_ibfwt"]
+
 [node name="Quest" type="Node" unique_id=528668185]
 script = ExtResource("1_bjfuw")
 
-[node name="StatsRecommended" parent="." unique_id=329966221 instance=ExtResource("2_u4fnb")]
+[node name="StatsToClear" parent="." unique_id=329966221 instance=ExtResource("2_u4fnb")]
+_agility = SubResource("Curve_u4fnb")
+_combat = SubResource("Curve_pleko")
+_awareness = SubResource("Curve_ubfai")
+_eldritch_knowledge = SubResource("Curve_f8jch")
+_map_layout_knowledge = SubResource("Curve_vvvow")
+_mental_clarity = SubResource("Curve_ibfwt")

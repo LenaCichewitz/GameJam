@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyruobvl3nbte"
-path="res://.godot/imported/Button.png-2e4c11f7e62612dd5ae55f0988f9eead.ctex"
+uid="uid://14uupu5hjaqp"
+path="res://.godot/imported/icon_skull.svg-107d0a2317cbe1d907742b6f94706376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Button.png"
-dest_files=["res://.godot/imported/Button.png-2e4c11f7e62612dd5ae55f0988f9eead.ctex"]
+source_file="res://graphics/icons/icon_skull.svg"
+dest_files=["res://.godot/imported/icon_skull.svg-107d0a2317cbe1d907742b6f94706376.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

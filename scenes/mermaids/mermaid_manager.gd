@@ -33,6 +33,28 @@ func load(data: Array[MermaidSaveData]):
 #endregion
 
 #region getter/setter
+func is_action_available() -> bool:
+	var mermaids = $RecruitedMermaids.get_children()
+	if mermaids.is_empty():
+		return false
+	for mermaid in mermaids:
+		if !mermaid.is_exploring():
+			return true
+	return false
+
+
+func has_recruitable_mermaids() -> bool:
+	return !$AvailableMermaids.get_children().is_empty()
+
+
+func _get_mermaid_for_id(mermaid_id: int) -> Node:
+	var mermaids = _get_all_mermaids()
+	var filtered_mermaids = mermaids.filter(func(obj): return obj.mermaid_id == mermaid_id)
+	if filtered_mermaids.size() > 1:
+		push_error("[get_mermaid_for_id]: Found multiple mermaids for id " + str(mermaid_id) + ". Can't uniquely identify mermaid to get.")
+		return
+	return filtered_mermaids.front()
+
 func _get_all_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
 	mermaids.append($RecruitedMermaids.get_children())
@@ -50,6 +72,16 @@ func increment_progress():
 	var mermaids = _get_all_recruited_mermaids()
 	for mermaid in mermaids:
 		mermaid.increment_progress()
+
+
+func _on_mermaid_reporting_corruption_capped(mermaid_id: int):
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	mermaid.reparent($LostMermaids)
+	if $RecruitedMermaids.get_children().is_empty() and $ExploringMermaids.get_children().is_empty():
+		no_mermaids_left.emit()
+	
 
 
 func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:

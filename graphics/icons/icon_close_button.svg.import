@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mlrowkyssph0"
-path="res://.godot/imported/Button_hover.png-bc1633b4d72312826212177559068956.ctex"
+uid="uid://dvksxvbflrtju"
+path="res://.godot/imported/icon_close_button.svg-570643d8e8e8b3e21f244e26aa12ea4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Button_hover.png"
-dest_files=["res://.godot/imported/Button_hover.png-bc1633b4d72312826212177559068956.ctex"]
+source_file="res://graphics/icons/icon_close_button.svg"
+dest_files=["res://.godot/imported/icon_close_button.svg-570643d8e8e8b3e21f244e26aa12ea4c.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

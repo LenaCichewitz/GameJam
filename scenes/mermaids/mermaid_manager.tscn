@@ -11,6 +11,8 @@ script = ExtResource("1_5yo11")
 [node name="PlaceholderMermaid#1" parent="RecruitedMermaids" unique_id=1578086549 instance=ExtResource("1_7m4ph")]
 mermaid_name = "Placeholder Mermaid #1"
 
+[node name="ExploringMermaids" type="Node" parent="." unique_id=689432222]
+
 [node name="AvailableMermaids" type="Node" parent="." unique_id=1928527730]
 
 [node name="LostMermaids" type="Node" parent="." unique_id=1243933119]
