@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cuiyk2x7ivtrh"]
+
+[ext_resource type="Script" uid="uid://crbnh2pfiwr0m" path="res://scenes/items/item_manager.gd" id="1_eu8xw"]
+
+[node name="ItemManager" type="Node" unique_id=1062156382]
+script = ExtResource("1_eu8xw")
+
+[node name="UnobtainedItems" type="Node" parent="." unique_id=711321597]
+
+[node name="UnrepairedItems" type="Node" parent="." unique_id=1853843324]
+
+[node name="UnequippedItems" type="Node" parent="." unique_id=527744419]
