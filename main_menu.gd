@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_new_game_button_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/ui/management_root.tscn")
 
 func _on_start_pressed() -> void:
 	pass # Replace with function body.
