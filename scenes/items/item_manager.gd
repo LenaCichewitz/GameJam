@@ -25,7 +25,7 @@ func save() -> Array[ItemSaveData]:
 	return data
 
 
-func load(data: Array[ItemSaveData]):
+func load_data(data: Array[ItemSaveData]):
 	for item in _get_all_items():
 		var item_data_for_item_id = data.filter(func(obj): return obj.get_item_id() == item.item_id)
 		if item_data_for_item_id.is_empty():
@@ -34,7 +34,7 @@ func load(data: Array[ItemSaveData]):
 			push_error("[item loading]: Multiple save entries found for item id. Can't uniquely identify which to load. ID:" + str(item.item_id))
 			continue
 		# Assigned items re-place themselves via the reequip_* signals emitted inside item.load()
-		item.load(item_data_for_item_id.front())
+		item.load_data(item_data_for_item_id.front())
 		if not item.is_assigned():
 			_place_unassigned_item(item)
 #endregion
@@ -181,7 +181,8 @@ func _reclaim_lost_items(quest: Node) -> void:
 	if lost_items.is_empty():
 		return
 	for item in lost_items:
-		_obtain(item)
+		item.release()
+		_place_unassigned_item(item)
 	items_reclaimed_from_quest.emit(quest.quest_id)
 #endregion
 

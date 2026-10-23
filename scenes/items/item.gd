@@ -20,7 +20,7 @@ func save() -> ItemSaveData:
 	return ItemSaveData.new(item_id, is_repaired, is_obtained, _assigned_mermaid_id, _lost_on_quest_id)
 
 
-func load(data: ItemSaveData):
+func load_data(data: ItemSaveData):
 	if item_id != data.get_item_id():
 		return
 	is_repaired = data.is_repaired()
@@ -55,6 +55,13 @@ func release():
 
 func is_assigned() -> bool:
 	return _assigned_mermaid_id >= 0 || _lost_on_quest_id >= 0
+
+
+func get_assigned_mermaid_id() -> int:
+	return _assigned_mermaid_id
+
+func get_lost_on_quest_id() -> int:
+	return _lost_on_quest_id
 #endregion
 
 

@@ -5,6 +5,13 @@ signal no_mermaids_left()
 
 @export var quest_manager: Node
 
+
+func _ready() -> void:
+	for mermaid in _get_all_mermaids():
+		if not mermaid.mermaid_capped_corruption.is_connected(_on_mermaid_reporting_corruption_capped):
+			mermaid.mermaid_capped_corruption.connect(_on_mermaid_reporting_corruption_capped)
+
+
 #region save/load
 func save() -> Array[MermaidSaveData]:
 	var data: Array[MermaidSaveData]
@@ -13,7 +20,7 @@ func save() -> Array[MermaidSaveData]:
 		data.append(mermaid.save())
 	return data
 
-func load(data: Array[MermaidSaveData]):
+func load_data(data: Array[MermaidSaveData]):
 	var mermaids = _get_all_mermaids()
 	for mermaid in mermaids:
 		var mermaid_data_for_mermaid_id = data.filter(func(obj): return obj.get_mermaid_id() == mermaid.mermaid_id)
@@ -23,7 +30,7 @@ func load(data: Array[MermaidSaveData]):
 			push_error("[loading]: Multiple mermaids found for mermaid id. Can't uniquely identify with mermaid to load. ID:" + str(mermaid.mermaid_id))
 			continue
 		var mermaid_data = mermaid_data_for_mermaid_id.front()
-		mermaid.load(mermaid_data)
+		mermaid.load_data(mermaid_data)
 		if not mermaid_data.is_alive():
 			mermaid.reparent($LostMermaids)
 		elif mermaid_data.is_recruited():
@@ -57,6 +64,10 @@ func get_all_equipped_items() -> Array[Node]:
 	for mermaid in mermaids:
 		items.append_array(mermaid.get_items())
 	return items
+
+
+func get_mermaid_for_id(mermaid_id: int) -> Node:
+	return _get_mermaid_for_id(mermaid_id)
 
 
 func _get_mermaid_for_id(mermaid_id: int) -> Node:
@@ -103,6 +114,8 @@ func _on_quest_manager_reporting_quest_outcome(_quest_id: int, mermaid_id: int, 
 	if not mermaid:
 		return
 	mermaid.set_mermaid_exploring(false)
+	if not mermaid.alive:
+		return
 	if outcome == EnumConstants.QuestCompletionState.FAILURE:
 		mermaid.reparent($LostMermaids)
 		mermaid.alive = false

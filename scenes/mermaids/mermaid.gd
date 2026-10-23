@@ -18,7 +18,7 @@ func save() -> MermaidSaveData:
 	return MermaidSaveData.new(mermaid_id, alive, recruited, _is_exploring, $Stats.get_corruption())
 
 
-func load(data: MermaidSaveData):
+func load_data(data: MermaidSaveData):
 	if mermaid_id != data.get_mermaid_id():
 		return
 	

@@ -1,4 +1,4 @@
-extends Object
+extends RefCounted
 class_name MermaidSaveData
 var _mermaid_id: int = 0
 var _alive: bool = false

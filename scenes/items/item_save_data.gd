@@ -1,4 +1,4 @@
-extends Object
+extends RefCounted
 class_name ItemSaveData
 var _item_id: int = 0
 var _is_repaired: bool = false

@@ -40,7 +40,7 @@ func save() -> QuestSaveData:
 	return data
 
 
-func load(data: QuestSaveData):
+func load_data(data: QuestSaveData):
 	if quest_id != data.get_quest_id():
 		return
 		
@@ -57,6 +57,11 @@ func load(data: QuestSaveData):
 func assign_mermaid(mermaid_id: int):
 	assigned_mermaid_id = mermaid_id
 	requesting_mermaid_data.emit(quest_id, assigned_mermaid_id)
+
+
+func remove_mermaid_assignment():
+	assigned_mermaid_id = -1
+	assigned_mermaid_stats.clear()
 
 
 func provide_mermaid_stats(mermaid_id: int, mermaid_stat_block: Dictionary):
@@ -110,7 +115,7 @@ func _calculate_success() -> EnumConstants.QuestCompletionState:
 		return EnumConstants.QuestCompletionState.FAILURE
 	
 	if $StatsToClear.compare_against_stats_dictionary(assigned_mermaid_stats, use_mermaid_corruption_for_success_calculation):
-		completed = true
+		completed = one_shot or is_final_quest
 		if is_final_quest:
 			return EnumConstants.QuestCompletionState.FINAL_SUCCESS
 		return EnumConstants.QuestCompletionState.SUCCESS
