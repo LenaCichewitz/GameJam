@@ -3,6 +3,202 @@
 [ext_resource type="Script" uid="uid://dgb8nsxhd06ro" path="res://scenes/quests/quest_manager.gd" id="1_4a2l1"]
 [ext_resource type="PackedScene" uid="uid://cmcge61w3y8mo" path="res://scenes/quests/quest.tscn" id="2_7xuob"]
 
+[sub_resource type="Curve" id="Curve_7xuob"]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7i4vb"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wmh3v"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_f01sv"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_cex6b"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4nf4c"]
+_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_lgvmb"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mxc5p"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_qqstm"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_tr7ox"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8up6o"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_42d3x"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j63pw"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8uk7a"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7c7fg"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_lkrw4"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_jo48k"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_h4qoa"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gr7cu"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hfgdr"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_i5ifi"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gvpb6"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_70nes"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_t7ugm"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4icew"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_njkix"]
+_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_qqhc5"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_r5h17"]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_me171"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7kgqg"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g5v1a"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_bp6ou"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_a47fs"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_blk6h"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_n3veo"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wgq6u"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ivvbg"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mb3sc"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_22rjq"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rsh6g"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_d8tvc"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ak3ry"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yh0h6"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vtd8x"]
+_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8omnl"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ho8qw"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xjnry"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_i27fw"]
+_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_588e0"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="QuestManager" type="Node" unique_id=1796667383]
 script = ExtResource("1_4a2l1")
 
@@ -11,9 +207,179 @@ script = ExtResource("1_4a2l1")
 [node name="PlaceholderQuest#1" parent="AvailableQuests" unique_id=528668185 instance=ExtResource("2_7xuob")]
 quest_name = "Placeholder Quest #1"
 
+[node name="StatsToClear" parent="AvailableQuests/PlaceholderQuest#1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_7xuob")
+_combat = SubResource("Curve_7i4vb")
+_awareness = SubResource("Curve_wmh3v")
+_eldritch_knowledge = SubResource("Curve_f01sv")
+_map_layout_knowledge = SubResource("Curve_cex6b")
+_mental_clarity = SubResource("Curve_4nf4c")
+
+[node name="Quest" parent="AvailableQuests/PlaceholderQuest#1" unique_id=569622021 instance=ExtResource("2_7xuob")]
+
+[node name="Tutorial" parent="AvailableQuests" unique_id=1488423929 instance=ExtResource("2_7xuob")]
+quest_id = 1
+
+[node name="Dagger" parent="AvailableQuests" unique_id=1706432302 instance=ExtResource("2_7xuob")]
+quest_id = 2
+quest_group = 1
+
+[node name="StatsToClear" parent="AvailableQuests/Dagger" index="0" unique_id=329966221]
+_agility = SubResource("Curve_lgvmb")
+_map_layout_knowledge = SubResource("Curve_mxc5p")
+
+[node name="Study Texts" parent="AvailableQuests" unique_id=1359076990 instance=ExtResource("2_7xuob")]
+quest_id = 3
+quest_group = 1
+rewards_corruption_reduction = true
+reward_corruption_reduction = 10.0
+
+[node name="StatsToClear" parent="AvailableQuests/Study Texts" index="0" unique_id=329966221]
+_eldritch_knowledge = SubResource("Curve_qqstm")
+
+[node name="Fight Guard" parent="AvailableQuests" unique_id=1932161826 instance=ExtResource("2_7xuob")]
+quest_id = 4
+quest_group = 1
+rewards_corruption_reduction = true
+reward_corruption_reduction = -20.0
+
+[node name="StatsToClear" parent="AvailableQuests/Fight Guard" index="0" unique_id=329966221]
+_combat = SubResource("Curve_tr7ox")
+
+[node name="Artifact #1" parent="AvailableQuests" unique_id=1664053837 instance=ExtResource("2_7xuob")]
+quest_id = 5
+quest_group = 2
+
+[node name="StatsToClear" parent="AvailableQuests/Artifact #1" index="0" unique_id=329966221]
+_awareness = SubResource("Curve_8up6o")
+_eldritch_knowledge = SubResource("Curve_42d3x")
+
+[node name="Artifact #2" parent="AvailableQuests" unique_id=122931068 instance=ExtResource("2_7xuob")]
+quest_id = 6
+quest_group = 2
+
+[node name="StatsToClear" parent="AvailableQuests/Artifact #2" index="0" unique_id=329966221]
+_awareness = SubResource("Curve_j63pw")
+_mental_clarity = SubResource("Curve_8uk7a")
+
+[node name="Artifact #3" parent="AvailableQuests" unique_id=1521420106 instance=ExtResource("2_7xuob")]
+quest_id = 7
+quest_group = 2
+
+[node name="StatsToClear" parent="AvailableQuests/Artifact #3" index="0" unique_id=329966221]
+_agility = SubResource("Curve_7c7fg")
+_combat = SubResource("Curve_lkrw4")
+
+[node name="Scan the Area" parent="AvailableQuests" unique_id=428837585 instance=ExtResource("2_7xuob")]
+quest_id = 8
+quest_group = 2
+rewards_corruption_reduction = true
+reward_corruption_reduction = -50.0
+
+[node name="StatsToClear" parent="AvailableQuests/Scan the Area" index="0" unique_id=329966221]
+_agility = SubResource("Curve_jo48k")
+_map_layout_knowledge = SubResource("Curve_h4qoa")
+_mental_clarity = SubResource("Curve_gr7cu")
+
+[node name="Cursed Item #1" parent="AvailableQuests" unique_id=951889181 instance=ExtResource("2_7xuob")]
+quest_id = 9
+quest_group = 3
+
+[node name="StatsToClear" parent="AvailableQuests/Cursed Item #1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_hfgdr")
+_combat = SubResource("Curve_i5ifi")
+_awareness = SubResource("Curve_gvpb6")
+_eldritch_knowledge = SubResource("Curve_70nes")
+_map_layout_knowledge = SubResource("Curve_t7ugm")
+_mental_clarity = SubResource("Curve_4icew")
+
+[node name="Cursed Item #2" parent="AvailableQuests" unique_id=1605409417 instance=ExtResource("2_7xuob")]
+quest_id = 10
+quest_group = 3
+
+[node name="StatsToClear" parent="AvailableQuests/Cursed Item #2" index="0" unique_id=329966221]
+_combat = SubResource("Curve_njkix")
+_awareness = SubResource("Curve_qqhc5")
+_mental_clarity = SubResource("Curve_r5h17")
+
+[node name="Pending #1" parent="AvailableQuests" unique_id=1961663541 instance=ExtResource("2_7xuob")]
+quest_id = 11
+quest_group = 3
+rewards_corruption_reduction = true
+reward_corruption_reduction = 10.0
+
+[node name="StatsToClear" parent="AvailableQuests/Pending #1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_me171")
+_eldritch_knowledge = SubResource("Curve_7kgqg")
+_map_layout_knowledge = SubResource("Curve_g5v1a")
+
+[node name="Pending #2" parent="AvailableQuests" unique_id=1178817276 instance=ExtResource("2_7xuob")]
+quest_id = 12
+quest_group = 3
+rewards_corruption_reduction = true
+reward_corruption_reduction = -40.0
+
+[node name="StatsToClear" parent="AvailableQuests/Pending #2" index="0" unique_id=329966221]
+_combat = SubResource("Curve_bp6ou")
+_awareness = SubResource("Curve_a47fs")
+_eldritch_knowledge = SubResource("Curve_blk6h")
+_map_layout_knowledge = SubResource("Curve_n3veo")
+
+[node name="Finale #1" parent="AvailableQuests" unique_id=1200277134 instance=ExtResource("2_7xuob")]
+quest_id = 13
+is_final_quest = true
+quest_group = 4
+
+[node name="StatsToClear" parent="AvailableQuests/Finale #1" index="0" unique_id=329966221]
+_agility = SubResource("Curve_wgq6u")
+_combat = SubResource("Curve_ivvbg")
+_awareness = SubResource("Curve_mb3sc")
+_eldritch_knowledge = SubResource("Curve_22rjq")
+_map_layout_knowledge = SubResource("Curve_rsh6g")
+_mental_clarity = SubResource("Curve_d8tvc")
+
+[node name="Finale #2" parent="AvailableQuests" unique_id=1737277138 instance=ExtResource("2_7xuob")]
+quest_id = 14
+is_final_quest = true
+quest_group = 4
+
+[node name="StatsToClear" parent="AvailableQuests/Finale #2" index="0" unique_id=329966221]
+_agility = SubResource("Curve_ak3ry")
+_combat = SubResource("Curve_yh0h6")
+_map_layout_knowledge = SubResource("Curve_vtd8x")
+_mental_clarity = SubResource("Curve_8omnl")
+
+[node name="Final #3" parent="AvailableQuests" unique_id=45835624 instance=ExtResource("2_7xuob")]
+quest_id = 15
+is_final_quest = true
+quest_group = 4
+
+[node name="StatsToClear" parent="AvailableQuests/Final #3" index="0" unique_id=329966221]
+_agility = SubResource("Curve_ho8qw")
+_awareness = SubResource("Curve_xjnry")
+_eldritch_knowledge = SubResource("Curve_i27fw")
+_map_layout_knowledge = SubResource("Curve_588e0")
+
 [node name="ActiveQuests" type="Node" parent="." unique_id=1659325917]
 
 [node name="CompletedQuests" type="Node" parent="." unique_id=568808815]
 
 [connection signal="quest_completed" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_quest_completed"]
 [connection signal="requesting_mermaid_data" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_requesting_mermaid_data"]
+
+[editable path="AvailableQuests/PlaceholderQuest#1"]
+[editable path="AvailableQuests/Tutorial"]
+[editable path="AvailableQuests/Dagger"]
+[editable path="AvailableQuests/Study Texts"]
+[editable path="AvailableQuests/Fight Guard"]
+[editable path="AvailableQuests/Artifact #1"]
+[editable path="AvailableQuests/Artifact #2"]
+[editable path="AvailableQuests/Artifact #3"]
+[editable path="AvailableQuests/Scan the Area"]
+[editable path="AvailableQuests/Cursed Item #1"]
+[editable path="AvailableQuests/Cursed Item #2"]
+[editable path="AvailableQuests/Pending #1"]
+[editable path="AvailableQuests/Pending #2"]
+[editable path="AvailableQuests/Finale #1"]
+[editable path="AvailableQuests/Finale #2"]
+[editable path="AvailableQuests/Final #3"]
