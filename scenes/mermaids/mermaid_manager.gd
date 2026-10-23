@@ -120,3 +120,10 @@ func _on_quest_manager_requesting_mermaid_data(mermaid_id: int) -> void:
 	
 	var stats = mermaid.get_calculated_stats()
 	quest_manager.provide_mermaid_stats(mermaid_id, stats)
+
+
+func _on_quest_manager_reporting_mermaid_as_exploring(mermaid_id: int) -> void:
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	mermaid.set_mermaid_exploring(true)
