@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b07oomibpr07k"]
+
+[ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/TargetBox.tscn" id="1_ct72h"]
+[ext_resource type="Script" uid="uid://co7tnof8581tr" path="res://scripts/workbench/WorkbenchController.gd" id="1_d5ce4"]
+[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_t8l4c"]
+[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://data/items/perle.tres" id="3_dfhgv"]
+[ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
+[ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
+[ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://data/tools/sponge.tres" id="7_0my5e"]
+
+[node name="Workbench" type="Control" unique_id=1896145299]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5ce4")
+available_items = Array[ExtResource("2_t8l4c")]([ExtResource("3_dfhgv")])
+
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1745677948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorkArea" type="Control" parent="MainLayout" unique_id=420574147]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TargetBox" parent="MainLayout/WorkArea" unique_id=1313226884 instance=ExtResource("1_ct72h")]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 0
+offset_left = 455.0
+offset_top = 200.0
+offset_right = 695.0
+offset_bottom = 440.0
+
+[node name="Content" type="VBoxContainer" parent="MainLayout/WorkArea/TargetBox" unique_id=677405564]
+layout_mode = 2
+
+[node name="ItemPreview" type="TextureRect" parent="MainLayout/WorkArea/TargetBox/Content" unique_id=870856329]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ItemBar" type="HBoxContainer" parent="MainLayout" unique_id=827700913]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="restoration_container" type="Control" parent="." unique_id=702671143]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="toolbox" parent="." unique_id=1918526201 instance=ExtResource("5_dfhgv")]
+layout_mode = 1
+offset_left = -352.0
+offset_top = 20.0
+offset_right = -172.0
+offset_bottom = 270.0
+available_tools = Array[ExtResource("6_kxv2g")]([ExtResource("7_0my5e")])

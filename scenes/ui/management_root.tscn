@@ -1,7 +1,33 @@
-[gd_scene format=3 uid="uid://dph6vkl23ntmu"]
+[gd_scene format=3 uid="uid://cw88yy8x6b340"]
+
+[ext_resource type="Script" uid="uid://c0h2oq2kjtivw" path="res://scenes/ui/management_root.gd" id="1_wul21"]
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_yn4a1"]
+[ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_a4i7e"]
+[ext_resource type="PackedScene" uid="uid://dpvjhr5efep37" path="res://scenes/ui/components/mermaid_list_item.tscn" id="2_rlydk"]
+[ext_resource type="Texture2D" uid="uid://hm1ulo3creqw" path="res://graphics/button1.svg" id="3_rlydk"]
+[ext_resource type="Texture2D" uid="uid://c1850uphsyx2x" path="res://graphics/button3.svg" id="4_wul21"]
+[ext_resource type="Texture2D" uid="uid://crd36k40u02n2" path="res://graphics/button2.svg" id="5_nk5b7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
+bg_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
 font_size = 67
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
+texture = ExtResource("3_rlydk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unrva"]
+texture = ExtResource("4_wul21")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjdm6"]
+texture = ExtResource("5_nk5b7")
 
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
@@ -10,6 +36,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wul21")
+
+[node name="Panel" type="Panel" parent="." unique_id=1205185668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8y12")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1710992005]
 layout_mode = 1
@@ -18,10 +54,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 3
 
 [node name="QuestInterfaceRoot" type="PanelContainer" parent="HBoxContainer" unique_id=2127973480]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
 
 [node name="QuestSelection" type="VBoxContainer" parent="HBoxContainer/QuestInterfaceRoot" unique_id=2120974534]
 layout_mode = 2
@@ -32,6 +70,8 @@ theme_override_constants/margin_left = 70
 
 [node name="QuestListHeaderLabel" type="Label" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/QuestHeaderMargins" unique_id=394193140]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("1_yn4a1")
 text = "Quests"
 label_settings = SubResource("LabelSettings_77ro6")
 vertical_alignment = 1
@@ -57,3 +97,78 @@ layout_mode = 2
 [node name="MermaidDetailsRoot" type="Control" parent="HBoxContainer" unique_id=448609858]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MermaidDetailsRoot" unique_id=956535673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unrva")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel" unique_id=1695299590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Mermaid List Row1" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer" unique_id=253237720]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MermaidListItem" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row1" unique_id=1707984664 instance=ExtResource("2_rlydk")]
+layout_mode = 2
+
+[node name="MermaidListItem2" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row1" unique_id=1035215130 instance=ExtResource("2_rlydk")]
+layout_mode = 2
+
+[node name="MermaidListItem3" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row1" unique_id=435520057 instance=ExtResource("2_rlydk")]
+layout_mode = 2
+
+[node name="Mermaid List Row2" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer" unique_id=1447057701]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MermaidListItem4" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=1554050839 instance=ExtResource("2_rlydk")]
+layout_mode = 2
+
+[node name="MermaidListItem5" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=351956355 instance=ExtResource("2_rlydk")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer" unique_id=1057564049]
+layout_mode = 2
+theme_override_constants/margin_left = 235
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer" unique_id=1401296714]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1453000268]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=671103954]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1761618505]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_a4i7e")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_gf8qy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_unrva")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yjdm6")
+text = "Item Restauration"

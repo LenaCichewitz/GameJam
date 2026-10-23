@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cuiyk2x7ivtrh"]
+
+[ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_m0tn0"]
+[ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="2_53f03"]
+[ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_x8uhn"]
+[ext_resource type="PackedScene" path="res://main_menu.tscn" id="4_y20ut"]
+
+[node name="MainScene" type="Node" unique_id=577158869]
+process_mode = 3
+
+[node name="Systems" type="Node" parent="." unique_id=1282027253]
+process_mode = 3
+
+[node name="QuestManager" parent="Systems" unique_id=1796667383 instance=ExtResource("1_m0tn0")]
+
+[node name="MermaidManager" parent="Systems" unique_id=836053267 node_paths=PackedStringArray("quest_manager") instance=ExtResource("2_53f03")]
+quest_manager = NodePath("../QuestManager")
+
+[node name="RenovationRoot" type="Node2D" parent="." unique_id=1490714256]
+process_mode = 1
+
+[node name="RenovationHudLayer" type="CanvasLayer" parent="." unique_id=1221930533]
+process_mode = 1
+layer = 10
+
+[node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
+process_mode = 1
+layer = 20
+
+[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 instance=ExtResource("3_x8uhn")]
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
+process_mode = 2
+layer = 30
+
+[node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=720024113]
+process_mode = 3
+layer = 40
+
+[node name="MainMenu" parent="MainMenuLayer" unique_id=793280666 instance=ExtResource("4_y20ut")]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=878110436]
+process_mode = 3
+layer = 100

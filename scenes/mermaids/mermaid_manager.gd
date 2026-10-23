@@ -5,6 +5,13 @@ signal no_mermaids_left()
 
 @export var quest_manager: Node
 
+
+func _ready() -> void:
+	for mermaid in _get_all_mermaids():
+		if not mermaid.mermaid_capped_corruption.is_connected(_on_mermaid_reporting_corruption_capped):
+			mermaid.mermaid_capped_corruption.connect(_on_mermaid_reporting_corruption_capped)
+
+
 #region save/load
 func save() -> Array[MermaidSaveData]:
 	var data: Array[MermaidSaveData]
@@ -13,7 +20,7 @@ func save() -> Array[MermaidSaveData]:
 		data.append(mermaid.save())
 	return data
 
-func load(data: Array[MermaidSaveData]):
+func load_data(data: Array[MermaidSaveData]):
 	var mermaids = _get_all_mermaids()
 	for mermaid in mermaids:
 		var mermaid_data_for_mermaid_id = data.filter(func(obj): return obj.get_mermaid_id() == mermaid.mermaid_id)
@@ -23,7 +30,7 @@ func load(data: Array[MermaidSaveData]):
 			push_error("[loading]: Multiple mermaids found for mermaid id. Can't uniquely identify with mermaid to load. ID:" + str(mermaid.mermaid_id))
 			continue
 		var mermaid_data = mermaid_data_for_mermaid_id.front()
-		mermaid.load(mermaid_data)
+		mermaid.load_data(mermaid_data)
 		if not mermaid_data.is_alive():
 			mermaid.reparent($LostMermaids)
 		elif mermaid_data.is_recruited():
@@ -47,6 +54,22 @@ func has_recruitable_mermaids() -> bool:
 	return !$AvailableMermaids.get_children().is_empty()
 
 
+func get_recruitable_mermaids() -> Array[Node]:
+	return $AvailableMermaids.get_children()
+
+
+func get_all_equipped_items() -> Array[Node]:
+	var items: Array[Node]
+	var mermaids = _get_all_mermaids()
+	for mermaid in mermaids:
+		items.append_array(mermaid.get_items())
+	return items
+
+
+func get_mermaid_for_id(mermaid_id: int) -> Node:
+	return _get_mermaid_for_id(mermaid_id)
+
+
 func _get_mermaid_for_id(mermaid_id: int) -> Node:
 	var mermaids = _get_all_mermaids()
 	var filtered_mermaids = mermaids.filter(func(obj): return obj.mermaid_id == mermaid_id)
@@ -55,16 +78,18 @@ func _get_mermaid_for_id(mermaid_id: int) -> Node:
 		return
 	return filtered_mermaids.front()
 
+
 func _get_all_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
-	mermaids.append($RecruitedMermaids.get_children())
-	mermaids.append($AvailableMermaids.get_children())
-	mermaids.append($LostMermaids.get_children())
+	mermaids.append_array($RecruitedMermaids.get_children())
+	mermaids.append_array($AvailableMermaids.get_children())
+	mermaids.append_array($LostMermaids.get_children())
 	return mermaids
+
 
 func _get_all_recruited_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
-	mermaids.append($RecruitedMermaids.get_children())
+	mermaids.append_array($RecruitedMermaids.get_children())
 	return mermaids
 #endregion
 
@@ -79,11 +104,39 @@ func _on_mermaid_reporting_corruption_capped(mermaid_id: int):
 	if not mermaid:
 		return
 	mermaid.reparent($LostMermaids)
-	if $RecruitedMermaids.get_children().is_empty() and $ExploringMermaids.get_children().is_empty():
+	if $RecruitedMermaids.get_children().is_empty():
 		no_mermaids_left.emit()
 	
 
 
-func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
-	#
-	pass # Replace with function body.
+func _on_quest_manager_reporting_quest_outcome(_quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	mermaid.set_mermaid_exploring(false)
+	if not mermaid.alive:
+		return
+	if outcome == EnumConstants.QuestCompletionState.FAILURE:
+		mermaid.reparent($LostMermaids)
+		mermaid.alive = false
+		if $RecruitedMermaids.get_children().is_empty():
+			no_mermaids_left.emit()
+
+
+func _on_quest_manager_requesting_mermaid_data(mermaid_id: int) -> void:
+	if not quest_manager:
+		return
+	
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	
+	var stats = mermaid.get_calculated_stats()
+	quest_manager.provide_mermaid_stats(mermaid_id, stats)
+
+
+func _on_quest_manager_reporting_mermaid_as_exploring(mermaid_id: int) -> void:
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	mermaid.set_mermaid_exploring(true)

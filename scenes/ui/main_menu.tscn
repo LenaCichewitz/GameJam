@@ -1,21 +1,19 @@
 [gd_scene format=3 uid="uid://01r313regslk"]
 
-[ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://scenes/ui/main_menu.gd" id="1_06t4h"]
 [ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://hm1ulo3creqw" path="res://graphics/button1.svg" id="3_0o4t1"]
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://hm1ulo3creqw" path="res://graphics/button1.svg" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://c1850uphsyx2x" path="res://graphics/button3.svg" id="4_0k4wn"]
-[ext_resource type="Texture2D" uid="uid://crd36k40u02n2" path="res://graphics/button2.svg" id="5_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://crd36k40u02n2" path="res://graphics/button2.svg" id="5_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="7_qe12f"]
-[ext_resource type="Script" uid="uid://dtx17jdt2aw4d" path="res://fullscreen_controll.gd" id="8_8qtwp"]
+[ext_resource type="Script" uid="uid://dtx17jdt2aw4d" path="res://scenes/ui/fullscreen_controll.gd" id="8_8qtwp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
-texture = ExtResource("3_0o4t1")
+texture = ExtResource("3_nlkkf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
 texture = ExtResource("4_0k4wn")
@@ -27,7 +25,7 @@ texture = ExtResource("5_j5v2v")
 texture = ExtResource("3_nlkkf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
-texture = ExtResource("5_8qtwp")
+texture = ExtResource("5_j5v2v")
 
 [sub_resource type="FontVariation" id="FontVariation_7vrkn"]
 base_font = ExtResource("3_fu7sn")
@@ -222,49 +220,9 @@ Simon Gemmel
 Font: Stefie Justprince"
 horizontal_alignment = 1
 
-[node name="NewGame" type="Panel" parent="." unique_id=1838265562]
-visible = false
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 392.0
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="NewGame" unique_id=1608696685]
-custom_minimum_size = Vector2(300, 20)
-custom_maximum_size = Vector2(370, 258)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 230.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
-theme_override_constants/line_spacing = -18
-theme_override_fonts/font = ExtResource("2_7vrkn")
-theme_override_font_sizes/font_size = 64
-text = "Create New Game"
-horizontal_alignment = 1
-vertical_alignment = 2
-autowrap_mode = 3
-
-[node name="Exit New Game" type="Button" parent="NewGame" unique_id=324933462]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -81.0
-offset_top = 10.0
-offset_right = -9.0
-offset_bottom = 82.0
-grow_horizontal = 0
-accessibility_name = "Close Options"
-icon = ExtResource("7_qe12f")
-vertical_icon_alignment = 2
-
 [connection signal="pressed" from="MainButtons/NewGame" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainButtons/Load Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Exit Option" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="Options/FullscreenControll" to="Options/FullscreenControll" method="_on_toggled"]
-[connection signal="pressed" from="NewGame/Exit New Game" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5y5yqofq8il2"]
+
+[ext_resource type="Script" uid="uid://disjn8l31ve4k" path="res://scripts/workbench/TargetBox.gd" id="1_5kkyc"]
+
+[node name="TargetBox" type="PanelContainer" unique_id=1313226884]
+script = ExtResource("1_5kkyc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=24816695]
+layout_mode = 2
+
+[node name="ItemPreview" type="TextureRect" parent="VBoxContainer" unique_id=1606765093]
+layout_mode = 2
+expand_mode = 2
+
+[node name="ItemName" type="Label" parent="VBoxContainer" unique_id=1015254719]
+layout_mode = 2

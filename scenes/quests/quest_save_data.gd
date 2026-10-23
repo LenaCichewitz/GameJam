@@ -1,16 +1,18 @@
-extends Object
+extends RefCounted
 class_name QuestSaveData
 var _quest_id: int = 0
 var _completed: bool = false
 var _is_active: bool = false
+var _mermaids_lost_on_quest: bool = false
 var _assigned_mermaid_id: int = 0
 var _remaining_duration_left: float = 0.0
 
 
-func _init(quest_id: int, completed: bool, is_currently_active: bool, assigned_mermaid_id: int, remaining_duration_left: float):
+func _init(quest_id: int, completed: bool, is_currently_active: bool, mermaids_were_lost_on_quest: bool, assigned_mermaid_id: int, remaining_duration_left: float):
 	_quest_id = quest_id
 	_completed = completed
 	_is_active = is_currently_active
+	_mermaids_lost_on_quest = mermaids_were_lost_on_quest
 	_assigned_mermaid_id = assigned_mermaid_id
 	_remaining_duration_left = remaining_duration_left
 
@@ -25,6 +27,10 @@ func is_completed() -> bool:
 
 func is_active() -> bool:
 	return _is_active
+
+
+func were_mermaids_lost_on_quest() -> bool:
+	return _mermaids_lost_on_quest
 
 
 func get_assigned_mermaid_id() -> int:

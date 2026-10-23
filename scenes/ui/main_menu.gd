@@ -3,14 +3,13 @@ extends Control
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var titel: Label = $Titel
 @onready var options: Panel = $Options
-@onready var new_game: Panel = $NewGame
+@onready var main_menu: Control = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	main_buttons.visible = true
 	titel.visible = true
 	options.visible = false
-	new_game.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,9 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_new_game_button_pressed() -> void:
-	main_buttons.visible = false
-	titel.visible = false
-	new_game.visible = true
+	main_menu.visible = false
 
 func _on_start_pressed() -> void:
 	pass # Replace with function body.
