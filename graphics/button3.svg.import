@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbx4w8qmmfjme"
-path="res://.godot/imported/Button_focus.png-b372e28d9ce4e608adc4e8d4cf09efe1.ctex"
+uid="uid://c1850uphsyx2x"
+path="res://.godot/imported/button3.svg-9f3ada7ef96989ba08e22b3a023aaa5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Button_focus.png"
-dest_files=["res://.godot/imported/Button_focus.png-b372e28d9ce4e608adc4e8d4cf09efe1.ctex"]
+source_file="res://graphics/button3.svg"
+dest_files=["res://.godot/imported/button3.svg-9f3ada7ef96989ba08e22b3a023aaa5d.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
