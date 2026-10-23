@@ -172,3 +172,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gf8qy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_unrva")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yjdm6")
 text = "Item Restauration"
+
+[connection signal="pressed" from="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/Button" to="." method="_on_restauration_button_pressed"]
