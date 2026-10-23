@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bygpcw47keabm"]
 
 [ext_resource type="Script" uid="uid://bvqt6lbqxy4a" path="res://scenes/ui/components/quest_list_item.gd" id="1_qmdcg"]
+[ext_resource type="Texture2D" uid="uid://dtr20purn688i" path="res://graphics/icons/icon_arrow.svg" id="2_lpkqt"]
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_vqdcy"]
+[ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="4_gg24t"]
+[ext_resource type="Texture2D" uid="uid://14uupu5hjaqp" path="res://graphics/icons/icon_skull.svg" id="4_ic3jt"]
+[ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_ic3jt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
 font_size = 28
@@ -30,22 +35,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer" unique_id=821026240]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="ToggledIndicator" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=7364097]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 12)
+offset_transform_rotation = 1.5707964
+texture = ExtResource("2_lpkqt")
 expand_mode = 3
 
 [node name="QuestTitle" type="Label" parent="Header/MarginContainer/HBoxContainer" unique_id=676541777]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_vqdcy")
 text = "Title"
 label_settings = SubResource("LabelSettings_77ro6")
 
 [node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
 layout_mode = 2
+texture = ExtResource("4_ic3jt")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Body" type="PanelContainer" parent="." unique_id=1765888300]
 layout_mode = 2
@@ -65,6 +83,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+theme_override_colors/default_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/normal_font = ExtResource("4_gg24t")
+theme_override_fonts/bold_font = ExtResource("5_ic3jt")
 text = "Lorem Ipsum"
 
 [node name="Data" type="VBoxContainer" parent="Body/Margins/Content" unique_id=2112563232]
@@ -86,6 +107,9 @@ theme_override_constants/margin_right = 15
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("5_ic3jt")
+theme_override_font_sizes/font_size = 20
 text = "X/Y"
 label_settings = SubResource("LabelSettings_6rgs3")
 horizontal_alignment = 2
