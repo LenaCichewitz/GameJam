@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dpvjhr5efep37"]
 
-[ext_resource type="Script" uid="uid://cf2ltxxyddndm" path="res://scenes/ui/components/mermaid_list_item.gd" id="1_k8xct"]
 [ext_resource type="Texture2D" uid="uid://dwcyfyx68f4qq" path="res://graphics/IU-Placeholder-Mermaid-Head.svg" id="1_q4vjp"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_q5u5i"]
 
@@ -16,7 +15,6 @@ offset_right = -0.4480133
 offset_bottom = -0.038848877
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k8xct")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1122951831]
 layout_mode = 1
@@ -26,13 +24,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1502213505]
+[node name="MermaidIcon" type="TextureRect" parent="VBoxContainer" unique_id=1502213505]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_q4vjp")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1311471122]
+[node name="MermaidName" type="Label" parent="VBoxContainer" unique_id=1311471122]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("1_q5u5i")

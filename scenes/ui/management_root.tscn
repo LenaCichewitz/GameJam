@@ -135,10 +135,10 @@ layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="MermaidListItem" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=1554050839 instance=ExtResource("2_rlydk")]
+[node name="MermaidListItem4" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=1554050839 instance=ExtResource("2_rlydk")]
 layout_mode = 2
 
-[node name="MermaidListItem2" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=351956355 instance=ExtResource("2_rlydk")]
+[node name="MermaidListItem5" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaid List Row2" unique_id=351956355 instance=ExtResource("2_rlydk")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer" unique_id=1057564049]
