@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dj5beth302h2i"]
+
+[ext_resource type="Script" uid="uid://cri6adaneuhaw" path="res://scripts/restorations/cleaning_mode.gd" id="1_48dsi"]
+
+[node name="cleaning_mode" type="Control" unique_id=1319015002]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_48dsi")
+
+[node name="dirt_layer" type="TextureRect" parent="." unique_id=1345160754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="completion_popup" type="AcceptDialog" parent="." unique_id=1857434767]

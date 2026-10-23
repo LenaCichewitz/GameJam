@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://de8pgqmdxf65t"]
+
+[ext_resource type="Script" uid="uid://i34p10dd8ciw" path="res://scripts/restorations/tool_slot.gd" id="1_1553q"]
+
+[node name="tool_slot" type="Button" unique_id=1383302629]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+script = ExtResource("1_1553q")
+
+[node name="tool_icon" type="TextureRect" parent="." unique_id=2092084939]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
