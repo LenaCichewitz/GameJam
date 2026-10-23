@@ -3,7 +3,6 @@ extends Control
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var titel: Label = $Titel
 @onready var options: Panel = $Options
-@onready var new_game: Panel = $NewGame
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
