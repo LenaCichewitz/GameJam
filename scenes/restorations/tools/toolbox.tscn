@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://coc16r57pbogj"]
+
+[ext_resource type="Script" uid="uid://c3ki32ql6681" path="res://scripts/restorations/toolbox.gd" id="1_2d2fj"]
+
+[node name="toolbox" type="Control" unique_id=1918526201]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_top = 26.0
+offset_right = 55.0
+offset_bottom = 276.0
+grow_horizontal = 0
+script = ExtResource("1_2d2fj")
+
+[node name="tool_panel" type="VBoxContainer" parent="." unique_id=2052270732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tool_list" type="VBoxContainer" parent="tool_panel" unique_id=1243448510]
+layout_mode = 2
