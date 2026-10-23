@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtr20purn688i"
-path="res://.godot/imported/icon_rightArrow.svg-1497b29645da3e6c61672e7e347430a4.ctex"
+uid="uid://14uupu5hjaqp"
+path="res://.godot/imported/icon_skull.svg-107d0a2317cbe1d907742b6f94706376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/icons/icon_rightArrow.svg"
-dest_files=["res://.godot/imported/icon_rightArrow.svg-1497b29645da3e6c61672e7e347430a4.ctex"]
+source_file="res://graphics/icons/icon_skull.svg"
+dest_files=["res://.godot/imported/icon_skull.svg-107d0a2317cbe1d907742b6f94706376.ctex"]
 
 [params]
 
