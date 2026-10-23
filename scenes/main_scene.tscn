@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="3_gubc5"]
-[ext_resource type="PackedScene" uid="uid://cuiyk2x7ivtrh" path="res://scenes/items/item_manager.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://cuiyk2x7ivtrh" path="res://scenes/items/item_manager.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://main_menu.tscn" id="4_pu3yx"]
 
 [node name="MainScene" type="Node" unique_id=577158869]
@@ -49,3 +49,5 @@ process_mode = 3
 layer = 100
 
 [connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_quest_outcome"]
+[connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/ItemManager" method="_on_quest_manager_reporting_quest_outcome"]
+[connection signal="requesting_mermaid_data" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_requesting_mermaid_data"]
