@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="3_gubc5"]
+[ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://main_menu.tscn" id="4_pu3yx"]
 
 [node name="MainScene" type="Node" unique_id=577158869]
@@ -25,6 +26,8 @@ layer = 10
 [node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
 process_mode = 1
 layer = 20
+
+[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 instance=ExtResource("3_pu3yx")]
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
 process_mode = 2
