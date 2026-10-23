@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c33axwssrqbuv"]
+
+[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="1_4klvg"]
+[ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="1_q5nas"]
+[ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="1_ql0pd"]
+[ext_resource type="Texture2D" uid="uid://6grcgofm0vpg" path="res://icon.svg" id="2_q5nas"]
+
+[resource]
+script = ExtResource("1_4klvg")
+final_sprite = ExtResource("2_q5nas")
+dirt_texture = ExtResource("1_ql0pd")
+needs_punding = false
+closed_texture = ExtResource("1_q5nas")
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
