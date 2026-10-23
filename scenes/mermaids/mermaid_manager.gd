@@ -2,6 +2,7 @@ extends Node
 
 
 signal no_mermaids_left()
+signal mermaid_lost_to_corruption(mermaid_id: int)
 
 @export var quest_manager: Node
 
@@ -70,6 +71,14 @@ func get_mermaid_for_id(mermaid_id: int) -> Node:
 	return _get_mermaid_for_id(mermaid_id)
 
 
+func get_idle_recruited_mermaids() -> Array[Node]:
+	var idle: Array[Node]
+	for mermaid in $RecruitedMermaids.get_children():
+		if not mermaid.is_exploring():
+			idle.append(mermaid)
+	return idle
+
+
 func _get_mermaid_for_id(mermaid_id: int) -> Node:
 	var mermaids = _get_all_mermaids()
 	var filtered_mermaids = mermaids.filter(func(obj): return obj.mermaid_id == mermaid_id)
@@ -91,6 +100,14 @@ func _get_all_recruited_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
 	mermaids.append_array($RecruitedMermaids.get_children())
 	return mermaids
+
+
+func _apply_corruption_reward(quest_id: int, mermaid: Node) -> void:
+	if not quest_manager:
+		return
+	var quest = quest_manager.get_quest_for_id(quest_id)
+	if quest and quest.rewards_corruption_reduction:
+		mermaid.reduce_corruption(quest.reward_corruption_reduction)
 #endregion
 
 func increment_progress():
@@ -104,23 +121,25 @@ func _on_mermaid_reporting_corruption_capped(mermaid_id: int):
 	if not mermaid:
 		return
 	mermaid.reparent($LostMermaids)
+	mermaid_lost_to_corruption.emit(mermaid_id)
 	if $RecruitedMermaids.get_children().is_empty():
 		no_mermaids_left.emit()
 	
 
 
-func _on_quest_manager_reporting_quest_outcome(_quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
+func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
 	var mermaid = _get_mermaid_for_id(mermaid_id)
 	if not mermaid:
 		return
-	mermaid.set_mermaid_exploring(false)
-	if not mermaid.alive:
-		return
 	if outcome == EnumConstants.QuestCompletionState.FAILURE:
-		mermaid.reparent($LostMermaids)
 		mermaid.alive = false
+		mermaid.reparent($LostMermaids)
 		if $RecruitedMermaids.get_children().is_empty():
 			no_mermaids_left.emit()
+		return
+	if outcome == EnumConstants.QuestCompletionState.SUCCESS or outcome == EnumConstants.QuestCompletionState.FINAL_SUCCESS:
+		_apply_corruption_reward(quest_id, mermaid)
+	mermaid.set_mermaid_exploring(false)
 
 
 func _on_quest_manager_requesting_mermaid_data(mermaid_id: int) -> void:

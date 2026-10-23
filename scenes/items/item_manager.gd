@@ -225,3 +225,12 @@ func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, o
 			_reclaim_lost_items(quest)
 			if quest.rewards_item:
 				obtain_item(quest.reward_item_id)
+
+
+func _on_mermaid_manager_mermaid_lost_to_corruption(mermaid_id: int) -> void:
+	var mermaid = _get_mermaid(mermaid_id)
+	if not mermaid:
+		return
+	for item in mermaid.get_items():
+		item.release()
+		item.reparent($UnequippedItems)
