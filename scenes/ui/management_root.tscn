@@ -1,7 +1,18 @@
-[gd_scene format=3 uid="uid://dph6vkl23ntmu"]
+[gd_scene format=3 uid="uid://cw88yy8x6b340"]
+
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_yn4a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
+bg_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
 font_size = 67
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
@@ -11,6 +22,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="." unique_id=1205185668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8y12")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1710992005]
 layout_mode = 1
 anchors_preset = 15
@@ -18,10 +38,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 3
 
 [node name="QuestInterfaceRoot" type="PanelContainer" parent="HBoxContainer" unique_id=2127973480]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
 
 [node name="QuestSelection" type="VBoxContainer" parent="HBoxContainer/QuestInterfaceRoot" unique_id=2120974534]
 layout_mode = 2
@@ -32,6 +54,8 @@ theme_override_constants/margin_left = 70
 
 [node name="QuestListHeaderLabel" type="Label" parent="HBoxContainer/QuestInterfaceRoot/QuestSelection/QuestHeaderMargins" unique_id=394193140]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("1_yn4a1")
 text = "Quests"
 label_settings = SubResource("LabelSettings_77ro6")
 vertical_alignment = 1
@@ -57,3 +81,12 @@ layout_mode = 2
 [node name="MermaidDetailsRoot" type="Control" parent="HBoxContainer" unique_id=448609858]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MermaidDetailsRoot" unique_id=956535673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unrva")
