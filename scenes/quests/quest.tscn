@@ -25,3 +25,5 @@ _awareness = SubResource("Curve_ubfai")
 _eldritch_knowledge = SubResource("Curve_f8jch")
 _map_layout_knowledge = SubResource("Curve_vvvow")
 _mental_clarity = SubResource("Curve_ibfwt")
+
+[node name="LostItems" type="Node" parent="." unique_id=865411620]

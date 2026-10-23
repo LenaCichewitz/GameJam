@@ -47,6 +47,18 @@ func has_recruitable_mermaids() -> bool:
 	return !$AvailableMermaids.get_children().is_empty()
 
 
+func get_recruitable_mermaids() -> Array[Node]:
+	return $AvailableMermaids.get_children()
+
+
+func get_all_equipped_items() -> Array[Node]:
+	var items: Array[Node]
+	var mermaids = _get_all_mermaids()
+	for mermaid in mermaids:
+		items.append_array(mermaid.get_items())
+	return items
+
+
 func _get_mermaid_for_id(mermaid_id: int) -> Node:
 	var mermaids = _get_all_mermaids()
 	var filtered_mermaids = mermaids.filter(func(obj): return obj.mermaid_id == mermaid_id)
@@ -55,16 +67,18 @@ func _get_mermaid_for_id(mermaid_id: int) -> Node:
 		return
 	return filtered_mermaids.front()
 
+
 func _get_all_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
-	mermaids.append($RecruitedMermaids.get_children())
-	mermaids.append($AvailableMermaids.get_children())
-	mermaids.append($LostMermaids.get_children())
+	mermaids.append_array($RecruitedMermaids.get_children())
+	mermaids.append_array($AvailableMermaids.get_children())
+	mermaids.append_array($LostMermaids.get_children())
 	return mermaids
+
 
 func _get_all_recruited_mermaids() -> Array[Node]:
 	var mermaids: Array[Node]
-	mermaids.append($RecruitedMermaids.get_children())
+	mermaids.append_array($RecruitedMermaids.get_children())
 	return mermaids
 #endregion
 
@@ -79,11 +93,30 @@ func _on_mermaid_reporting_corruption_capped(mermaid_id: int):
 	if not mermaid:
 		return
 	mermaid.reparent($LostMermaids)
-	if $RecruitedMermaids.get_children().is_empty() and $ExploringMermaids.get_children().is_empty():
+	if $RecruitedMermaids.get_children().is_empty():
 		no_mermaids_left.emit()
 	
 
 
-func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
-	#
-	pass # Replace with function body.
+func _on_quest_manager_reporting_quest_outcome(_quest_id: int, mermaid_id: int, outcome: EnumConstants.QuestCompletionState) -> void:
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	mermaid.set_mermaid_exploring(false)
+	if outcome == EnumConstants.QuestCompletionState.FAILURE:
+		mermaid.reparent($LostMermaids)
+		mermaid.alive = false
+		if $RecruitedMermaids.get_children().is_empty():
+			no_mermaids_left.emit()
+
+
+func _on_quest_manager_requesting_mermaid_data(mermaid_id: int) -> void:
+	if not quest_manager:
+		return
+	
+	var mermaid = _get_mermaid_for_id(mermaid_id)
+	if not mermaid:
+		return
+	
+	var stats = mermaid.get_calculated_stats()
+	quest_manager.provide_mermaid_stats(mermaid_id, stats)

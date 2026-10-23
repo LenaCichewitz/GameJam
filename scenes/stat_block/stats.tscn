@@ -2,23 +2,23 @@
 
 [ext_resource type="Script" uid="uid://laxqyj6evqxp" path="res://scenes/stat_block/stats.gd" id="1_g3ifu"]
 
-[sub_resource type="Curve" id="Curve_ettco"]
+[sub_resource type="Curve" id="Curve_ale3k"]
 
-[sub_resource type="Curve" id="Curve_3lhj1"]
+[sub_resource type="Curve" id="Curve_q8r2k"]
 
-[sub_resource type="Curve" id="Curve_2jda0"]
+[sub_resource type="Curve" id="Curve_ejry4"]
 
-[sub_resource type="Curve" id="Curve_qm3t0"]
+[sub_resource type="Curve" id="Curve_wcemj"]
 
-[sub_resource type="Curve" id="Curve_5h1mu"]
+[sub_resource type="Curve" id="Curve_y1ovc"]
 
-[sub_resource type="Curve" id="Curve_qmjbi"]
+[sub_resource type="Curve" id="Curve_if2mh"]
 
 [node name="Stats" type="Node" unique_id=329966221]
 script = ExtResource("1_g3ifu")
-agility = SubResource("Curve_ettco")
-combat = SubResource("Curve_3lhj1")
-awareness = SubResource("Curve_2jda0")
-eldritch_knowledge = SubResource("Curve_qm3t0")
-map_layout_knowledge = SubResource("Curve_5h1mu")
-mental_clarity = SubResource("Curve_qmjbi")
+_agility = SubResource("Curve_ale3k")
+_combat = SubResource("Curve_q8r2k")
+_awareness = SubResource("Curve_ejry4")
+_eldritch_knowledge = SubResource("Curve_wcemj")
+_map_layout_knowledge = SubResource("Curve_y1ovc")
+_mental_clarity = SubResource("Curve_if2mh")
