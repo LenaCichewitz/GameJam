@@ -51,30 +51,6 @@ point_count = 4
 _data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.75, 0.8), 0.0, 0.0, 0, 0, Vector2(0.76, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_sd3xo"]
-_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.75, 0.8), 0.0, 0.0, 0, 0, Vector2(0.76, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_ebs7i"]
-_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(0.25, 0.7), 0.0, 0.0, 0, 0, Vector2(0.26, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_7bev5"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.75, 0.5), 0.0, 0.0, 0, 0, Vector2(0.76, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_85fe3"]
-_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(0.51, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_ufi5f"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(0.51, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_ccgel"]
-_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.25, 0.2), 0.0, 0.0, 0, 0, Vector2(0.26, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
-point_count = 4
-
 [sub_resource type="Curve" id="Curve_sqvgy"]
 _data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -98,6 +74,30 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_pxgp8"]
 _data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_sd3xo"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.75, 0.8), 0.0, 0.0, 0, 0, Vector2(0.76, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ebs7i"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(0.25, 0.7), 0.0, 0.0, 0, 0, Vector2(0.26, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_7bev5"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.75, 0.5), 0.0, 0.0, 0, 0, Vector2(0.76, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_85fe3"]
+_data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(0.51, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ufi5f"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(0.51, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ccgel"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.25, 0.2), 0.0, 0.0, 0, 0, Vector2(0.26, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="Curve" id="Curve_s732m"]
 _data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
@@ -156,25 +156,14 @@ _eldritch_knowledge = SubResource("Curve_irmwo")
 _map_layout_knowledge = SubResource("Curve_d6sja")
 _mental_clarity = SubResource("Curve_dv6w4")
 
-[node name="Lionfish" parent="RecruitedMermaids" unique_id=1061083452 instance=ExtResource("1_7m4ph")]
-mermaid_id = 3
-mermaid_name = "Lionfish"
-corruption_increase_per_increment = 20.0
+[node name="AvailableMermaids" type="Node" parent="." unique_id=1928527730]
 
-[node name="Stats" parent="RecruitedMermaids/Lionfish" index="0" unique_id=329966221]
-_agility = SubResource("Curve_sd3xo")
-_combat = SubResource("Curve_ebs7i")
-_awareness = SubResource("Curve_7bev5")
-_eldritch_knowledge = SubResource("Curve_85fe3")
-_map_layout_knowledge = SubResource("Curve_ufi5f")
-_mental_clarity = SubResource("Curve_ccgel")
-
-[node name="Jellyfish" parent="RecruitedMermaids" unique_id=1909194098 instance=ExtResource("1_7m4ph")]
+[node name="Jellyfish" parent="AvailableMermaids" unique_id=1909194098 instance=ExtResource("1_7m4ph")]
 mermaid_id = 4
 mermaid_name = "Jellyfish"
 corruption_increase_per_increment = 10.0
 
-[node name="Stats" parent="RecruitedMermaids/Jellyfish" index="0" unique_id=329966221]
+[node name="Stats" parent="AvailableMermaids/Jellyfish" index="0" unique_id=329966221]
 _agility = SubResource("Curve_sqvgy")
 _combat = SubResource("Curve_18hit")
 _awareness = SubResource("Curve_m00m7")
@@ -182,12 +171,25 @@ _eldritch_knowledge = SubResource("Curve_ysak4")
 _map_layout_knowledge = SubResource("Curve_runn7")
 _mental_clarity = SubResource("Curve_pxgp8")
 
-[node name="Kraken" parent="RecruitedMermaids" unique_id=1193506602 instance=ExtResource("1_7m4ph")]
+[node name="Lionfish" parent="AvailableMermaids" unique_id=1061083452 instance=ExtResource("1_7m4ph")]
+mermaid_id = 3
+mermaid_name = "Lionfish"
+corruption_increase_per_increment = 20.0
+
+[node name="Stats" parent="AvailableMermaids/Lionfish" index="0" unique_id=329966221]
+_agility = SubResource("Curve_sd3xo")
+_combat = SubResource("Curve_ebs7i")
+_awareness = SubResource("Curve_7bev5")
+_eldritch_knowledge = SubResource("Curve_85fe3")
+_map_layout_knowledge = SubResource("Curve_ufi5f")
+_mental_clarity = SubResource("Curve_ccgel")
+
+[node name="Kraken" parent="AvailableMermaids" unique_id=1193506602 instance=ExtResource("1_7m4ph")]
 mermaid_id = 5
 mermaid_name = "Kraken"
 corruption_increase_per_increment = 40.0
 
-[node name="Stats" parent="RecruitedMermaids/Kraken" index="0" unique_id=329966221]
+[node name="Stats" parent="AvailableMermaids/Kraken" index="0" unique_id=329966221]
 _agility = SubResource("Curve_s732m")
 _combat = SubResource("Curve_mwhwx")
 _awareness = SubResource("Curve_ng4fy")
@@ -195,12 +197,10 @@ _eldritch_knowledge = SubResource("Curve_tgax1")
 _map_layout_knowledge = SubResource("Curve_j2y1q")
 _mental_clarity = SubResource("Curve_tu5ku")
 
-[node name="AvailableMermaids" type="Node" parent="." unique_id=1928527730]
-
 [node name="LostMermaids" type="Node" parent="." unique_id=1243933119]
 
 [editable path="RecruitedMermaids/BAF"]
 [editable path="RecruitedMermaids/Sea-Slug"]
-[editable path="RecruitedMermaids/Lionfish"]
-[editable path="RecruitedMermaids/Jellyfish"]
-[editable path="RecruitedMermaids/Kraken"]
+[editable path="AvailableMermaids/Jellyfish"]
+[editable path="AvailableMermaids/Lionfish"]
+[editable path="AvailableMermaids/Kraken"]
