@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cw88yy8x6b340"]
 
+[ext_resource type="Script" uid="uid://c0h2oq2kjtivw" path="res://scenes/ui/management_root.gd" id="1_wul21"]
 [ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_yn4a1"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_a4i7e"]
 [ext_resource type="PackedScene" uid="uid://dpvjhr5efep37" path="res://scenes/ui/components/mermaid_list_item.tscn" id="2_rlydk"]
@@ -35,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wul21")
 
 [node name="Panel" type="Panel" parent="." unique_id=1205185668]
 layout_mode = 1

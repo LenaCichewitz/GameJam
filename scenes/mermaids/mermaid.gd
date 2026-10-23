@@ -5,6 +5,8 @@ signal mermaid_capped_corruption(mermaid_id: int)
 
 @export var mermaid_id: int = 0
 @export var mermaid_name: String
+@export var mermaid_full_body: Texture2D
+@export var mermaid_head_shot: Texture2D
 @export_multiline var mermaid_description: String
 @export var alive: bool = true
 @export var recruited: bool = false
