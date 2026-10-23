@@ -48,6 +48,7 @@ layer = 40
 process_mode = 3
 layer = 100
 
+[connection signal="reporting_mermaid_as_exploring" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_mermaid_as_exploring"]
 [connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_quest_outcome"]
 [connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/ItemManager" method="_on_quest_manager_reporting_quest_outcome"]
 [connection signal="requesting_mermaid_data" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_requesting_mermaid_data"]

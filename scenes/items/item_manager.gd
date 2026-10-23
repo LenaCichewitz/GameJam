@@ -15,8 +15,6 @@ signal items_reclaimed_from_quest(quest_id: int)
 func _ready() -> void:
 	for item in _get_all_items():
 		_connect_item_signals(item)
-	if quest_manager and not quest_manager.reporting_quest_outcome.is_connected(_on_quest_manager_reporting_quest_outcome):
-		quest_manager.reporting_quest_outcome.connect(_on_quest_manager_reporting_quest_outcome)
 
 
 #region save/load
@@ -98,11 +96,8 @@ func _get_quest(quest_id: int) -> Node:
 #region item actions
 func obtain_item(item_id: int) -> void:
 	var item = _find_item_with_id(item_id)
-	if not item or item.is_obtained:
-		return
-	item.is_obtained = true
-	item.reparent($UnequippedItems if item.is_repaired else $UnrepairedItems)
-	item_obtained.emit(item_id)
+	if item:
+		_obtain(item)
 
 
 func repair_item(item_id: int) -> void:
@@ -172,15 +167,21 @@ func _lose_items_on_quest(quest: Node, mermaid_id: int) -> void:
 	items_lost_on_quest.emit(quest.quest_id)
 
 
+func _obtain(item: Node) -> void:
+	if item.is_obtained:
+		return
+	item.release()
+	item.is_obtained = true
+	item.reparent($UnequippedItems if item.is_repaired else $UnrepairedItems)
+	item_obtained.emit(item.item_id)
+
+
 func _reclaim_lost_items(quest: Node) -> void:
 	var lost_items: Array[Node] = quest.get_lost_items()
 	if lost_items.is_empty():
 		return
 	for item in lost_items:
-		item.release()
-		item.is_reclaimed = true
-		item.is_repaired = false
-		item.reparent($UnrepairedItems)
+		_obtain(item)
 	items_reclaimed_from_quest.emit(quest.quest_id)
 #endregion
 
