@@ -10,7 +10,6 @@ func _ready() -> void:
 	main_buttons.visible = true
 	titel.visible = true
 	options.visible = false
-	new_game.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,9 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_new_game_button_pressed() -> void:
-	main_buttons.visible = false
-	titel.visible = false
-	new_game.visible = true
+	pass
 
 func _on_start_pressed() -> void:
 	pass # Replace with function body.
