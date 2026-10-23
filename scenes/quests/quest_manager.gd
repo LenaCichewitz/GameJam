@@ -53,6 +53,17 @@ func is_action_available() -> bool:
 	return !$AvailableQuests.get_children().is_empty()
 
 
+func has_startable_quests() -> bool:
+	for quest in get_all_available_quests():
+		if quest.assigned_mermaid_id >= 0:
+			return true
+	return false
+
+
+func has_active_quests() -> bool:
+	return !$ActiveQuests.get_children().is_empty()
+
+
 func assign_mermaid_to_quest(quest_id: int, mermaid_id: int):
 	var quest = _find_quest_with_id(quest_id)
 	if not quest:
@@ -62,6 +73,10 @@ func assign_mermaid_to_quest(quest_id: int, mermaid_id: int):
 	if current_mermaid_assignments.size() > 0:
 		for assigned_quest_id in current_mermaid_assignments:
 			quest_to_mermaid_mapping.erase(assigned_quest_id)
+			var old_quest = _find_quest_with_id(assigned_quest_id)
+			if not old_quest:
+				continue
+			old_quest.remove_mermaid_assignment()
 	quest_to_mermaid_mapping[quest_id] = mermaid_id
 	quest.assign_mermaid(mermaid_id)
 

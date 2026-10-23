@@ -71,6 +71,14 @@ func get_mermaid_for_id(mermaid_id: int) -> Node:
 	return _get_mermaid_for_id(mermaid_id)
 
 
+func get_idle_recruited_mermaids() -> Array[Node]:
+	var idle: Array[Node]
+	for mermaid in $RecruitedMermaids.get_children():
+		if not mermaid.is_exploring():
+			idle.append(mermaid)
+	return idle
+
+
 func _get_mermaid_for_id(mermaid_id: int) -> Node:
 	var mermaids = _get_all_mermaids()
 	var filtered_mermaids = mermaids.filter(func(obj): return obj.mermaid_id == mermaid_id)
