@@ -32,7 +32,8 @@ layer = 10
 process_mode = 1
 layer = 20
 
-[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 instance=ExtResource("3_pu3yx")]
+[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 node_paths=PackedStringArray("mermaid_manger") instance=ExtResource("3_pu3yx")]
+mermaid_manger = NodePath("../../Systems/MermaidManager")
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
 process_mode = 2
