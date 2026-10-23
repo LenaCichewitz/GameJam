@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqw5fyiau3nn8"]
 
-[ext_resource type="Script" uid="uid://b4rqow1ks3s74" path="res://scripts/workbench/ItemSlot.gd" id="1_nnk8x"]
+[ext_resource type="Script" uid="uid://b4rqow1ks3s74" path="res://scripts/workbench/item_slot.gd" id="1_nnk8x"]
 
 [node name="ItemSlot" type="Button" unique_id=1049678729]
 custom_minimum_size = Vector2(100, 100)
