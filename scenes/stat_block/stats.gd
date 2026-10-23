@@ -124,9 +124,9 @@ func compare_against_stats(stats: Node, use_own_corruption_for_source_sampling: 
 
 func compare_against_stats_dictionary(stats: Dictionary, use_source_corruption_for_own_sampling: bool) -> bool:
 	var relevant_corruption = stats.get("corruption", 0) if use_source_corruption_for_own_sampling else get_corruption()
-	return (get_agility_for_corruption(relevant_corruption) < stats.get("agility", 0) 
-		and get_combat_for_corruption(relevant_corruption) < stats.get("combat", 0)
-		and get_awareness_for_corruption(relevant_corruption) < stats.get("awareness", 0)
-		and get_eldritch_knowledge_for_corruption(relevant_corruption) < stats.get("eldritch_knowledge", 0)
-		and get_map_layout_knowledge_for_corruption(relevant_corruption) < stats.get("map_layout_knowledge", 0)
-		and get_mental_clarity_for_corruption(relevant_corruption) < stats.get("mental_clarity", 0))
+	return (get_agility_for_corruption(relevant_corruption) <= stats.get("agility", 0) 
+		and get_combat_for_corruption(relevant_corruption) <= stats.get("combat", 0)
+		and get_awareness_for_corruption(relevant_corruption) <= stats.get("awareness", 0)
+		and get_eldritch_knowledge_for_corruption(relevant_corruption) <= stats.get("eldritch_knowledge", 0)
+		and get_map_layout_knowledge_for_corruption(relevant_corruption) <= stats.get("map_layout_knowledge", 0)
+		and get_mental_clarity_for_corruption(relevant_corruption) <= stats.get("mental_clarity", 0))

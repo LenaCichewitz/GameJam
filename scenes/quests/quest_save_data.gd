@@ -1,4 +1,4 @@
-extends Object
+extends RefCounted
 class_name QuestSaveData
 var _quest_id: int = 0
 var _completed: bool = false

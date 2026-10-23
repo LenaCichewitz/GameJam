@@ -8,6 +8,17 @@ signal final_quest_completed()
 
 var quest_to_mermaid_mapping: Dictionary
 
+
+func _ready() -> void:
+	for quest in _get_all_quests():
+		if not quest.quest_started.is_connected(_on_quest_started):
+			quest.quest_started.connect(_on_quest_started)
+		if not quest.quest_completed.is_connected(_on_quest_completed):
+			quest.quest_completed.connect(_on_quest_completed)
+		if not quest.requesting_mermaid_data.is_connected(_on_requesting_mermaid_data):
+			quest.requesting_mermaid_data.connect(_on_requesting_mermaid_data)
+
+
 #region save / load
 func save() -> Array[QuestSaveData]:
 	var quest_data: Array[QuestSaveData]
@@ -17,7 +28,7 @@ func save() -> Array[QuestSaveData]:
 	return quest_data
 
 
-func load(data: Array[QuestSaveData]):
+func load_data(data: Array[QuestSaveData]):
 	var quests = _get_all_quests()
 	for quest in quests:
 		var quest_data_for_quest_id = data.filter(func(obj): return obj.get_quest_id() == quest.quest_id)
@@ -27,7 +38,7 @@ func load(data: Array[QuestSaveData]):
 			push_error("[Loading]: Multiple quest save data for a given quest id were found. Can't uniquely identify which quest to load. ID:" + str(quest.quest_id))
 			continue
 		var quest_save_data: QuestSaveData = quest_data_for_quest_id.front()
-		quest.load(quest_save_data)
+		quest.load_data(quest_save_data)
 		if quest.is_active:
 			quest_to_mermaid_mapping[quest.quest_id] = quest.assigned_mermaid_id
 			quest.reparent($ActiveQuests)
@@ -46,9 +57,13 @@ func assign_mermaid_to_quest(quest_id: int, mermaid_id: int):
 	var quest = _find_quest_with_id(quest_id)
 	if not quest:
 		return
+	
+	var current_mermaid_assignments = _get_quest_ids_for_mermaid_id(mermaid_id)
+	if current_mermaid_assignments.size() > 0:
+		for assigned_quest_id in current_mermaid_assignments:
+			quest_to_mermaid_mapping.erase(assigned_quest_id)
 	quest_to_mermaid_mapping[quest_id] = mermaid_id
 	quest.assign_mermaid(mermaid_id)
-	
 
 func provide_mermaid_stats(mermaid_id: int, stats: Dictionary):
 	var quest_idss = _get_quest_ids_for_mermaid_id(mermaid_id)
@@ -80,6 +95,10 @@ func get_all_lost_items() -> Array[Node]:
 	for quest in quests:
 		items.append_array(quest.get_lost_items())
 	return items
+
+
+func get_quest_for_id(quest_id: int) -> Node:
+	return _find_quest_with_id(quest_id)
 
 
 func _get_all_quests() -> Array[Node]:
@@ -145,7 +164,7 @@ func _on_quest_completed(quest_id: int, state: EnumConstants.QuestCompletionStat
 		final_quest_completed.emit()
 		return
 	if state == EnumConstants.QuestCompletionState.SUCCESS:
-		quest.reparent($CompletedQuests if !quest.one_shot else $AvailableQuests)
+		quest.reparent($CompletedQuests if quest.one_shot else $AvailableQuests)
 		return
 	if state == EnumConstants.QuestCompletionState.NEUTRAL:
 		quest.reparent($AvailableQuests)
