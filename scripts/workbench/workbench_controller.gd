@@ -16,7 +16,7 @@ const CLEANING_MODE_SCENE: PackedScene = preload(
 var active_restoration_mode: Control = null
 
 var item_slot_scene: PackedScene = preload(
-    "res://scenes/workbench/ItemSlot.tscn"
+    "res://scenes/workbench/item_slot.tscn"
 )
 
 
