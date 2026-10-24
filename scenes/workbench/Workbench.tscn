@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
 [ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://data/items/mirror.tres" id="4_1ykue"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
+[ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://data/tools/sponge.tres" id="7_0my5e"]
 
@@ -44,6 +45,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_gf8qy")
 
+[node name="Exit Button" type="MarginContainer" parent="." unique_id=1535465085]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Exit Button" type="Button" parent="Exit Button" unique_id=1370288555]
+layout_mode = 2
+icon = ExtResource("5_np7mg")
+
 [node name="MainLayout" type="VBoxContainer" parent="." unique_id=1745677948]
 layout_mode = 1
 anchors_preset = 15
@@ -77,7 +89,6 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
 [node name="restoration_container" type="Control" parent="." unique_id=702671143]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,3 +103,5 @@ offset_top = 20.0
 offset_right = -172.0
 offset_bottom = 270.0
 available_tools = Array[ExtResource("6_kxv2g")]([ExtResource("7_0my5e")])
+
+[connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]

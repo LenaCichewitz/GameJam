@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpvjhr5efep37"]
 
-[ext_resource type="Texture2D" uid="uid://dwcyfyx68f4qq" path="res://graphics/IU-Placeholder-Mermaid-Head.svg" id="1_q4vjp"]
+[ext_resource type="Texture2D" uid="uid://ckxc40gxc606o" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Empty.png" id="1_k8xct"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_q5u5i"]
 [ext_resource type="Texture2D" uid="uid://htg28i7jvorj" path="res://graphics/IU-Mermaid-Nameplate.svg" id="3_k8xct"]
 
@@ -29,7 +29,7 @@ grow_vertical = 2
 [node name="MermaidIcon" type="TextureRect" parent="VBoxContainer" unique_id=1502213505]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_q4vjp")
+texture = ExtResource("1_k8xct")
 stretch_mode = 5
 
 [node name="MermaidName" type="Label" parent="VBoxContainer" unique_id=1311471122]
