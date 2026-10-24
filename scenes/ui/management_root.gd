@@ -46,7 +46,7 @@ func _on_management_root_requesting_quest() -> void:
 	var quest:Array = quest_manager.get_all_available_quests()
 
 func _on_restauration_button_pressed() -> void:
-	management_root.visible = false
+	management_root.hide()
 
-func _on_close_button_mermaid_information_pressed() -> void:
+func _on_close_button_mermaid_info_pressed() -> void:
 	mermaid_information.hide()
