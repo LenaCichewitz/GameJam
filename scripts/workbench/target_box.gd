@@ -55,3 +55,10 @@ func finish_pounding() -> void:
 
 	current_item.needs_punding = false
 	_update_item_display()
+	
+func hide_item() -> void:
+	item_preview.texture = null
+
+
+func show_item() -> void:
+	_update_item_display()
