@@ -21,6 +21,7 @@ func display_item(data: ItemData) -> void:
 	_update_item_display()
 
 
+
 func _update_item_display() -> void:
 	if current_item == null:
 		item_preview.texture = null
@@ -38,11 +39,11 @@ func _on_item_preview_gui_input(event: InputEvent) -> void:
 			if current_item != null:
 				item_clicked.emit(current_item)
 
-
+# Sieht so aus als ob "_at_position" nicht gebraucht wird?
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is ItemData
 
-
+# Sieht so aus als ob "_at_position" nicht gebraucht wird?
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is ItemData:
 		display_item(data)

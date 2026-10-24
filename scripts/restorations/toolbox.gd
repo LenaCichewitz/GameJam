@@ -1,6 +1,7 @@
 
 extends Control
 
+# Gibt das nicht Probleme? Die selben Signale werden auch in Toolslot genutzt
 signal tool_drag_started(tool_data: ToolData, drag_global_position: Vector2)
 signal tool_drag_moved(tool_data: ToolData, drag_global_position: Vector2)
 signal tool_drag_ended(tool_data: ToolData, drag_global_position: Vector2)

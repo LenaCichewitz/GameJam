@@ -7,6 +7,12 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnqdw"]
 texture = ExtResource("3_k8xct")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8y12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf8qy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unrva"]
+
 [node name="MermaidListItem" type="Control" unique_id=1707984664]
 custom_minimum_size = Vector2(158, 200)
 layout_mode = 3
@@ -44,3 +50,14 @@ text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=239635830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v8y12")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gf8qy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_unrva")
