@@ -6,3 +6,5 @@
 script = ExtResource("1_au6t3")
 
 [node name="pieces_container" type="Node2D" parent="." unique_id=165590053]
+
+[node name="puzzle_complete" type="AcceptDialog" parent="." unique_id=126910749]

@@ -100,11 +100,17 @@ func _on_item_dropped(data: ItemData) -> void:
 
 func open_puzzling_mode(data: ItemData)-> void: 
 	var puzzling_mode = PUZZLING_MODE_SCENE.instantiate()
+	
 	restoration_container.show()
 	restoration_container.add_child(puzzling_mode)
+	puzzling_mode.puzzling_finished.connect(_on_puzzling_finished)
 	target_box.hide_item()
 	puzzling_mode.start_puzzling(data) 
-
+	
+func _on_puzzling_finished(data: ItemData) -> void:
+	target_box.display_item(data)
+	item_bar.show()	
+	
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
 

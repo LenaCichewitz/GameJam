@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b07oomibpr07k"]
 
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
-[ext_resource type="Script" uid="uid://co7tnof8581tr" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
+[ext_resource type="Script" uid="uid://bovjx5mspl7uc" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
 [ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
 [ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
 [ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="11_aduu8"]
+[ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
@@ -130,7 +131,7 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 grow_vertical = 2
-available_tools = Array[ExtResource("6_kxv2g")]([SubResource("Resource_arus1"), ExtResource("8_hammer")])
+available_tools = Array[ExtResource("6_kxv2g")]([SubResource("Resource_arus1"), ExtResource("8_hammer"), ExtResource("14_6kk7q")])
 
 [node name="MarginContainer" type="MarginContainer" parent="toolbox" unique_id=631215965]
 layout_mode = 1
