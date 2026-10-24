@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bnmw2hsv5qxvm" path="res://scenes/quests/quest_manager.tscn" id="1_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://cuiyk2x7ivtrh" path="res://scenes/items/item_manager.tscn" id="1_gubc5"]
 [ext_resource type="Script" uid="uid://c33mwi55nj7ht" path="res://scenes/systems.gd" id="1_rt2n2"]
+[ext_resource type="Script" uid="uid://b8n4k2m7p1q5r" path="res://scenes/game_loop.gd" id="2_gameloop"]
 [ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://scenes/ui/main_menu.tscn" id="4_pu3yx"]
@@ -14,6 +15,9 @@ process_mode = 3
 [node name="Systems" type="Node" parent="." unique_id=1282027253]
 process_mode = 3
 script = ExtResource("1_rt2n2")
+
+[node name="GameLoop" type="Node" parent="Systems"]
+script = ExtResource("2_gameloop")
 
 [node name="ItemManager" parent="Systems" unique_id=1062156382 node_paths=PackedStringArray("mermaid_manager", "quest_manager") instance=ExtResource("1_gubc5")]
 mermaid_manager = NodePath("../MermaidManager")
