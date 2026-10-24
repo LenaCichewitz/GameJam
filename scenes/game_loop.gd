@@ -85,13 +85,6 @@ func finish_visual_novel() -> void:
 	visual_novel_finished.emit(current_day)
 	_start_next_day()
 
-
-#func skip_night() -> void:
-	#if current_phase != Phase.NIGHT:
-		#return
-	#finish_visual_novel()
-
-
 func _start_next_day() -> void:
 	current_day += 1
 	_set_phase(Phase.DAY)
