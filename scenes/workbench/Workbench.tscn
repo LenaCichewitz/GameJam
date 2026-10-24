@@ -89,6 +89,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
 [node name="restoration_container" type="Control" parent="." unique_id=702671143]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
