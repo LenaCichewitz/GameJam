@@ -57,17 +57,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_gf8qy")
 
-[node name="Exit Button" type="MarginContainer" parent="." unique_id=1535465085]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-
-[node name="Exit Button" type="Button" parent="Exit Button" unique_id=1370288555]
-layout_mode = 2
-icon = ExtResource("5_np7mg")
-
 [node name="MainLayout" type="VBoxContainer" parent="." unique_id=1745677948]
 layout_mode = 1
 anchors_preset = 15
@@ -146,5 +135,17 @@ theme_override_constants/margin_top = 46
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
+[node name="Exit Button" type="MarginContainer" parent="." unique_id=1535465085]
+visible = false
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 76.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Exit Button" type="Button" parent="Exit Button" unique_id=1370288555]
+layout_mode = 2
+icon = ExtResource("5_np7mg")
+
 [connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
