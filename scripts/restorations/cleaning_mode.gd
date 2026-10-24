@@ -15,8 +15,13 @@ var cleaning_finished: bool = false
 var is_tool_dragging: bool = false
 
 
+func _ready() -> void:
+	dirt_layer.mouse_filter = Control.MOUSE_FILTER_STOP
+	completion_popup.dialog_text = "CLEAN!"
+
+
 func on_tool_drag_started(
-	tool_data: ToolData,
+	_tool_data: ToolData,
 	_global_position: Vector2
 ) -> void:
 	is_tool_dragging = true
@@ -24,20 +29,25 @@ func on_tool_drag_started(
 
 func on_tool_drag_moved(
 	tool_data: ToolData,
-	global_position: Vector2
+	drag_global_position: Vector2
 ) -> void:
-
 	if not is_tool_dragging:
 		return
+
 	if tool_data == null:
 		return
+
 	if tool_data.tool_id != "sponge":
 		return
 
-	var local_position := (
+	if dirt_image == null or dirt_image_texture == null:
+		return
+
+	var local_position: Vector2 = (
 		dirt_layer.get_global_transform().affine_inverse()
-		* global_position
+		* drag_global_position
 	)
+
 	_clean_at_position(local_position)
 
 
@@ -47,22 +57,20 @@ func on_tool_drag_ended(
 ) -> void:
 	is_tool_dragging = false
 
-func _ready() -> void:
-
-	dirt_layer.mouse_filter = Control.MOUSE_FILTER_STOP
-
-	completion_popup.dialog_text = "CLEAN!"
-
 
 func start_cleaning(data: ItemData) -> void:
-	if data == null:
-		return
 
+	if data == null:
+		push_warning("Wo Itemr?")
+		return
+	if data.dirt_texture == null:
+		push_warning("Item ist sauber")
+		return
+		
 	current_item = data
 	cleaning_finished = false
 	removed_dirt_pixels = 0
 	total_dirt_pixels = 0
-
 
 	dirt_image = data.dirt_texture.get_image()
 
@@ -71,6 +79,9 @@ func start_cleaning(data: ItemData) -> void:
 			if dirt_image.get_pixel(x, y).a > 0.0:
 				total_dirt_pixels += 1
 
+	dirt_layer.texture = data.dirt_texture
+	completion_popup.hide()
+
 	if total_dirt_pixels == 0:
 		finish_cleaning()
 		return
@@ -78,22 +89,39 @@ func start_cleaning(data: ItemData) -> void:
 	dirt_image_texture = ImageTexture.create_from_image(dirt_image)
 	dirt_layer.texture = dirt_image_texture
 
-	completion_popup.hide()
 
-func _clean_at_position(position: Vector2) -> void:
+func _clean_at_position(drag_position: Vector2) -> void:
+	if dirt_image == null or dirt_image_texture == null:
+		return
+
 	if dirt_layer.size.x <= 0.0 or dirt_layer.size.y <= 0.0:
 		return
 
-	var pixel_x := int(position.x / dirt_layer.size.x * dirt_image.get_width())
-	var pixel_y := int(position.y / dirt_layer.size.y * dirt_image.get_height())
+	var pixel_x := int(
+		drag_position.x / dirt_layer.size.x * dirt_image.get_width()
+	)
+	var pixel_y := int(
+		drag_position.y / dirt_layer.size.y * dirt_image.get_height()
+	)
+
+	if (
+		pixel_x < 0
+		or pixel_y < 0
+		or pixel_x >= dirt_image.get_width()
+		or pixel_y >= dirt_image.get_height()
+	):
+		return
 
 	var radius := brush_radius
 
-	for y in range(maxi(0, pixel_y - radius),
-			mini(dirt_image.get_height(), pixel_y + radius + 1)):
-		for x in range(maxi(0, pixel_x - radius),
-				mini(dirt_image.get_width(), pixel_x + radius + 1)):
-
+	for y in range(
+		maxi(0, pixel_y - radius),
+		mini(dirt_image.get_height(), pixel_y + radius + 1)
+	):
+		for x in range(
+			maxi(0, pixel_x - radius),
+			mini(dirt_image.get_width(), pixel_x + radius + 1)
+		):
 			var distance := Vector2(x - pixel_x, y - pixel_y).length()
 
 			if distance > radius:

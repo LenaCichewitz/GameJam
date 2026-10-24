@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dwcyfyx68f4qq" path="res://graphics/IU-Placeholder-Mermaid-Head.svg" id="1_q4vjp"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_q5u5i"]
+[ext_resource type="Texture2D" uid="uid://htg28i7jvorj" path="res://graphics/IU-Mermaid-Nameplate.svg" id="3_k8xct"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5kp"]
-bg_color = Color(0.18431373, 0.34117648, 0.3254902, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnqdw"]
+texture = ExtResource("3_k8xct")
 
 [node name="MermaidListItem" type="Control" unique_id=1707984664]
 custom_minimum_size = Vector2(158, 200)
@@ -21,6 +22,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -19.865173
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -35,7 +37,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("1_q5u5i")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_1p5kp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rnqdw")
 text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1

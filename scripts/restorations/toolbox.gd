@@ -1,9 +1,9 @@
 
 extends Control
 
-signal tool_drag_started(tool_data: ToolData, global_position: Vector2)
-signal tool_drag_moved(tool_data: ToolData, global_position: Vector2)
-signal tool_drag_ended(tool_data: ToolData, global_position: Vector2)
+signal tool_drag_started(tool_data: ToolData, drag_global_position: Vector2)
+signal tool_drag_moved(tool_data: ToolData, drag_global_position: Vector2)
+signal tool_drag_ended(tool_data: ToolData, drag_global_position: Vector2)
 
 @export var available_tools: Array[ToolData] = []
 
@@ -31,20 +31,20 @@ func _ready() -> void:
 
 func _on_tool_drag_started(
 	tool_data: ToolData,
-	global_position: Vector2
+	drag_global_position: Vector2
 ) -> void:
-	tool_drag_started.emit(tool_data, global_position)
+	tool_drag_started.emit(tool_data, drag_global_position)
 
 
 func _on_tool_drag_moved(
 	tool_data: ToolData,
-	global_position: Vector2
+	drag_global_position: Vector2
 ) -> void:
-	tool_drag_moved.emit(tool_data, global_position)
+	tool_drag_moved.emit(tool_data, drag_global_position)
 
 
 func _on_tool_drag_ended(
 	tool_data: ToolData,
-	global_position: Vector2
+	drag_global_position: Vector2
 ) -> void:
-	tool_drag_ended.emit(tool_data, global_position)
+	tool_drag_ended.emit(tool_data, drag_global_position)

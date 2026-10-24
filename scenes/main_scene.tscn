@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1qofgb7ly6ev" path="res://scenes/mermaids/mermaid_manager.tscn" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://scenes/ui/main_menu.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://b07oomibpr07k" path="res://scenes/workbench/Workbench.tscn" id="5_c16ls"]
 
 [node name="MainScene" type="Node" unique_id=577158869]
 process_mode = 3
@@ -34,6 +35,8 @@ process_mode = 1
 process_mode = 1
 layer = 10
 
+[node name="Workbench" parent="RenovationHudLayer" unique_id=1896145299 instance=ExtResource("5_c16ls")]
+
 [node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
 process_mode = 1
 layer = 20
@@ -56,7 +59,7 @@ process_mode = 3
 layer = 100
 
 [connection signal="reporting_mermaid_as_exploring" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_mermaid_as_exploring"]
-[connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_quest_outcome"]
 [connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/ItemManager" method="_on_quest_manager_reporting_quest_outcome"]
+[connection signal="reporting_quest_outcome" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_reporting_quest_outcome"]
 [connection signal="requesting_mermaid_data" from="Systems/QuestManager" to="Systems/MermaidManager" method="_on_quest_manager_requesting_mermaid_data"]
 [connection signal="mermaid_lost_to_corruption" from="Systems/MermaidManager" to="Systems/ItemManager" method="_on_mermaid_manager_mermaid_lost_to_corruption"]

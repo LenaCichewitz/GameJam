@@ -17,12 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SaveManager="*uid://bstu8iq4a874j"
+SaveManager="*uid://coposqqhkb7mg"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="GameJamMermaid"
 
 [physics]
 

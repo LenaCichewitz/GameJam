@@ -49,6 +49,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=289026315]
+visible = false
 layout_mode = 0
 offset_left = 75.0
 offset_top = 318.0
@@ -122,6 +123,7 @@ text = "Exit
 "
 
 [node name="Titel" type="Label" parent="." unique_id=267296171]
+visible = false
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 0
 offset_left = 52.0
@@ -137,19 +139,29 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Options" type="Panel" parent="." unique_id=1933918887]
-visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 392.0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Options" unique_id=863712142]
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=365025762]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 181.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit Option" type="Button" parent="Options/VBoxContainer" unique_id=836047809]
+layout_mode = 2
+size_flags_horizontal = 8
+accessibility_name = "Close Options"
+icon = ExtResource("7_qe12f")
+vertical_icon_alignment = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer" unique_id=863712142]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 64
@@ -157,26 +169,13 @@ text = "Setting"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Exit Option" type="Button" parent="Options" unique_id=836047809]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -81.0
-offset_top = 10.0
-offset_right = -9.0
-offset_bottom = 82.0
-grow_horizontal = 0
-accessibility_name = "Close Options"
-icon = ExtResource("7_qe12f")
-vertical_icon_alignment = 2
+[node name="Fullscreen" type="MarginContainer" parent="Options/VBoxContainer" unique_id=1379485999]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
 
-[node name="FullscreenControll" type="CheckButton" parent="Options" unique_id=1096094962]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 200.0
-offset_right = 324.0
-offset_bottom = 231.0
+[node name="FullscreenControll" type="CheckButton" parent="Options/VBoxContainer/Fullscreen" unique_id=1096094962]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_colors/font_pressed_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_colors/font_hover_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
@@ -185,14 +184,21 @@ theme_override_font_sizes/font_size = 32
 text = "Fullscreen"
 script = ExtResource("8_8qtwp")
 
-[node name="Label2" type="Label" parent="Options" unique_id=1298074674]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -30.0
-offset_right = 392.0
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer" unique_id=953822020]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="Credits Box" type="VBoxContainer" parent="Options/VBoxContainer/MarginContainer" unique_id=2004746387]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer/MarginContainer/Credits Box" unique_id=1022222336]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="Heder Credits" type="Label" parent="Options/VBoxContainer/MarginContainer/Credits Box/MarginContainer" unique_id=1298074674]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 24
@@ -200,16 +206,8 @@ text = "Credits:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Credits" type="Label" parent="Options" unique_id=1273845567]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 208.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Credits" type="Label" parent="Options/VBoxContainer/MarginContainer/Credits Box" unique_id=1273845567]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 text = "Writing: Lukas Leo Weber Kraemer
@@ -224,5 +222,5 @@ horizontal_alignment = 1
 [connection signal="pressed" from="MainButtons/Load Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Options/Exit Option" to="." method="_on_exit_button_pressed"]
-[connection signal="toggled" from="Options/FullscreenControll" to="Options/FullscreenControll" method="_on_toggled"]
+[connection signal="pressed" from="Options/VBoxContainer/Exit Option" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="Options/VBoxContainer/Fullscreen/FullscreenControll" to="Options/VBoxContainer/Fullscreen/FullscreenControll" method="_on_toggled"]
