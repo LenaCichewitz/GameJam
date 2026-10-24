@@ -129,50 +129,60 @@ script = ExtResource("1_eu8xw")
 
 [node name="UnobtainedItems" type="Node" parent="." unique_id=711321597]
 
-[node name="Dagger" parent="UnobtainedItems" unique_id=1696573865 instance=ExtResource("2_qyosx")]
+[node name="Kopis of biting teeth" parent="UnobtainedItems" unique_id=1696573865 instance=ExtResource("2_qyosx")]
 item_id = 1
-item_name = "Dagger "
+item_name = "Kopis of biting teeth "
+item_description = "Just holding this blade makes one steeled for battle. All thought not focused on the fight seem suppressed when holding it
+"
 
-[node name="Stats" parent="UnobtainedItems/Dagger" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Kopis of biting teeth" index="0" unique_id=329966221]
 _combat = SubResource("Curve_mag0o")
 _awareness = SubResource("Curve_m0tn0")
 _mental_clarity = SubResource("Curve_53f03")
 
-[node name="Artifact #1" parent="UnobtainedItems" unique_id=708708695 instance=ExtResource("2_qyosx")]
+[node name="Amulet of flowing waves" parent="UnobtainedItems" unique_id=708708695 instance=ExtResource("2_qyosx")]
 item_id = 2
-item_name = "Artifact #1"
+item_name = "Amulet of flowing waves"
+item_description = "While wearing this amulet one may move like the ocean currents do and feel what they flow past as if part of the great depths. 
+"
 
-[node name="Stats" parent="UnobtainedItems/Artifact #1" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Amulet of flowing waves" index="0" unique_id=329966221]
 _agility = SubResource("Curve_x8uhn")
 _awareness = SubResource("Curve_y20ut")
 _eldritch_knowledge = SubResource("Curve_sddch")
 
-[node name="Artifact #2" parent="UnobtainedItems" unique_id=1379877076 instance=ExtResource("2_qyosx")]
+[node name="Himantes of swift action" parent="UnobtainedItems" unique_id=1379877076 instance=ExtResource("2_qyosx")]
 item_id = 3
-item_name = "Artifact #2"
+item_name = "Himantes of swift action"
+item_description = "Wearing these gives one the qualities of an underground boxer. Combat ability is part of that but much more important is a scrappyness that allows for quick adaptation. 
+"
 
-[node name="Stats" parent="UnobtainedItems/Artifact #2" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Himantes of swift action" index="0" unique_id=329966221]
 _combat = SubResource("Curve_drem0")
 _awareness = SubResource("Curve_yj2ag")
 _eldritch_knowledge = SubResource("Curve_408tu")
 _map_layout_knowledge = SubResource("Curve_j83i4")
 
-[node name="Artifact #3" parent="UnobtainedItems" unique_id=1706116071 instance=ExtResource("2_qyosx")]
+[node name="Mail of sinking sun" parent="UnobtainedItems" unique_id=1706116071 instance=ExtResource("2_qyosx")]
 item_id = 4
-item_name = "Artifact #3"
+item_name = "Mail of sinking sun"
+item_description = "Despite being physically limiting, the sense of security and knowledge of the dark this armor provides make it invaluable for our excursions. 
+"
 
-[node name="Stats" parent="UnobtainedItems/Artifact #3" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Mail of sinking sun" index="0" unique_id=329966221]
 _agility = SubResource("Curve_eqg6k")
 _combat = SubResource("Curve_2mltl")
 _eldritch_knowledge = SubResource("Curve_le8m6")
 _mental_clarity = SubResource("Curve_dd81h")
 
-[node name="Cursed Item #1" parent="UnobtainedItems" unique_id=1062571730 instance=ExtResource("2_qyosx")]
+[node name="Cairons fare" parent="UnobtainedItems" unique_id=1062571730 instance=ExtResource("2_qyosx")]
 item_id = 5
-item_name = "Cursed Item #1"
+item_name = "Cairons fare"
+item_description = "This artifact of the underworld seems to bolster once whole person. Even more peculiar: It seems to react especially well to those of us more strongly enveloped by the curse.
+"
 use_corruption_for_stat_changes = true
 
-[node name="Stats" parent="UnobtainedItems/Cursed Item #1" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Cairons fare" index="0" unique_id=329966221]
 _agility = SubResource("Curve_ugc8l")
 _combat = SubResource("Curve_amlwg")
 _awareness = SubResource("Curve_aeqls")
@@ -180,12 +190,14 @@ _eldritch_knowledge = SubResource("Curve_dnkux")
 _map_layout_knowledge = SubResource("Curve_t6t7g")
 _mental_clarity = SubResource("Curve_ln53x")
 
-[node name="Cursed Item #2" parent="UnobtainedItems" unique_id=573719340 instance=ExtResource("2_qyosx")]
+[node name="Statue of Poseidon" parent="UnobtainedItems" unique_id=573719340 instance=ExtResource("2_qyosx")]
 item_id = 6
-item_name = "Cursed Item #2"
+item_name = "Statue of Poseidon"
+item_description = "Just observing the statue makes it clear that the power inside is immense. Extreme care is needed however, as the statue seems to turn on its holder if their curse is too far progressed. 
+"
 use_corruption_for_stat_changes = true
 
-[node name="Stats" parent="UnobtainedItems/Cursed Item #2" index="0" unique_id=329966221]
+[node name="Stats" parent="UnobtainedItems/Statue of Poseidon" index="0" unique_id=329966221]
 _agility = SubResource("Curve_818rb")
 _combat = SubResource("Curve_maaxi")
 _awareness = SubResource("Curve_4vggb")
@@ -197,9 +209,9 @@ _mental_clarity = SubResource("Curve_rwu21")
 
 [node name="UnequippedItems" type="Node" parent="." unique_id=527744419]
 
-[editable path="UnobtainedItems/Dagger"]
-[editable path="UnobtainedItems/Artifact #1"]
-[editable path="UnobtainedItems/Artifact #2"]
-[editable path="UnobtainedItems/Artifact #3"]
-[editable path="UnobtainedItems/Cursed Item #1"]
-[editable path="UnobtainedItems/Cursed Item #2"]
+[editable path="UnobtainedItems/Kopis of biting teeth"]
+[editable path="UnobtainedItems/Amulet of flowing waves"]
+[editable path="UnobtainedItems/Himantes of swift action"]
+[editable path="UnobtainedItems/Mail of sinking sun"]
+[editable path="UnobtainedItems/Cairons fare"]
+[editable path="UnobtainedItems/Statue of Poseidon"]
