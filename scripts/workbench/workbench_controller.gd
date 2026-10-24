@@ -87,16 +87,15 @@ func open_cleaning_mode(data: ItemData) -> void:
 	active_restoration_mode.call_deferred("start_cleaning", data)
 
 
-
-
 func _on_item_dropped(data: ItemData) -> void:
+	item_bar.visible = false
 	if data.needs_cleaning:
 		open_cleaning_mode(data)
 
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
-	
+
 func _on_tool_selected(tool_data: ToolData, _position: Vector2) -> void:
 	selected_tool = tool_data
 
@@ -118,3 +117,10 @@ func _on_target_item_clicked(data: ItemData) -> void:
 		target_box.finish_pounding()
 		pounding_hits.erase(item_key)
 		print("Removed Shell", data.item_name)
+
+
+func _on_item_button_pressed() -> void:
+	if item_bar.visible ==false:
+		item_bar.visible = true
+	else:
+		item_bar.visible = false

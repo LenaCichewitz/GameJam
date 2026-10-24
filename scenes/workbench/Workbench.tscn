@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
 [ext_resource type="Script" uid="uid://co7tnof8581tr" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
 [ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
-[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
+[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
-[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://assets/data/items/mirror.tres" id="4_1ykue"]
+[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://data/items/mirror.tres" id="4_1ykue"]
 [ext_resource type="Resource" uid="uid://e5u166kwhqhr" path="res://assets/data/items/glove.tres" id="5_aduu8"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
@@ -25,6 +25,9 @@ tool_id = "sponge"
 tool_name = "sponge"
 tool_icon = ExtResource("11_aduu8")
 metadata/_custom_type_script = "uid://b6dkoc8wcr287"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
+bg_color = Color(0.46666667, 0.36078432, 0.30980393, 1)
 
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
@@ -94,7 +97,17 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
 
+[node name="ItemButton" type="MarginContainer" parent="MainLayout" unique_id=2021871834]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+
+[node name="Button" type="Button" parent="MainLayout/ItemButton" unique_id=1118614078]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Items"
+
 [node name="ItemBar" type="HBoxContainer" parent="MainLayout" unique_id=827700913]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
@@ -109,10 +122,49 @@ grow_vertical = 2
 
 [node name="toolbox" parent="." unique_id=1918526201 instance=ExtResource("5_dfhgv")]
 layout_mode = 1
-offset_left = -352.0
-offset_top = 20.0
-offset_right = -172.0
-offset_bottom = 270.0
+anchors_preset = 11
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 2
 available_tools = Array[ExtResource("6_kxv2g")]([SubResource("Resource_arus1"), ExtResource("8_hammer")])
 
+[node name="MarginContainer" type="MarginContainer" parent="toolbox" unique_id=631215965]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 46
+
+[node name="Toolbox" type="VBoxContainer" parent="toolbox/MarginContainer" unique_id=1693343376]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Panel" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1445375781]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel2" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=981012928]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel3" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1154336]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel4" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=23830621]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
 [connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]

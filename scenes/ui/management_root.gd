@@ -1,6 +1,7 @@
 extends Control
 
 @export var mermaid_manger : Node
+@export var quest_manager: Node
 @onready var management_root: Control = $"."
 
 @onready var mermaid_list_item: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem"
@@ -21,7 +22,6 @@ func _on_management_root_requesting_all_recruited_mermaids() -> void:
 	
 	var mermaids:Array = mermaid_manger._get_all_recruited_mermaids()
 	
-	
 	var index = 0
 	
 	for mermaid in mermaids:
@@ -36,7 +36,12 @@ func _on_management_root_requesting_all_recruited_mermaids() -> void:
 		item.visible = true
 		
 		index += 1
-		
+
+func _on_management_root_requesting_quest() -> void:
+	if not quest_manager:
+		return
+	
+	var quest:Array = quest_manager.get_all_available_quests()
 
 func _on_restauration_button_pressed() -> void:
 	management_root.visible = false
