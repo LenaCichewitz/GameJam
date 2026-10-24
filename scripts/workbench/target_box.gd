@@ -11,11 +11,11 @@ func display_item(data: ItemData) -> void:
 	item_preview.texture = data.final_sprite
 
 
-
+# Sieht so aus als ob "_at_position" nicht gebraucht wird?
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is ItemData
 
-
+# Sieht so aus als ob "_at_position" nicht gebraucht wird?
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is ItemData:
 		display_item(data)
