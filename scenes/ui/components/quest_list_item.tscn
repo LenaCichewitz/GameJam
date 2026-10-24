@@ -61,6 +61,7 @@ text = "Title"
 label_settings = SubResource("LabelSettings_77ro6")
 
 [node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
+visible = false
 layout_mode = 2
 texture = ExtResource("4_ic3jt")
 expand_mode = 3
