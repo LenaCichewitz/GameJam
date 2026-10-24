@@ -2,6 +2,7 @@ extends Control
 
 @export var mermaid_manager : Node
 @export var quest_manager: Node
+@export var item_manager: Node
 
 #region import... stuffy... thingies(idk)
 @onready var management_root: Control = $"."
@@ -14,6 +15,12 @@ extends Control
 @onready var mermaid_list_item_4: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4"
 @onready var mermaid_list_item_5: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5"
 
+@onready var texture_button: TextureButton = $"Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton"
+@onready var texture_button_2: TextureButton = $"Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton2"
+
+@onready var itembar: Control = $Itembar
+@onready var items_list: HBoxContainer = $Itembar/Panel/HBoxContainer/ScrollContainer/ItemsList
+
 @onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
 #endregion
 
@@ -21,6 +28,7 @@ func _ready() -> void:
 	_on_management_root_requesting_all_recruited_mermaids()
 	add_quest()
 	mermaid_information.hide()
+	itembar.hide()
 
 func _on_management_root_requesting_all_recruited_mermaids() -> void:
 	if not mermaid_manager:
@@ -52,6 +60,17 @@ func _on_management_root_requesting_quest() -> Array:
 		return []
 	var quest:Array = quest_manager.get_all_available_quests()
 	return quest
+
+func _on_management_root_get_all_unequied_items()->void:
+	if not item_manager:
+		return
+	
+	var items:Array = item_manager.get_unequipped_items()
+	
+	for item in items:
+		var item_iu =load("res://scenes/ui/components/item_list.tscn").instantiate()
+		items_list.add_child(item_iu)
+		item_iu.setup(item)
 
 func add_quest() -> void:
 	var quests = _on_management_root_requesting_quest()
@@ -95,4 +114,13 @@ func _on_mermaid_list_item_4_mermaid_pressed(id: int) -> void:
 
 func _on_mermaid_list_item_5_mermaid_pressed(id: int) -> void:
 	import_mermaid_by_id(id)
+
+func _on_texture_button_pressed() -> void:
+	itembar.show()
+
+func _on_texture_button_2_pressed() -> void:
+	itembar.show()
+
+func _on_done_item_pressed() -> void:
+	itembar.hide()
 #endregion

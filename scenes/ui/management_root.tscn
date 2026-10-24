@@ -73,6 +73,9 @@ corner_radius_bottom_left = 16
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agpy6"]
 texture = ExtResource("13_62ryc")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cya7"]
+bg_color = Color(0.18431373, 0.34117648, 0.3254902, 1)
+
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
 anchors_preset = 15
@@ -442,6 +445,51 @@ text = "Stats"
 [node name="ProgressBar" type="ProgressBar" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child" unique_id=425343053]
 layout_mode = 2
 
+[node name="Itembar" type="Control" parent="." unique_id=1871631386]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Itembar" unique_id=1468806608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cya7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Itembar/Panel" unique_id=907696584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Itembar/Panel/HBoxContainer" unique_id=557418720]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemsList" type="HBoxContainer" parent="Itembar/Panel/HBoxContainer/ScrollContainer" unique_id=437731623]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Itembar/Panel/HBoxContainer" unique_id=348755404]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Button" type="Button" parent="Itembar/Panel/HBoxContainer/MarginContainer" unique_id=1129058575]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Done"
+
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem" to="." method="_on_mermaid_list_item_mermaid_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2" to="." method="_on_mermaid_list_item_2_mermaid_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem3" to="." method="_on_mermaid_list_item_3_mermaid_pressed"]
@@ -449,3 +497,6 @@ layout_mode = 2
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5" to="." method="_on_mermaid_list_item_5_mermaid_pressed"]
 [connection signal="pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/Button" to="." method="_on_restauration_button_pressed"]
 [connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_mermaid_info_pressed"]
+[connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Itembar/Panel/HBoxContainer/MarginContainer/Button" to="." method="_on_done_item_pressed"]
