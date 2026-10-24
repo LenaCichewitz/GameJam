@@ -217,75 +217,138 @@ _mental_clarity = SubResource("Curve_4nf4c")
 
 [node name="Quest" parent="AvailableQuests/PlaceholderQuest#1" unique_id=569622021 instance=ExtResource("2_7xuob")]
 
-[node name="Tutorial" parent="AvailableQuests" unique_id=1488423929 instance=ExtResource("2_7xuob")]
+[node name="Find Help" parent="AvailableQuests" unique_id=1488423929 instance=ExtResource("2_7xuob")]
 quest_id = 1
+quest_name = "Find Help"
+quest_description = "The Clock is Ticking and we're gonna need all Hands on Deck if we wanna accomplish this in Time. Lady Edeltraut has connections everywhere, and more than a few favors to Cash in.
+"
+quest_success_outcome = "The only ones willing to assist us in this endeavor are others with the same affliction, but that's exactly who we need. They are currently busy keeping themselves sane but will come to our aid if need be. Beware tho as soon as they join us their time too is limited.
+"
+quest_neutral_outcome = "Try as she might, Mae just does not have it in her to play the Diplomatic games necessary to succeed here. A timeloss this early stings we have to Focus up!
+"
 
-[node name="Dagger" parent="AvailableQuests" unique_id=1706432302 instance=ExtResource("2_7xuob")]
+[node name="An Artifact of War" parent="AvailableQuests" unique_id=1706432302 instance=ExtResource("2_7xuob")]
 quest_id = 2
+quest_name = "An Artifact of War"
+quest_description = "According to Mae there lies a powerful Kopisin the Streets of outer Atlantis, abandoned from a battle years ago. We don't know which Spirits will awaken once we pick it up so someone who thinks on their feet and is quick to act will need to step up
+"
+quest_success_outcome = "While the Kopis has certainly seen better times the Power emanating from it is still Palpable. With a little work it will be a powerful tool for us.
+"
+quest_neutral_outcome = "Once the Kopis was grasped a Host of Spirits sprung up. With fast thinking and actions just as swift we might have secured the relic but this time it had to be left behind to secure escape.
+"
 quest_group = 1
 
-[node name="StatsToClear" parent="AvailableQuests/Dagger" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/An Artifact of War" index="0" unique_id=329966221]
 _agility = SubResource("Curve_lgvmb")
 _map_layout_knowledge = SubResource("Curve_mxc5p")
 
-[node name="Study Texts" parent="AvailableQuests" unique_id=1359076990 instance=ExtResource("2_7xuob")]
+[node name="Ancient Knowledge" parent="AvailableQuests" unique_id=1359076990 instance=ExtResource("2_7xuob")]
 quest_id = 3
+quest_name = "Ancient Knowledge"
+quest_description = "We need to know our Enemy to even stand a chance. The sunken Library holds long lost knowledge that might just be what we need. Someone versed in the ancient rites will know just where to find what we need, though they may not like what will be found…
+"
+quest_success_outcome = "Ancient texts reveal the locations of powerful Artifacts deep in the city's bowls. Boons from the gods may yet but us on even footing with the enemy. While this knowledge is certain to aid us greatly it seems the trip has had a lasting effect.
+"
+quest_neutral_outcome = "Searching the library revealed much but nothing of use to us. A deeper knowledge of the ancient customs may be necessary to find exactly what we need.
+"
 quest_group = 1
 rewards_corruption_reduction = true
 reward_corruption_reduction = 10.0
 
-[node name="StatsToClear" parent="AvailableQuests/Study Texts" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Ancient Knowledge" index="0" unique_id=329966221]
 _eldritch_knowledge = SubResource("Curve_qqstm")
 
-[node name="Fight Guard" parent="AvailableQuests" unique_id=1932161826 instance=ExtResource("2_7xuob")]
+[node name="A looming threat" parent="AvailableQuests" unique_id=1932161826 instance=ExtResource("2_7xuob")]
 quest_id = 4
+quest_name = "A looming threat"
+quest_description = "To secure a path deeper into the city conflict will be unavoidable. An ancient guardian statue stands on the city's inner walls, ever on watch for intruders. The construct's age makes it vulnerable but the fight will be anything but trivial. 
+"
+quest_success_outcome = "A hard fought battle clears not only the path into the city but also the mind. Knowing these horrors can be beaten back lightens the burden of the curse ever so slightly.
+"
+quest_neutral_outcome = "Despite a valiant effort the guardian proves to be a steep wall to climb indeed. Precious time has been lost but no life was forfeit today. We must return with a more experienced fighter or better equipment
+"
 quest_group = 1
 rewards_corruption_reduction = true
 reward_corruption_reduction = -20.0
 
-[node name="StatsToClear" parent="AvailableQuests/Fight Guard" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/A looming threat" index="0" unique_id=329966221]
 _combat = SubResource("Curve_tr7ox")
 
-[node name="Artifact #1" parent="AvailableQuests" unique_id=1664053837 instance=ExtResource("2_7xuob")]
+[node name="Combing the Fields" parent="AvailableQuests" unique_id=1664053837 instance=ExtResource("2_7xuob")]
 quest_id = 5
+quest_name = "Combing the Fields"
+quest_description = "One of the artifacts is already in our possession but it remains uncompleted. A magic pearl from a mutated clam is required to power it and can be found on the outskirts of the city. Once a field for growing and harvesting clams it has since overgrown into a mass of seaweed and chaos. A scavenger hunt for a cursed creature certainly requires a specific set of skills.
+"
+quest_success_outcome = "Among the overflowing mass lay the abomination of a clam, its pearl now ours to harvest and put to good use.
+"
+quest_neutral_outcome = "Despite hours of looking, the clam evades us still. Perceptive eyes and a feeling for the otherworldly may yet help us locate it within the chaos
+"
 quest_group = 2
 
-[node name="StatsToClear" parent="AvailableQuests/Artifact #1" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Combing the Fields" index="0" unique_id=329966221]
 _awareness = SubResource("Curve_8up6o")
 _eldritch_knowledge = SubResource("Curve_42d3x")
 
-[node name="Artifact #2" parent="AvailableQuests" unique_id=122931068 instance=ExtResource("2_7xuob")]
+[node name="Winding ways #2" parent="AvailableQuests" unique_id=122931068 instance=ExtResource("2_7xuob")]
 quest_id = 6
+quest_name = "Winding ways"
+quest_description = "The winding streets of the slums rival a maze in all its confusion. Within them lies one of the artifacts we are seeking. While a good eye is certainly of import, even more so is a capacity to withstand, as the slinging paths may drive anyone to madness.
+"
+quest_success_outcome = "Navigation these streets was difficult but fruitful, as the gods bounty is now ours to use against our foes, just as soon as it is restored
+"
+quest_neutral_outcome = "Returning from this hell at all is admirable, even empty handed as it is. We will need to brave it again however and this time nerves of steel and eyes like a sea-hawk must prevail. 
+"
 quest_group = 2
 
-[node name="StatsToClear" parent="AvailableQuests/Artifact #2" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Winding ways #2" index="0" unique_id=329966221]
 _awareness = SubResource("Curve_j63pw")
 _mental_clarity = SubResource("Curve_8uk7a")
 
-[node name="Artifact #3" parent="AvailableQuests" unique_id=1521420106 instance=ExtResource("2_7xuob")]
+[node name="A grab for power" parent="AvailableQuests" unique_id=1521420106 instance=ExtResource("2_7xuob")]
 quest_id = 7
+quest_name = "A grab for power"
+quest_description = "Alas hoping we were uncontested in our search for power was a short dream. A group of traveling trades have one of the Artifacts, though they seem not to know what they have on their hands. We must get in, take out the guards and get out before backup arrives. Prepare to get your hands dirty
+"
+quest_success_outcome = "With fresh blood on our hands and immense power in our possession the only thing left to do is restore the artefact and forget what lies behind us
+"
+quest_neutral_outcome = "A bloodied return is a return nonetheless. They seem not to know what it is we were searching for so we may yet have a shot. Speed and power are of utmost import if we are to attempt another attack
+"
 quest_group = 2
 
-[node name="StatsToClear" parent="AvailableQuests/Artifact #3" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/A grab for power" index="0" unique_id=329966221]
 _agility = SubResource("Curve_7c7fg")
 _combat = SubResource("Curve_lkrw4")
 
-[node name="Scan the Area" parent="AvailableQuests" unique_id=428837585 instance=ExtResource("2_7xuob")]
+[node name="Deep dive" parent="AvailableQuests" unique_id=428837585 instance=ExtResource("2_7xuob")]
 quest_id = 8
+quest_name = "Deep dive"
+quest_description = "Below the streets, in what was once the city's sewers, supposedly hides a scholar who once researched a cure to the curse. A conversation with him may prove invaluable. These tunnels are vast and unexplored. Spending too much time here will surely prove lethal so move quickly, think on your feet and be prepared to see things that might… unnerve a lesser mind.
+"
+quest_success_outcome = "Tho the scholar expired some moons ago his research notes are mostly intact. The only way to stop the curse, it seems, is to destroy its root deep in the core of the city. Knowing there is a way to rid yourself brings forth the energy to contain the curse and push onwards
+"
+quest_neutral_outcome = "What these tunnels contain can not be described and there is no shame in returning unsuccessful. Yet still we must brave these depths again in hopes of a way forward. 
+"
 quest_group = 2
 rewards_corruption_reduction = true
 reward_corruption_reduction = -50.0
 
-[node name="StatsToClear" parent="AvailableQuests/Scan the Area" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Deep dive" index="0" unique_id=329966221]
 _agility = SubResource("Curve_jo48k")
 _map_layout_knowledge = SubResource("Curve_h4qoa")
 _mental_clarity = SubResource("Curve_gr7cu")
 
-[node name="Cursed Item #1" parent="AvailableQuests" unique_id=951889181 instance=ExtResource("2_7xuob")]
+[node name="Bread and Games" parent="AvailableQuests" unique_id=951889181 instance=ExtResource("2_7xuob")]
 quest_id = 9
+quest_name = "Bread and Games"
+quest_description = "The old arena seems animated with magic. A powerful cursed object must bring this about and we minted to use it for our benefit. Once stepping into the veil of the spell there is no knowing what to expect so send someone who triumphs no matter the circumstances 
+"
+quest_success_outcome = "As the spell fizzles into the deep waters the coin now in our hands feels distinctly… alive. A power both great and dangerous. Amongst us a feeling of unease takes hold
+"
+quest_neutral_outcome = "Stepping out of the spell empty handed was expected, having no memory of the ordeal was not. Whatever magic animates the arena can only be of godly origin but refusing such power is simply not an option.
+"
 quest_group = 3
 
-[node name="StatsToClear" parent="AvailableQuests/Cursed Item #1" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Bread and Games" index="0" unique_id=329966221]
 _agility = SubResource("Curve_hfgdr")
 _combat = SubResource("Curve_i5ifi")
 _awareness = SubResource("Curve_gvpb6")
@@ -293,44 +356,70 @@ _eldritch_knowledge = SubResource("Curve_70nes")
 _map_layout_knowledge = SubResource("Curve_t7ugm")
 _mental_clarity = SubResource("Curve_4icew")
 
-[node name="Cursed Item #2" parent="AvailableQuests" unique_id=1605409417 instance=ExtResource("2_7xuob")]
+[node name="Poseidon\'s Secrets" parent="AvailableQuests" unique_id=1605409417 instance=ExtResource("2_7xuob")]
 quest_id = 10
+quest_name = "Poseidon's Secrets"
+quest_description = "Hidden behind a secret passage in one of Poseidon temples is said to lay a godly artifact of great power. Finding it however is only part of the trouble as one of the gods own creatures has taken to protecting it. Just laying eyes upon the beast tests one's mind and slaying it is a task not beneath a Hero. 
+"
+quest_success_outcome = "The god's power emanating from the statue feels almost smothering. This power is sure to be a great boon however the curse within rejects it outright. Caution is most important when mixing this holy and unholy power. 
+"
+quest_neutral_outcome = "Barely holding on to life, the thought of returning to face the beast again seems towering. Yet still this is the reality we are in. If this beast can not be felled the curse shall subsume us entirely. 
+"
 quest_group = 3
 
-[node name="StatsToClear" parent="AvailableQuests/Cursed Item #2" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Poseidon\'s Secrets" index="0" unique_id=329966221]
 _combat = SubResource("Curve_njkix")
 _awareness = SubResource("Curve_qqhc5")
 _mental_clarity = SubResource("Curve_r5h17")
 
-[node name="Pending #1" parent="AvailableQuests" unique_id=1961663541 instance=ExtResource("2_7xuob")]
+[node name="Taking Stock" parent="AvailableQuests" unique_id=1961663541 instance=ExtResource("2_7xuob")]
 quest_id = 11
+quest_name = "Taking Stock"
+quest_description = "Knowing what's to come is more important yet than any power one can wield. To find weaknesses in the unholy defenses of our adversary one must be both creative and able to detect its dark influence and power. And don't dawdle long for unwanted attention may prove lethal.
+"
+quest_success_outcome = "Even the best armor has a weakness somewhere and now we are informed and able to formulate a plan to abuse just such a weak point. However, what was seen on this journey can never be unseen and the question of whether this is possible at all lays heavy on the mind
+"
+quest_neutral_outcome = "Still feeling watched, at the end of the day we feel no wiser than in the morrow. Another trip to the curse steeped streets feels daunting but the luxury of choice is not ours,
+"
 quest_group = 3
 rewards_corruption_reduction = true
 reward_corruption_reduction = 10.0
 
-[node name="StatsToClear" parent="AvailableQuests/Pending #1" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Taking Stock" index="0" unique_id=329966221]
 _agility = SubResource("Curve_me171")
 _eldritch_knowledge = SubResource("Curve_7kgqg")
 _map_layout_knowledge = SubResource("Curve_g5v1a")
 
-[node name="Pending #2" parent="AvailableQuests" unique_id=1178817276 instance=ExtResource("2_7xuob")]
+[node name="A way forward" parent="AvailableQuests" unique_id=1178817276 instance=ExtResource("2_7xuob")]
 quest_id = 12
+quest_name = "A way forward"
+quest_description = "A magical barrier separates the dark core from the rest of the city. To break it a ritual of dark nature is required. Only an expert in the dark ways may perform it and even then it will take some hours to complete. So stay on your toes, look out for any clue of danger and be ready to defend yourself
+"
+quest_success_outcome = "As the barrier lifts even greater horrors lie beyond. Do not be confused however, this is a great victory nonetheless and nothing but the result of immaculate work. Seeing such a work of great evil fall bolsters our strength against the curse, as we begin this final offence
+"
+quest_neutral_outcome = "It is simply too much, holding onto the ritual while defending ourselves against all manner of attacks. Still the barrier must fall and hoisting a new attack against it is inevitable. 
+"
 quest_group = 3
 rewards_corruption_reduction = true
 reward_corruption_reduction = -40.0
 
-[node name="StatsToClear" parent="AvailableQuests/Pending #2" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/A way forward" index="0" unique_id=329966221]
 _combat = SubResource("Curve_bp6ou")
 _awareness = SubResource("Curve_a47fs")
 _eldritch_knowledge = SubResource("Curve_blk6h")
 _map_layout_knowledge = SubResource("Curve_n3veo")
 
-[node name="Finale #1" parent="AvailableQuests" unique_id=1200277134 instance=ExtResource("2_7xuob")]
+[node name="A stab to the heart" parent="AvailableQuests" unique_id=1200277134 instance=ExtResource("2_7xuob")]
 quest_id = 13
+quest_name = "A stab to the heart"
+quest_description = "The most direct way to the goal is simple: just go straight into the core of the darkness.Facing the enemy on its terms seems almost laughable but there is value in doing the unexpected. We know not what expects us within the depths of darkness only that it will test us like nothing has before. Only one certain in the fact that they can overcome whatever may be thrown at them should brave these streams.
+"
+quest_neutral_outcome = "The colors, the sounds and the overpowering feeling of dread, the experience within the core was indescribable and horrific. Imagining what it takes to succeed in this hell seems impossible and a dread fills the air with every breath taken
+"
 is_final_quest = true
 quest_group = 4
 
-[node name="StatsToClear" parent="AvailableQuests/Finale #1" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/A stab to the heart" index="0" unique_id=329966221]
 _agility = SubResource("Curve_wgq6u")
 _combat = SubResource("Curve_ivvbg")
 _awareness = SubResource("Curve_mb3sc")
@@ -338,23 +427,33 @@ _eldritch_knowledge = SubResource("Curve_22rjq")
 _map_layout_knowledge = SubResource("Curve_rsh6g")
 _mental_clarity = SubResource("Curve_d8tvc")
 
-[node name="Finale #2" parent="AvailableQuests" unique_id=1737277138 instance=ExtResource("2_7xuob")]
+[node name="A shot in the dark" parent="AvailableQuests" unique_id=1737277138 instance=ExtResource("2_7xuob")]
 quest_id = 14
+quest_name = "A shot in the dark"
+quest_description = "The tunnels below the city will invariably lead to the core but where exactly one may emerge is impossible to know. Yet still attacking the enemy from an unexpected position is sure to create confusion in our favor. With no knowledge of what's to come, being able to make an adaptable plan on the fly and execute it swiftly is most important. The unthinkable horrors in these tunnels will surely oppose us as well 
+"
+quest_neutral_outcome = "No plan survives contact with the Enemy. Between winding paths, constant attacks and horrors whose pure existent proofs taxing its impossible to stay crafty. The sheer experience was overwhelming in a way nothing else has ever been. To go there again is pure madness…
+"
 is_final_quest = true
 quest_group = 4
 
-[node name="StatsToClear" parent="AvailableQuests/Finale #2" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/A shot in the dark" index="0" unique_id=329966221]
 _agility = SubResource("Curve_ak3ry")
 _combat = SubResource("Curve_yh0h6")
 _map_layout_knowledge = SubResource("Curve_vtd8x")
 _mental_clarity = SubResource("Curve_8omnl")
 
-[node name="Final #3" parent="AvailableQuests" unique_id=45835624 instance=ExtResource("2_7xuob")]
+[node name="Finish what was started" parent="AvailableQuests" unique_id=45835624 instance=ExtResource("2_7xuob")]
 quest_id = 15
+quest_name = "Finish what was started"
+quest_description = "We are not the first to attack this being, though none ever succeeded. Along the streets are overgrown altars, part of a ritual intended to banish the curse once and for all. Though they never were used by those who erected them we can finish what was started. This complex Ritual involves moving between the altars while continuously channeling dark magic so strong barely any can even fathom it. The enemy knows this too so the area around the altars is sure to be riddled with traps. Spot them before they ever activate and be ready for whatever tricks may be thrown at you 
+"
+quest_neutral_outcome = "As the magic dissipates into the vast waters one must imagine that every single brick on these roads was but a trap. Being focused on a spell so incredibly complex leaves one invariably open and one single unfocused second spells the end. Can a plan this obvious ever be successful? 
+"
 is_final_quest = true
 quest_group = 4
 
-[node name="StatsToClear" parent="AvailableQuests/Final #3" index="0" unique_id=329966221]
+[node name="StatsToClear" parent="AvailableQuests/Finish what was started" index="0" unique_id=329966221]
 _agility = SubResource("Curve_ho8qw")
 _awareness = SubResource("Curve_xjnry")
 _eldritch_knowledge = SubResource("Curve_i27fw")
@@ -368,18 +467,18 @@ _map_layout_knowledge = SubResource("Curve_588e0")
 [connection signal="requesting_mermaid_data" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_requesting_mermaid_data"]
 
 [editable path="AvailableQuests/PlaceholderQuest#1"]
-[editable path="AvailableQuests/Tutorial"]
-[editable path="AvailableQuests/Dagger"]
-[editable path="AvailableQuests/Study Texts"]
-[editable path="AvailableQuests/Fight Guard"]
-[editable path="AvailableQuests/Artifact #1"]
-[editable path="AvailableQuests/Artifact #2"]
-[editable path="AvailableQuests/Artifact #3"]
-[editable path="AvailableQuests/Scan the Area"]
-[editable path="AvailableQuests/Cursed Item #1"]
-[editable path="AvailableQuests/Cursed Item #2"]
-[editable path="AvailableQuests/Pending #1"]
-[editable path="AvailableQuests/Pending #2"]
-[editable path="AvailableQuests/Finale #1"]
-[editable path="AvailableQuests/Finale #2"]
-[editable path="AvailableQuests/Final #3"]
+[editable path="AvailableQuests/Find Help"]
+[editable path="AvailableQuests/An Artifact of War"]
+[editable path="AvailableQuests/Ancient Knowledge"]
+[editable path="AvailableQuests/A looming threat"]
+[editable path="AvailableQuests/Combing the Fields"]
+[editable path="AvailableQuests/Winding ways #2"]
+[editable path="AvailableQuests/A grab for power"]
+[editable path="AvailableQuests/Deep dive"]
+[editable path="AvailableQuests/Bread and Games"]
+[editable path="AvailableQuests/Poseidon\'s Secrets"]
+[editable path="AvailableQuests/Taking Stock"]
+[editable path="AvailableQuests/A way forward"]
+[editable path="AvailableQuests/A stab to the heart"]
+[editable path="AvailableQuests/A shot in the dark"]
+[editable path="AvailableQuests/Finish what was started"]

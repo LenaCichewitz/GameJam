@@ -10,6 +10,8 @@ extends Resource
 
 @export var needs_puzzling: bool = false
 @export var puzzle_pieces: Array[Texture2D] = []
+@export var puzzle_target_positions: Array[Vector2] = []
+@export var unfinished_puzzle: Texture2D  
 
 @export var needs_punding: bool = true
 @export var closed_texture: Texture2D 

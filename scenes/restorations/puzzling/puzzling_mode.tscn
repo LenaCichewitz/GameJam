@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d18537s6hxbwe"]
+
+[ext_resource type="Script" uid="uid://dlct47jvruq27" path="res://scripts/restorations/puzzling_mode.gd" id="1_au6t3"]
+
+[node name="puzzling_mode" type="Node2D" unique_id=2023644616]
+script = ExtResource("1_au6t3")
+
+[node name="pieces_container" type="Node2D" parent="." unique_id=165590053]
+
+[node name="puzzle_complete" type="AcceptDialog" parent="." unique_id=126910749]

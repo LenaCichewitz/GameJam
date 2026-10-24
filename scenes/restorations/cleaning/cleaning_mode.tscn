@@ -17,3 +17,4 @@ grow_vertical = 2
 mouse_filter = 0
 
 [node name="completion_popup" type="AcceptDialog" parent="." unique_id=1857434767]
+oversampling_override = 1.0
