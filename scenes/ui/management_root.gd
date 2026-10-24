@@ -48,8 +48,35 @@ func _on_management_root_requesting_quest() -> void:
 	
 	var quest:Array = quest_manager.get_all_available_quests()
 
+func import_mermaid_by_id(id:int) -> void:
+	if not mermaid_manager:
+		return
+	
+	var mermaid = mermaid_manager.get_mermaid_for_id(id)
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/first child/Header/MarginContainer/Name").text = mermaid.mermaid_name
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/first child/MarginContainer/Mermaid_Picture").texture = mermaid.mermaid_full_body
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/second child/MarginContainer/Story/VBoxContainer/RichTextLabel").text = mermaid.mermaid_description
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/third child/ProgressBar").value = mermaid.corruption_increase_per_increment
+	
+	mermaid_information.show()
+
 func _on_restauration_button_pressed() -> void:
 	management_root.hide()
 
 func _on_close_button_mermaid_info_pressed() -> void:
 	mermaid_information.hide()
+
+func _on_mermaid_list_item_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_2_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_3_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_4_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_5_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)

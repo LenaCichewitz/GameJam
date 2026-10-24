@@ -404,5 +404,10 @@ text = "Stats"
 [node name="ProgressBar" type="ProgressBar" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child" unique_id=425343053]
 layout_mode = 2
 
+[connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem" to="." method="_on_mermaid_list_item_mermaid_pressed"]
+[connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2" to="." method="_on_mermaid_list_item_2_mermaid_pressed"]
+[connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem3" to="." method="_on_mermaid_list_item_3_mermaid_pressed"]
+[connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4" to="." method="_on_mermaid_list_item_4_mermaid_pressed"]
+[connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5" to="." method="_on_mermaid_list_item_5_mermaid_pressed"]
 [connection signal="pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/Button" to="." method="_on_restauration_button_pressed"]
 [connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_mermaid_info_pressed"]
