@@ -9,24 +9,31 @@ var piece_sprites: Array[Sprite2D] = []
 var dragging_piece: Sprite2D = null
 var drag_offset: Vector2 = Vector2.ZERO
 
+var gluing_mode: bool = false
+var glued_pieces: Array[Sprite2D] = []
+
 var preview_scale: float = 1.0
 var preview_position: Vector2 = Vector2.ZERO
+var pieces_in_place: int = 0
+signal puzzling_finished(data: ItemData)
 
+@onready var completion_popup: AcceptDialog = $puzzle_complete
 
 func _ready() -> void:
 	pieces_container = $pieces_container
-
+	completion_popup.confirmed.connect(_on_completion_confirmed)
+	completion_popup.dialog_text = "PUZZLE DONE!"
 
 func start_puzzling(data: ItemData) -> void:
 	if data == null:
 		return
-
+	pieces_in_place = 0
 	current_item = data
 	show()
 	pieces_container.show()
 	_clear_pieces()
 	_setup_preview()
-	
+	completion_popup.hide()
 	for i in range(current_item.puzzle_pieces.size()):
 		var texture: Texture2D = current_item.puzzle_pieces[i]
 
@@ -93,6 +100,10 @@ func _get_random_start_position() -> Vector2:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			if gluing_mode:
+				_glue_piece_at_position(get_global_mouse_position())
+				get_viewport().set_input_as_handled()
+				return
 			if event.pressed:
 				_start_drag()
 			else:
@@ -149,9 +160,71 @@ func _finish_drag() -> void:
 		if dragging_piece.position.distance_to(target_position) <= 35.0:
 			dragging_piece.position = target_position
 			dragging_piece.set_meta("placed", true)
-
+			pieces_in_place += 1
+			
+			if pieces_in_place == piece_sprites.size():
+				completion_popup.popup_centered()
+	
 	dragging_piece = null
 
+func _on_completion_confirmed() -> void:
+	if current_item == null:
+		return
+
+	gluing_mode = true
+	glued_pieces.clear()
+
+	#current_item.needs_puzzling = false
+	#puzzling_finished.emit(current_item)
+	
+func _glue_piece_at_position(mouse_position: Vector2) -> void:
+	if not gluing_mode:
+		return
+
+	for i in range(piece_sprites.size() - 1, -1, -1):
+		var piece: Sprite2D = piece_sprites[i]
+
+		if not is_instance_valid(piece):
+			continue
+
+		if not piece.get_meta("placed", false):
+			continue
+
+		if glued_pieces.has(piece):
+			continue
+
+		if piece.texture == null:
+			continue
+
+		var local_mouse := piece.to_local(mouse_position)
+		var rect := Rect2(
+			-piece.texture.get_size() / 2.0,
+			piece.texture.get_size()
+		)
+
+		if rect.has_point(local_mouse):
+			glued_pieces.append(piece)
+			piece.modulate = Color(0.7, 1.0, 0.7, 1.0)
+
+			print(
+				"Geklebt: ",
+				glued_pieces.size(),
+				" / ",
+				piece_sprites.size()
+			)
+
+			if glued_pieces.size() == piece_sprites.size():
+				_finish_gluing()
+
+			return
+
+func _finish_gluing() -> void:
+	if current_item == null:
+		return
+
+	current_item.needs_puzzling = false
+	puzzling_finished.emit(current_item)
+	queue_free()
 
 func _clear_pieces() -> void:
 	for piece in piece_sprites:
