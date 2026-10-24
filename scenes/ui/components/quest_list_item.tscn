@@ -27,10 +27,8 @@ script = ExtResource("1_qmdcg")
 [node name="Header" type="Button" parent="." unique_id=735170469]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Butoon"
 
 [node name="MarginContainer" type="MarginContainer" parent="Header" unique_id=372699285]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +64,6 @@ text = "Title"
 label_settings = SubResource("LabelSettings_77ro6")
 
 [node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("4_ic3jt")

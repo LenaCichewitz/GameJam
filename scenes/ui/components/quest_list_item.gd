@@ -13,5 +13,4 @@ func setup(quest: Object) -> void:
 	description.text = quest.quest_description
 
 func _on_header_pressed() -> void:
-	print("HAllo!")
 	body.visible = not body.visible

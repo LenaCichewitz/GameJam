@@ -53,7 +53,7 @@ func _on_management_root_requesting_quest() -> Array:
 		return []
 	var quest:Array = quest_manager.get_all_available_quests()
 	return quest
-	
+
 func add_quest() -> void:
 	var quests = _on_management_root_requesting_quest()
 	var quest_scene = load("res://scenes/ui/components/quest_list_item.tscn")
@@ -62,7 +62,6 @@ func add_quest() -> void:
 		var quest_ui = quest_scene.instantiate()
 		quest_list_container.add_child(quest_ui)
 		quest_ui.setup(quest)
-	
 
 func import_mermaid_by_id(id:int) -> void:
 	if not mermaid_manager:
