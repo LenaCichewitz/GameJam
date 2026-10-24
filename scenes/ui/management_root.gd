@@ -47,3 +47,6 @@ func _on_management_root_requesting_quest() -> void:
 
 func _on_restauration_button_pressed() -> void:
 	management_root.visible = false
+
+func _on_close_button_mermaid_information_pressed() -> void:
+	mermaid_information.hide()
