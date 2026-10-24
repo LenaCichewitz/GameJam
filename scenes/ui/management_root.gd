@@ -6,11 +6,11 @@ extends Control
 
 @onready var mermaid_information: Panel = $Mermaid_Information
 
-@onready var mermaid_list_item: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem"
-@onready var mermaid_list_item_2: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2"
-@onready var mermaid_list_item_3: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem3"
-@onready var mermaid_list_item_4: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4"
-@onready var mermaid_list_item_5: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5"
+@onready var mermaid_list_item: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem"
+@onready var mermaid_list_item_2: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2"
+@onready var mermaid_list_item_3: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem3"
+@onready var mermaid_list_item_4: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4"
+@onready var mermaid_list_item_5: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5"
 
 
 func _ready() -> void:
@@ -31,11 +31,13 @@ func _on_management_root_requesting_all_recruited_mermaids() -> void:
 		if index >= ListItem.size():
 			break
 		var item = ListItem[index]
+		var mermaid_id = mermaid.mermaid_id
 		var mermaid_name = mermaid.mermaid_name
 		var mermaid_icon = mermaid.mermaid_head_shot
 		
 		item.get_node("VBoxContainer/MermaidName").text = mermaid_name
-		item.get_node("VBoxContainer/MermaidIcon").texture = mermaid_icon
+		item.get_node("VBoxContainer/MermaidIcon").texture_normal = mermaid_icon
+		item.get_node("VBoxContainer/MermaidID").text = str(mermaid_id)
 		item.visible = true
 		
 		index += 1
