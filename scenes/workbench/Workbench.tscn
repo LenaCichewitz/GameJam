@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://e5u166kwhqhr" path="res://assets/data/items/glove.tres" id="5_aduu8"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
+[ext_resource type="Resource" uid="uid://cpsjsjb5qbqb0" path="res://assets/data/items/puzzle.tres" id="6_arus1"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
 [ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="11_aduu8"]
@@ -37,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc")])
+available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1

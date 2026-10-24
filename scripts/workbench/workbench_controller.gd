@@ -10,6 +10,9 @@ var pounding_hits: Dictionary = {}
 const CLEANING_MODE_SCENE: PackedScene = preload(
     "res://scenes/restorations/cleaning/cleaning_mode.tscn"
 )
+const PUZZLING_MODE_SCENE = preload(
+    "res://scenes/restorations/puzzling/puzzling_mode.tscn"
+)
 
 @onready var restoration_container: Control = $restoration_container
 @onready var toolbox: Control = $toolbox
@@ -89,9 +92,18 @@ func open_cleaning_mode(data: ItemData) -> void:
 
 func _on_item_dropped(data: ItemData) -> void:
 	item_bar.visible = false
+	if data.needs_puzzling:
+		open_puzzling_mode(data)
 	if data.needs_cleaning:
 		open_cleaning_mode(data)
 
+
+func open_puzzling_mode(data: ItemData)-> void: 
+	var puzzling_mode = PUZZLING_MODE_SCENE.instantiate()
+	restoration_container.show()
+	restoration_container.add_child(puzzling_mode)
+	target_box.hide_item()
+	puzzling_mode.start_puzzling(data) 
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
