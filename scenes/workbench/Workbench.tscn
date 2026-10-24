@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
 [ext_resource type="Script" uid="uid://co7tnof8581tr" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
-[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_t8l4c"]
-[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://data/items/perle.tres" id="3_dfhgv"]
+[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
+[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
+[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://data/items/mirror.tres" id="4_1ykue"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://data/tools/sponge.tres" id="7_0my5e"]
@@ -23,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_t8l4c")]([ExtResource("3_dfhgv")])
+available_items = Array[ExtResource("2_np7mg")]([ExtResource("3_wlhxc"), ExtResource("4_1ykue")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1
