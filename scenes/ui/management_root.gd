@@ -15,6 +15,7 @@ extends Control
 
 func _ready() -> void:
 	_on_management_root_requesting_all_recruited_mermaids()
+	mermaid_information.hide()
 
 func _on_management_root_requesting_all_recruited_mermaids() -> void:
 	if not mermaid_manager:
