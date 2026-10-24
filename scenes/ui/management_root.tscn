@@ -14,13 +14,22 @@
 [ext_resource type="Texture2D" uid="uid://cqaqbji3ge6qo" path="res://graphics/IU-Mermaid-Border.svg" id="13_62ryc"]
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="13_f7xhn"]
 [ext_resource type="Texture2D" uid="uid://b8itwu23l1ahl" path="res://assets/Mermaids/RainbowTrout_Mermaid_FullArt.png" id="14_e5ll0"]
-[ext_resource type="Texture2D" uid="uid://dwcyfyx68f4qq" path="res://graphics/IU-Placeholder-Mermaid-Head.svg" id="16_e5ll0"]
+[ext_resource type="Texture2D" uid="uid://3b6yh1bctfuf" path="res://assets/items/Items for UI/Sprite-IU-Empty Item slot.png" id="15_f7xhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58a6y"]
+texture = ExtResource("3_rlydk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdr17"]
+texture = ExtResource("4_wul21")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ag5r"]
+texture = ExtResource("5_nk5b7")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
@@ -112,13 +121,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Mermaid_Management/QuestInterface/VBoxContainer" unique_id=1666204427]
+[node name="Header" type="MarginContainer" parent="Mermaid_Management/QuestInterface/VBoxContainer" unique_id=1666204427]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 4
 
-[node name="Quest" type="Label" parent="Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer" unique_id=1973053050]
+[node name="Quest" type="Label" parent="Mermaid_Management/QuestInterface/VBoxContainer/Header" unique_id=1973053050]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = ExtResource("13_f7xhn")
@@ -142,6 +151,25 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Footer" type="MarginContainer" parent="Mermaid_Management/QuestInterface/VBoxContainer" unique_id=1501689655]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="Button" type="Button" parent="Mermaid_Management/QuestInterface/VBoxContainer/Footer" unique_id=858489717]
+custom_minimum_size = Vector2(200, 75)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("13_f7xhn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_58a6y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr17")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ag5r")
+text = "Send to quest"
 
 [node name="MermaidDetailsRoot" type="Control" parent="Mermaid_Management" unique_id=448609858]
 layout_mode = 2
@@ -226,7 +254,7 @@ custom_maximum_size = Vector2(300, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
-theme_override_fonts/font = ExtResource("2_a4i7e")
+theme_override_fonts/font = ExtResource("13_f7xhn")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_gf8qy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_unrva")
@@ -236,7 +264,6 @@ autowrap_mode = 2
 autowrap_trim_flags = 192
 
 [node name="Mermaid_Information" type="Panel" parent="." unique_id=1217298015]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,11 +423,11 @@ theme_override_constants/separation = 16
 
 [node name="TextureButton" type="TextureButton" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items" unique_id=906429469]
 layout_mode = 2
-texture_normal = ExtResource("16_e5ll0")
+texture_normal = ExtResource("15_f7xhn")
 
 [node name="TextureButton2" type="TextureButton" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items" unique_id=127652870]
 layout_mode = 2
-texture_normal = ExtResource("16_e5ll0")
+texture_normal = ExtResource("15_f7xhn")
 
 [node name="Stats" type="Panel" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child" unique_id=1372984687]
 layout_mode = 2

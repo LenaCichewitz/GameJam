@@ -3,7 +3,6 @@ extends Control
 @export var mermaid_manager : Node
 @export var quest_manager: Node
 
-
 #region import... stuffy... thingies(idk)
 @onready var management_root: Control = $"."
 
