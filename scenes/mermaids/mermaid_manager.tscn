@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxpu0ij15quqe" path="res://scenes/mermaids/mermaid.tscn" id="1_7m4ph"]
 [ext_resource type="Texture2D" uid="uid://b8itwu23l1ahl" path="res://assets/Mermaids/RainbowTrout_Mermaid_FullArt.png" id="3_d6sja"]
 [ext_resource type="Texture2D" uid="uid://d1d3hyv33c6y8" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Trout.png" id="4_dv6w4"]
+[ext_resource type="Texture2D" uid="uid://14uupu5hjaqp" path="res://graphics/icons/icon_skull.svg" id="5_dv6w4"]
 [ext_resource type="Texture2D" uid="uid://bxesdplfd3rfw" path="res://assets/Mermaids/Seaslug_Mermaid_FullArt.png" id="5_sd3xo"]
 [ext_resource type="Texture2D" uid="uid://dat53qhd7i4v5" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Seaslug.png" id="6_ebs7i"]
 [ext_resource type="Texture2D" uid="uid://fbj5ramack2c" path="res://assets/Mermaids/Jellyfish_Mermaid_FullArt.png" id="7_7bev5"]
@@ -143,6 +144,7 @@ mermaid_id = 1
 mermaid_name = "Placeholder Mermaid #1"
 mermaid_full_body = ExtResource("3_d6sja")
 mermaid_head_shot = ExtResource("4_dv6w4")
+mermaid_icon = ExtResource("5_dv6w4")
 recruited = true
 corruption_increase_per_increment = 20.0
 

@@ -5,8 +5,17 @@
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_a4i7e"]
 [ext_resource type="PackedScene" uid="uid://dpvjhr5efep37" path="res://scenes/ui/components/mermaid_list_item.tscn" id="2_rlydk"]
 [ext_resource type="Texture2D" uid="uid://hm1ulo3creqw" path="res://graphics/button1.svg" id="3_rlydk"]
+[ext_resource type="Texture2D" uid="uid://dd37je7ubv01d" path="res://graphics/rahmen.svg" id="4_c65gk"]
 [ext_resource type="Texture2D" uid="uid://c1850uphsyx2x" path="res://graphics/button3.svg" id="4_wul21"]
 [ext_resource type="Texture2D" uid="uid://crd36k40u02n2" path="res://graphics/button2.svg" id="5_nk5b7"]
+[ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="8_nk5b7"]
+[ext_resource type="Texture2D" uid="uid://dtr20purn688i" path="res://graphics/icons/icon_arrow.svg" id="10_kf5xn"]
+[ext_resource type="Texture2D" uid="uid://dk3b060wemt2u" path="res://assets/Mermaids/Octopus_Mermaid_FullArt.png" id="11_3bkmo"]
+[ext_resource type="Texture2D" uid="uid://cdo3m14a6lnq0" path="res://graphics/icons/icon_leftArrow.svg" id="11_62ryc"]
+[ext_resource type="Texture2D" uid="uid://htg28i7jvorj" path="res://graphics/IU-Mermaid-Nameplate.svg" id="12_sd8f2"]
+[ext_resource type="Texture2D" uid="uid://cqaqbji3ge6qo" path="res://graphics/IU-Mermaid-Border.svg" id="13_62ryc"]
+[ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="13_f7xhn"]
+[ext_resource type="Texture2D" uid="uid://dwcyfyx68f4qq" path="res://graphics/IU-Placeholder-Mermaid-Head.svg" id="16_e5ll0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
@@ -20,6 +29,9 @@ font_size = 67
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8y12"]
+texture = ExtResource("4_c65gk")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
 texture = ExtResource("3_rlydk")
 
@@ -28,6 +40,26 @@ texture = ExtResource("4_wul21")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjdm6"]
 texture = ExtResource("5_nk5b7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjdm6"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62ryc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sd8f2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7xhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5ll0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsull"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwc3t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd8f2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58a6y"]
+bg_color = Color(0.18431373, 0.34117648, 0.3254902, 1)
 
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
@@ -124,7 +156,7 @@ theme_override_constants/separation = 32
 
 [node name="Mermaid List Row1" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids" unique_id=253237720]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 35
 alignment = 1
 
 [node name="MermaidListItem" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1" unique_id=1707984664 instance=ExtResource("2_rlydk")]
@@ -149,24 +181,31 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer" unique_id=1057564049]
 layout_mode = 2
-theme_override_constants/margin_left = 235
-theme_override_constants/margin_top = 32
+size_flags_vertical = 8
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer" unique_id=1401296714]
+custom_minimum_size = Vector2(250, 80)
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_constants/separation = 8
+alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1453000268]
-custom_minimum_size = Vector2(48, 48)
+visible = false
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_v8y12")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=671103954]
 layout_mode = 2
 mouse_filter = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1761618505]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(300, 75)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
@@ -176,5 +215,154 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gf8qy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_unrva")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yjdm6")
 text = "Item Restauration"
+autowrap_mode = 2
+autowrap_trim_flags = 192
+
+[node name="Mermaid_Information" type="Panel" parent="." unique_id=1217298015]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yjdm6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Mermaid_Information" unique_id=1756293916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mermaid_Information/MarginContainer" unique_id=2005036503]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Mermaid_Information/MarginContainer/VBoxContainer" unique_id=1670554097]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_62ryc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sd8f2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f7xhn")
+icon = ExtResource("8_nk5b7")
+
+[node name="body" type="GridContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer" unique_id=501081723]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="first child" type="VBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body" unique_id=123521544]
+custom_minimum_size = Vector2(384, 0)
+custom_maximum_size = Vector2(384, -1)
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="HBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child" unique_id=1239038018]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header" unique_id=796972389]
+layout_mode = 2
+theme_override_icons/icon = ExtResource("10_kf5xn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e5ll0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rsull")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wwc3t")
+icon = ExtResource("11_62ryc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header" unique_id=1434013188]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header/MarginContainer" unique_id=1268442313]
+custom_maximum_size = Vector2(247, -1)
+layout_mode = 2
+texture = ExtResource("12_sd8f2")
+
+[node name="Name" type="Label" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header/MarginContainer" unique_id=1748289676]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("13_f7xhn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sd8f2")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header" unique_id=727244059]
+layout_mode = 2
+icon = ExtResource("10_kf5xn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child" unique_id=100269508]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Mermaid_Picture" type="TextureRect" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/MarginContainer" unique_id=394183173]
+layout_mode = 2
+texture = ExtResource("11_3bkmo")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/MarginContainer" unique_id=1167858498]
+layout_mode = 2
+texture = ExtResource("13_62ryc")
+
+[node name="second child" type="VBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body" unique_id=970569275]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child" unique_id=1530186679]
+layout_mode = 2
+theme_override_constants/margin_top = 72
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child/MarginContainer" unique_id=254064695]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Name" type="Label" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child/MarginContainer/HBoxContainer" unique_id=1691961506]
+layout_mode = 2
+text = "Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Story" type="Label" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child/MarginContainer/HBoxContainer" unique_id=1758002171]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Story"
+
+[node name="Panel" type="Panel" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child" unique_id=1594993545]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_58a6y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child/Panel" unique_id=963983315]
+custom_maximum_size = Vector2(384, -1)
+layout_mode = 0
+offset_top = 4.0
+offset_right = 92.0
+offset_bottom = 4.0
+theme_override_fonts/normal_font = ExtResource("13_f7xhn")
+theme_override_fonts/bold_font = ExtResource("2_a4i7e")
+text = "Story"
+
+[node name="third child" type="VBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body" unique_id=111041569]
+custom_maximum_size = Vector2(384, -1)
+layout_mode = 2
+
+[node name="Items" type="HBoxContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child" unique_id=2046300330]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items" unique_id=906429469]
+layout_mode = 2
+texture_normal = ExtResource("16_e5ll0")
+
+[node name="TextureButton2" type="TextureButton" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items" unique_id=127652870]
+layout_mode = 2
+texture_normal = ExtResource("16_e5ll0")
 
 [connection signal="pressed" from="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/MarginContainer/HBoxContainer/Button" to="." method="_on_restauration_button_pressed"]
+[connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_mermaid_info_pressed"]

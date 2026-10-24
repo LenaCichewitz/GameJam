@@ -1,7 +1,10 @@
 extends Control
 
-@export var mermaid_manger : Node
+@export var mermaid_manager : Node
+@export var quest_manager: Node
 @onready var management_root: Control = $"."
+
+@onready var mermaid_information: Panel = $Mermaid_Information
 
 @onready var mermaid_list_item: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem"
 @onready var mermaid_list_item_2: Control = $"HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2"
@@ -12,15 +15,15 @@ extends Control
 
 func _ready() -> void:
 	_on_management_root_requesting_all_recruited_mermaids()
+	mermaid_information.hide()
 
 func _on_management_root_requesting_all_recruited_mermaids() -> void:
-	if not mermaid_manger:
+	if not mermaid_manager:
 		return
 	
 	var ListItem = [mermaid_list_item, mermaid_list_item_2, mermaid_list_item_3, mermaid_list_item_4, mermaid_list_item_5]
 	
-	var mermaids:Array = mermaid_manger._get_all_recruited_mermaids()
-	
+	var mermaids:Array = mermaid_manager._get_all_recruited_mermaids()
 	
 	var index = 0
 	
@@ -36,7 +39,15 @@ func _on_management_root_requesting_all_recruited_mermaids() -> void:
 		item.visible = true
 		
 		index += 1
-		
+
+func _on_management_root_requesting_quest() -> void:
+	if not quest_manager:
+		return
+	
+	var quest:Array = quest_manager.get_all_available_quests()
 
 func _on_restauration_button_pressed() -> void:
-	management_root.visible = false
+	management_root.hide()
+
+func _on_close_button_mermaid_info_pressed() -> void:
+	mermaid_information.hide()
