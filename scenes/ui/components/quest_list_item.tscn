@@ -15,9 +15,10 @@ font_size = 28
 font_size = 24
 
 [node name="QuestListItem" type="VBoxContainer" unique_id=7110428]
-anchors_preset = 10
+anchors_preset = -1
 anchor_right = 1.0
-offset_bottom = 350.0
+anchor_bottom = 0.54
+offset_bottom = 0.07998657
 grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -26,15 +27,17 @@ script = ExtResource("1_qmdcg")
 [node name="Header" type="Button" parent="." unique_id=735170469]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-toggle_mode = true
+text = "Butoon"
 
 [node name="MarginContainer" type="MarginContainer" parent="Header" unique_id=372699285]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 0
@@ -42,6 +45,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer" unique_id=821026240]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 8
 
 [node name="ToggledIndicator" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=7364097]
@@ -50,6 +54,7 @@ layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
 offset_transform_rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("2_lpkqt")
 expand_mode = 3
 
@@ -63,12 +68,14 @@ label_settings = SubResource("LabelSettings_77ro6")
 [node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_ic3jt")
 expand_mode = 3
 stretch_mode = 5
 
 [node name="Body" type="PanelContainer" parent="." unique_id=1765888300]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Margins" type="MarginContainer" parent="Body" unique_id=995166297]
 custom_minimum_size = Vector2(0, 150)

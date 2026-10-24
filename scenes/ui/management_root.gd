@@ -15,7 +15,7 @@ extends Control
 @onready var mermaid_list_item_4: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4"
 @onready var mermaid_list_item_5: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5"
 
-@onready var quest_list_content: VBoxContainer = $Mermaid_Management/QuestInterfaceRoot/QuestSelection/QuestBodyMargins/QuestListScroll/QuestListContent
+@onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
 #endregion
 
 func _ready() -> void:
@@ -60,7 +60,7 @@ func add_quest() -> void:
 	
 	for quest in quests:
 		var quest_ui = quest_scene.instantiate()
-		quest_list_content.add_child(quest_ui)
+		quest_list_container.add_child(quest_ui)
 		quest_ui.setup(quest)
 	
 
