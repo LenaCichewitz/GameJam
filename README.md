@@ -60,7 +60,7 @@ https://www.matheretter.de/rechner/zufallsgenerator
 - Märchen/ Fairytales
 - Hexerei/Witchcraft
 - Experiment
-    
+	
 ## Planungsresourcen 
 - https://www.meistertask.com/de
 - https://kanbantool.com/de/
