@@ -1,7 +1,7 @@
 class_name ItemData
 extends Resource
 
-@export var item_name: String = "perle"
+@export var item_name: String = "item_name"
 @export var final_sprite: Texture2D
 
 @export_group("Tasks")
@@ -13,3 +13,4 @@ extends Resource
 
 @export var needs_punding: bool = true
 @export var closed_texture: Texture2D 
+@export_range(1, 50, 1) var required_pounding_hits: int = 3

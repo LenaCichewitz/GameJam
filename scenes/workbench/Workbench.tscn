@@ -3,19 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
 [ext_resource type="Script" uid="uid://co7tnof8581tr" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
 [ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
-[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://data/items/perle.tres" id="3_wlhxc"]
+[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
-[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://data/items/mirror.tres" id="4_1ykue"]
+[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://assets/data/items/mirror.tres" id="4_1ykue"]
+[ext_resource type="Resource" uid="uid://e5u166kwhqhr" path="res://assets/data/items/glove.tres" id="5_aduu8"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
-[ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://data/tools/sponge.tres" id="7_0my5e"]
+[ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
+[ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="11_aduu8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
 texture = ExtResource("4_0my5e")
+
+[sub_resource type="Resource" id="Resource_arus1"]
+script = ExtResource("6_kxv2g")
+tool_id = "sponge"
+tool_name = "sponge"
+tool_icon = ExtResource("11_aduu8")
+metadata/_custom_type_script = "uid://b6dkoc8wcr287"
 
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
@@ -25,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_np7mg")]([ExtResource("3_wlhxc"), ExtResource("4_1ykue")])
+available_items = Array[ExtResource("2_np7mg")]([ExtResource("3_wlhxc"), ExtResource("5_aduu8"), ExtResource("4_1ykue")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1
@@ -78,6 +87,7 @@ offset_bottom = 440.0
 
 [node name="Content" type="VBoxContainer" parent="MainLayout/WorkArea/TargetBox" unique_id=677405564]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ItemPreview" type="TextureRect" parent="MainLayout/WorkArea/TargetBox/Content" unique_id=870856329]
 custom_minimum_size = Vector2(180, 180)
@@ -103,6 +113,6 @@ offset_left = -352.0
 offset_top = 20.0
 offset_right = -172.0
 offset_bottom = 270.0
-available_tools = Array[ExtResource("6_kxv2g")]([ExtResource("7_0my5e")])
+available_tools = Array[ExtResource("6_kxv2g")]([SubResource("Resource_arus1"), ExtResource("8_hammer")])
 
 [connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
