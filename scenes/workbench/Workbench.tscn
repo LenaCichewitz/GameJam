@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b07oomibpr07k"]
 
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
-[ext_resource type="Script" uid="uid://bovjx5mspl7uc" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
-[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
+[ext_resource type="Script" uid="uid://dwq7s867jeg23" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
+[ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
 [ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
 [ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://assets/data/items/mirror.tres" id="4_1ykue"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
 [ext_resource type="Resource" uid="uid://cpsjsjb5qbqb0" path="res://assets/data/items/puzzle.tres" id="6_arus1"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="7_367to"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
 [ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="11_aduu8"]
 [ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]
@@ -39,7 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1")])
+available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1"), ExtResource("7_367to")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1
