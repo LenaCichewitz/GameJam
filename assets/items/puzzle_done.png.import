@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rxt5ya8354"
-valid=false
+uid="uid://7bucpvn27s21"
+path="res://.godot/imported/puzzle_done.png-54d68e11bfe621b14ffe6d7d244b0a27.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/tools/spongebob.png"
+source_file="res://assets/items/puzzle_done.png"
+dest_files=["res://.godot/imported/puzzle_done.png-54d68e11bfe621b14ffe6d7d244b0a27.ctex"]
 
 [params]
 

@@ -1,6 +1,8 @@
 extends Node
 
 
+@onready var game_loop: GameLoop = $GameLoop
+
 var _game_over: bool = false
 var _won: bool = false
 
@@ -11,11 +13,24 @@ func _ready() -> void:
 
 
 func start_round() -> void:   # the future button
+	if not game_loop.is_day() or _game_over or _won:
+		return
 	if not $QuestManager.has_startable_quests():
 		return
 	_tick()
 	$QuestManager.start_all_quests()
 	_tick_until_something_to_do()
+	if _game_over or _won:
+		return
+	game_loop.end_day()
+
+
+func finish_visual_novel() -> void:
+	game_loop.finish_visual_novel()
+
+
+#func skip_night() -> void:
+	#game_loop.skip_night()
 
 
 func _tick() -> void:

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxpu0ij15quqe" path="res://scenes/mermaids/mermaid.tscn" id="1_7m4ph"]
 [ext_resource type="Texture2D" uid="uid://b8itwu23l1ahl" path="res://assets/Mermaids/RainbowTrout_Mermaid_FullArt.png" id="3_d6sja"]
 [ext_resource type="Texture2D" uid="uid://d1d3hyv33c6y8" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Trout.png" id="4_dv6w4"]
+[ext_resource type="Texture2D" uid="uid://14uupu5hjaqp" path="res://graphics/icons/icon_skull.svg" id="5_dv6w4"]
 [ext_resource type="Texture2D" uid="uid://bxesdplfd3rfw" path="res://assets/Mermaids/Seaslug_Mermaid_FullArt.png" id="5_sd3xo"]
 [ext_resource type="Texture2D" uid="uid://dat53qhd7i4v5" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Seaslug.png" id="6_ebs7i"]
 [ext_resource type="Texture2D" uid="uid://fbj5ramack2c" path="res://assets/Mermaids/Jellyfish_Mermaid_FullArt.png" id="7_7bev5"]
@@ -140,9 +141,12 @@ script = ExtResource("1_5yo11")
 
 [node name="BAF" parent="RecruitedMermaids" unique_id=1578086549 instance=ExtResource("1_7m4ph")]
 mermaid_id = 1
-mermaid_name = "Placeholder Mermaid #1"
+mermaid_name = "Lady Edeltraut"
 mermaid_full_body = ExtResource("3_d6sja")
 mermaid_head_shot = ExtResource("4_dv6w4")
+mermaid_icon = ExtResource("5_dv6w4")
+mermaid_description = "Once a member of high society, Edeltraut lost everything trying to fight off the curse. The mix of a proper upbringing and the fight to survive gave her a versatile set of skills
+"
 recruited = true
 corruption_increase_per_increment = 20.0
 
@@ -156,9 +160,11 @@ _mental_clarity = SubResource("Curve_gc2t3")
 
 [node name="Sea-Slug" parent="RecruitedMermaids" unique_id=298695985 instance=ExtResource("1_7m4ph")]
 mermaid_id = 2
-mermaid_name = "Sea-Slug"
+mermaid_name = "Mae"
 mermaid_full_body = ExtResource("5_sd3xo")
 mermaid_head_shot = ExtResource("6_ebs7i")
+mermaid_description = "Though she may be slow Mae is well studied and good at adapting on the go. Studying ancient text made her resilient to the horrors of the dark.
+"
 recruited = true
 corruption_increase_per_increment = 20.0
 
@@ -174,9 +180,11 @@ _mental_clarity = SubResource("Curve_dv6w4")
 
 [node name="Jellyfish" parent="AvailableMermaids" unique_id=1909194098 instance=ExtResource("1_7m4ph")]
 mermaid_id = 4
-mermaid_name = "Jellyfish"
+mermaid_name = "Angelica "
 mermaid_full_body = ExtResource("7_7bev5")
 mermaid_head_shot = ExtResource("8_85fe3")
+mermaid_description = "Angelica's body means that the curse affects her more slowly than others. While she may be less effective overall this makes her a valuable member of the Team.
+"
 corruption_increase_per_increment = 10.0
 
 [node name="Stats" parent="AvailableMermaids/Jellyfish" index="0" unique_id=329966221]
@@ -189,9 +197,11 @@ _mental_clarity = SubResource("Curve_pxgp8")
 
 [node name="Lionfish" parent="AvailableMermaids" unique_id=1061083452 instance=ExtResource("1_7m4ph")]
 mermaid_id = 3
-mermaid_name = "Lionfish"
+mermaid_name = "Leona"
 mermaid_full_body = ExtResource("9_ufi5f")
 mermaid_head_shot = ExtResource("10_ccgel")
+mermaid_description = "Being cursed turned out to be a problem Leona couldn't beat by bashing someone's head in, which was a problem. She's limited in her skillset but truly excels at what she is good at. 
+"
 corruption_increase_per_increment = 20.0
 
 [node name="Stats" parent="AvailableMermaids/Lionfish" index="0" unique_id=329966221]
@@ -204,9 +214,11 @@ _mental_clarity = SubResource("Curve_ccgel")
 
 [node name="Kraken" parent="AvailableMermaids" unique_id=1193506602 instance=ExtResource("1_7m4ph")]
 mermaid_id = 5
-mermaid_name = "Kraken"
+mermaid_name = "Octavia "
 mermaid_full_body = ExtResource("11_sqvgy")
 mermaid_head_shot = ExtResource("12_18hit")
+mermaid_description = "Octivia has embraced the Curse. This makes her incredibly powerful but she's on an even shorter clock than the rest of us. Every mission counts as she tries to outrace her fate.
+"
 corruption_increase_per_increment = 40.0
 
 [node name="Stats" parent="AvailableMermaids/Kraken" index="0" unique_id=329966221]
