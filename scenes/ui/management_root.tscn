@@ -124,7 +124,7 @@ theme_override_constants/separation = 32
 
 [node name="Mermaid List Row1" type="HBoxContainer" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids" unique_id=253237720]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 35
 alignment = 1
 
 [node name="MermaidListItem" parent="HBoxContainer/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1" unique_id=1707984664 instance=ExtResource("2_rlydk")]
