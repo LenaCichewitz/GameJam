@@ -89,3 +89,7 @@ func open_cleaning_mode(data: ItemData) -> void:
 func _on_item_dropped(data: ItemData) -> void:
 	if data.needs_cleaning:
 		open_cleaning_mode(data)
+
+
+func _on_exit_button_pressed() -> void:
+	pass #TODO: show manager_root again 
