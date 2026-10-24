@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coc16r57pbogj"]
 
-[ext_resource type="Script" uid="uid://c3ki32ql6681" path="res://scripts/restorations/toolbox.gd" id="1_2d2fj"]
+[ext_resource type="Script" uid="uid://dsgmnps6vctv7" path="res://scripts/restorations/toolbox.gd" id="1_2d2fj"]
 
 [node name="toolbox" type="Control" unique_id=1918526201]
 layout_mode = 3

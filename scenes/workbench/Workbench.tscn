@@ -29,9 +29,6 @@ tool_name = "sponge"
 tool_icon = ExtResource("11_aduu8")
 metadata/_custom_type_script = "uid://b6dkoc8wcr287"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
-bg_color = Color(0.46666667, 0.36078432, 0.30980393, 1)
-
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
 anchors_preset = 15
@@ -148,26 +145,6 @@ theme_override_constants/margin_top = 46
 [node name="Toolbox" type="VBoxContainer" parent="toolbox/MarginContainer" unique_id=1693343376]
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="Panel" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1445375781]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
-
-[node name="Panel2" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=981012928]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
-
-[node name="Panel3" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1154336]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
-
-[node name="Panel4" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=23830621]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
 
 [connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]
