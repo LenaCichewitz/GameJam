@@ -84,12 +84,18 @@ func open_cleaning_mode(data: ItemData) -> void:
 	active_restoration_mode.call_deferred("start_cleaning", data)
 
 
-
-
 func _on_item_dropped(data: ItemData) -> void:
+	item_bar.visible = false
 	if data.needs_cleaning:
 		open_cleaning_mode(data)
 
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
+
+
+func _on_item_button_pressed() -> void:
+	if item_bar.visible ==false:
+		item_bar.visible = true
+	else:
+		item_bar.visible = false

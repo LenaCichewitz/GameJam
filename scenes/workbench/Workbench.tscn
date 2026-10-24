@@ -17,6 +17,9 @@ bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
 texture = ExtResource("4_0my5e")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
+bg_color = Color(0.46666667, 0.36078432, 0.30980393, 1)
+
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
 anchors_preset = 15
@@ -84,7 +87,17 @@ custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
 
+[node name="ItemButton" type="MarginContainer" parent="MainLayout" unique_id=2021871834]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+
+[node name="Button" type="Button" parent="MainLayout/ItemButton" unique_id=1118614078]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Items"
+
 [node name="ItemBar" type="HBoxContainer" parent="MainLayout" unique_id=827700913]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
@@ -99,10 +112,49 @@ grow_vertical = 2
 
 [node name="toolbox" parent="." unique_id=1918526201 instance=ExtResource("5_dfhgv")]
 layout_mode = 1
-offset_left = -352.0
-offset_top = 20.0
-offset_right = -172.0
-offset_bottom = 270.0
+anchors_preset = 11
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 2
 available_tools = Array[ExtResource("6_kxv2g")]([ExtResource("7_0my5e")])
 
+[node name="MarginContainer" type="MarginContainer" parent="toolbox" unique_id=631215965]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 46
+
+[node name="Toolbox" type="VBoxContainer" parent="toolbox/MarginContainer" unique_id=1693343376]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Panel" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1445375781]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel2" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=981012928]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel3" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1154336]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Panel4" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=23830621]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
 [connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]
