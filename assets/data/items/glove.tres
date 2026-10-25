@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_8aers")
+item_id = 3
 final_sprite = ExtResource("2_ep5ie")
 dirt_texture = ExtResource("1_jafin")
 needs_punding = false
