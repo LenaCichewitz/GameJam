@@ -1,5 +1,7 @@
 extends Node
 
+
+#TODO: RELEVANT FOR GAMELOOP
 signal quest_completed(quest_id: int, state: EnumConstants.QuestCompletionState)
 signal quest_started(quest_id: int, mermaid_id: int)
 signal requesting_mermaid_data(quest_id: int, mermaid_id: int)
@@ -33,6 +35,11 @@ var mermaids_were_lost_on_quest: bool = false
 var assigned_mermaid_id: int = -1
 var assigned_mermaid_stats: Dictionary
 var remaining_duration: float = 0.0
+
+func _ready() -> void:
+	SaveManager.register("quest", self)
+
+
 
 #region save / load
 func save() -> QuestSaveData:

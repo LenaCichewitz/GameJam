@@ -18,6 +18,8 @@ var _lost_on_quest_id: int = -1
 
 #region save/load
 func save() -> ItemSaveData:
+	SaveManager.register("item", self)
+	
 	return ItemSaveData.new(item_id, is_repaired, is_obtained, _assigned_mermaid_id, _lost_on_quest_id)
 
 

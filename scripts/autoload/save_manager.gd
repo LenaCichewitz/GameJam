@@ -54,6 +54,6 @@ func load_game() -> void:
 	if typeof(data) != TYPE_DICTIONARY:
 		return
 	var state: Dictionary = data.get("state", {})
-	for key in SAVE_ORDER:
-		if _saveables.has(key) and state.has(key):
+	for key in _saveables:
+		if state.has(key):
 			_saveables[key].load_data(state[key])
