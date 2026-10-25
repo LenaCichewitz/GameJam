@@ -76,6 +76,9 @@ texture = ExtResource("13_62ryc")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cya7"]
 bg_color = Color(0.18431373, 0.34117648, 0.3254902, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7xhn"]
+bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
 anchors_preset = 15
@@ -497,9 +500,47 @@ size_flags_vertical = 8
 text = "Done"
 
 [node name="QuestOutcome" type="Panel" parent="." unique_id=1826984748]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f7xhn")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestOutcome" unique_id=976833831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestOutcome/MarginContainer" unique_id=1878817874]
+layout_mode = 2
+
+[node name="Titel" type="Label" parent="QuestOutcome/MarginContainer/VBoxContainer" unique_id=286911858]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("13_f7xhn")
+theme_override_font_sizes/font_size = 64
+text = "Quest Outcome"
+
+[node name="Body" type="ScrollContainer" parent="QuestOutcome/MarginContainer/VBoxContainer" unique_id=1116721600]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestOutcome/MarginContainer/VBoxContainer/Body" unique_id=1833871941]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="QuestOutcome/MarginContainer/VBoxContainer" unique_id=72736680]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Confire"
 
 [connection signal="pressed" from="Mermaid_Management/QuestInterface/VBoxContainer/Footer/QuestSend" to="." method="_on_quest_send_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem" to="." method="_on_mermaid_list_item_mermaid_pressed"]
@@ -512,3 +553,4 @@ offset_bottom = 40.0
 [connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Itembar/Panel/HBoxContainer/MarginContainer/Button" to="." method="_on_done_item_pressed"]
+[connection signal="pressed" from="QuestOutcome/MarginContainer/VBoxContainer/Button" to="." method="_on_outcome_button_pressed"]

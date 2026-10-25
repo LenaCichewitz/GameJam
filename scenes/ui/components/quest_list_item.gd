@@ -42,8 +42,9 @@ func _on_select_mermaid_pressed() -> void:
 	overlay.show()
 
 func _on_mermaid_button_pressed(mermaid: Node) -> void:
-	var choosen_mermaid_id = mermaid.mermaid_id
+	var choosen_mermaid_id = str(mermaid.mermaid_id)
 	var mermaid_icon = mermaid.mermaid_icon
 	mermaid_button.texture_normal = mermaid_icon
 	mermaid_id.text = choosen_mermaid_id
+	mermaid_id.hide()
 	overlay.hide()

@@ -89,8 +89,6 @@ func add_quest() -> void:
 		quest_list_container.add_child(quest_ui)
 		quest_ui.setup(quest)
 		quest_ui.select_mermaid(availiable_mermaids)
-		
-		quest_ui.mermaid_and_quest_choosen.connect(connect_mermaid_to_quest)
 
 func import_mermaid_by_id(id:int) -> void:
 	if not mermaid_manager:
@@ -114,9 +112,6 @@ func import_mermaid_by_id(id:int) -> void:
 		index += 1
 	
 	mermaid_information.show()
-
-func connect_mermaid_to_quest() -> void:
-	pass
 
 func equip_item(item_id) -> void:
 	if not item_manager:
@@ -159,4 +154,7 @@ func _on_done_item_pressed() -> void:
 func _on_quest_send_pressed() -> void:
 	#TODO: get all Mermaid_Id und Quest_Id und send die ans BE
 	quest_outcome.show()
+
+func _on_outcome_button_pressed() -> void:
+	quest_outcome.hide()
 #endregion
