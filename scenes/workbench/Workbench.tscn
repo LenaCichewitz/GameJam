@@ -3,18 +3,51 @@
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
 [ext_resource type="Script" uid="uid://dwq7s867jeg23" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
 [ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
-[ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
-[ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://assets/data/items/mirror.tres" id="4_1ykue"]
-[ext_resource type="Resource" uid="uid://e5u166kwhqhr" path="res://assets/data/items/glove.tres" id="5_aduu8"]
+[ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="4_pkvyr"]
 [ext_resource type="PackedScene" uid="uid://coc16r57pbogj" path="res://scenes/restorations/tools/toolbox.tscn" id="5_dfhgv"]
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
-[ext_resource type="Resource" uid="uid://cpsjsjb5qbqb0" path="res://assets/data/items/puzzle.tres" id="6_arus1"]
+[ext_resource type="Texture2D" uid="uid://bpvrdm7pfe24r" path="res://assets/items/cuntysponge.png" id="5_wgaic"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
+[ext_resource type="Texture2D" uid="uid://7bucpvn27s21" path="res://assets/items/puzzle_done.png" id="6_p1glv"]
 [ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/knife.tres" id="7_367to"]
+[ext_resource type="Texture2D" uid="uid://crr87upl82wse" path="res://assets/items/puzzle_pice1.png" id="7_rqx6s"]
+[ext_resource type="Texture2D" uid="uid://cou0p4asiirm7" path="res://assets/items/puzzle_pice2.png" id="8_6rxmn"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
+[ext_resource type="Texture2D" uid="uid://bgn8e2ncqcpd2" path="res://assets/items/puzzle_pice3.png" id="9_j3ytv"]
+[ext_resource type="Texture2D" uid="uid://bwmouavh5cesl" path="res://assets/items/puzzle_pice4.png" id="10_53ejp"]
 [ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://assets/data/tools/sponge.tres" id="12_367to"]
 [ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]
+
+[sub_resource type="Resource" id="Resource_mklxv"]
+script = ExtResource("2_np7mg")
+item_name = "glove"
+
+[sub_resource type="Resource" id="Resource_4xnl0"]
+script = ExtResource("2_np7mg")
+required_pounding_hits = 50
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
+
+[sub_resource type="Resource" id="Resource_xbp4l"]
+script = ExtResource("2_np7mg")
+final_sprite = ExtResource("5_wgaic")
+needs_cleaning = false
+dirt_texture = ExtResource("4_pkvyr")
+closed_texture = ExtResource("5_np7mg")
+required_pounding_hits = 10
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
+
+[sub_resource type="Resource" id="Resource_bppl8"]
+script = ExtResource("2_np7mg")
+item_name = "puzzle"
+final_sprite = ExtResource("6_p1glv")
+needs_cleaning = false
+needs_puzzling = true
+puzzle_pieces = Array[Texture2D]([ExtResource("7_rqx6s"), ExtResource("8_6rxmn"), ExtResource("9_j3ytv"), ExtResource("10_53ejp")])
+puzzle_target_positions = Array[Vector2]([Vector2(150, 170), Vector2(410, 170), Vector2(150, 430), Vector2(410, 430)])
+unfinished_puzzle = ExtResource("5_wgaic")
+needs_punding = false
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
@@ -30,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1"), ExtResource("7_367to")])
+available_items = Array[ExtResource("2_np7mg")]([SubResource("Resource_mklxv"), SubResource("Resource_4xnl0"), SubResource("Resource_xbp4l"), SubResource("Resource_bppl8"), ExtResource("7_367to")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1

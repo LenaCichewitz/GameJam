@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://e5u166kwhqhr"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b1agk3evcvd4k"]
 
 [ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="1_8aers"]
+[ext_resource type="Texture2D" uid="uid://vvek8c35co11" path="res://assets/items/Dirt/Glove Dirt.png" id="1_jafin"]
+[ext_resource type="Texture2D" uid="uid://ddyscoiga1dqi" path="res://assets/items/Glove/Glove Finished.png" id="2_ep5ie"]
 
 [resource]
 script = ExtResource("1_8aers")
-item_name = "glove"
+final_sprite = ExtResource("2_ep5ie")
+dirt_texture = ExtResource("1_jafin")
+needs_punding = false
+metadata/_custom_type_script = "uid://c2si4kp50ke6h"
