@@ -225,7 +225,12 @@ Art: Selina Weber Kraemer
 UI: Maaike Klein
 Programming: Lena Cichewitz, Marcus Boeder, 
 Simon Gemmel
-Font: Stefie Justprince"
+Sound effects from DailySounds.org 
+Music:
+And Then So Clear - Oblivious Into Collapse
+Font:
+Stefie Justprince
+"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MainButtons/NewGame" to="." method="_on_new_game_button_pressed"]
