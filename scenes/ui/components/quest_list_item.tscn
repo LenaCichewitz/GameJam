@@ -164,12 +164,13 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="SelectMermaid" type="VBoxContainer" parent="Body/Overlay/MarginContainer" unique_id=337188005]
-layout_mode = 2
-
 [node name="Panel" type="Panel" parent="Body/Overlay/MarginContainer" unique_id=1326870588]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_unrva")
+
+[node name="SelectMermaid" type="VBoxContainer" parent="Body/Overlay/MarginContainer" unique_id=337188005]
+layout_mode = 2
+mouse_filter = 0
 
 [connection signal="pressed" from="Header" to="." method="_on_header_pressed"]
 [connection signal="pressed" from="Body/Margins/Content/Data/Row/Mermaid" to="." method="_on_select_mermaid_pressed"]
