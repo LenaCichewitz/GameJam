@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b3m6ub67683c8"]
+
+[ext_resource type="Texture2D" uid="uid://b0inwuk8svfb0" path="res://assets/items/Dirt/Dirt.png" id="1_bicx7"]
+[ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="1_rahxe"]
+[ext_resource type="Texture2D" uid="uid://chpo36hx5yp64" path="res://assets/items/Statue/Statue Finished.png" id="2_akpn8"]
+[ext_resource type="Texture2D" uid="uid://kagqw7w33264" path="res://assets/items/Statue/Statue Bottom.png" id="3_vthy4"]
+
+[resource]
+script = ExtResource("1_rahxe")
+final_sprite = ExtResource("2_akpn8")
+dirt_texture = ExtResource("1_bicx7")
+needs_puzzling = true
+puzzle_pieces = Array[Texture2D]([ExtResource("3_vthy4")])
+needs_punding = false
+metadata/_custom_type_script = "uid://c2si4kp50ke6h"

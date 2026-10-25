@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxakrwna5y1u1"
-path="res://.godot/imported/Sprite-IU-Scale Mail.png-06a8000ee661946d29a46ff8f520ebba.ctex"
+uid="uid://b8igka8qnek1w"
+path="res://.godot/imported/Title_Screen_Art.png-44b49dab565ba4605ec31a38b37df669.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Scale Mail.png"
-dest_files=["res://.godot/imported/Sprite-IU-Scale Mail.png-06a8000ee661946d29a46ff8f520ebba.ctex"]
+source_file="res://assets/UI Element Art/Title_Screen_Art.png"
+dest_files=["res://.godot/imported/Title_Screen_Art.png-44b49dab565ba4605ec31a38b37df669.ctex"]
 
 [params]
 

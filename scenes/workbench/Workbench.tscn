@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
 [ext_resource type="Resource" uid="uid://cpsjsjb5qbqb0" path="res://assets/data/items/puzzle.tres" id="6_arus1"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
-[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="7_367to"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/knife.tres" id="7_367to"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
 [ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://assets/data/tools/sponge.tres" id="12_367to"]
 [ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]

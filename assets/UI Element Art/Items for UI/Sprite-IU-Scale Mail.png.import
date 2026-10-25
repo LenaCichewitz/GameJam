@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfv8jp36q1vit"
-path="res://.godot/imported/Sprite-IU-Pearl Amulett.png-680682d8c189ef754256d39c616d0370.ctex"
+uid="uid://cxakrwna5y1u1"
+path="res://.godot/imported/Sprite-IU-Scale Mail.png-b6081551c50891ad6988f719258ea87f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Pearl Amulett.png"
-dest_files=["res://.godot/imported/Sprite-IU-Pearl Amulett.png-680682d8c189ef754256d39c616d0370.ctex"]
+source_file="res://assets/UI Element Art/Items for UI/Sprite-IU-Scale Mail.png"
+dest_files=["res://.godot/imported/Sprite-IU-Scale Mail.png-b6081551c50891ad6988f719258ea87f.ctex"]
 
 [params]
 

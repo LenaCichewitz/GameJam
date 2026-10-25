@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://crbnh2pfiwr0m" path="res://scenes/items/item_manager.gd" id="1_eu8xw"]
 [ext_resource type="PackedScene" uid="uid://bwah0w48agrcc" path="res://scenes/items/item.tscn" id="2_qyosx"]
-[ext_resource type="Texture2D" uid="uid://cdiincqc762xo" path="res://assets/items/Items for UI/Sprite-IU-Knife.png" id="3_sddch"]
-[ext_resource type="Texture2D" uid="uid://dfv8jp36q1vit" path="res://assets/items/Items for UI/Sprite-IU-Pearl Amulett.png" id="4_drem0"]
-[ext_resource type="Texture2D" uid="uid://cqi3to0w42oqt" path="res://assets/items/Items for UI/Sprite-IU-Glove.png" id="5_yj2ag"]
-[ext_resource type="Texture2D" uid="uid://cxakrwna5y1u1" path="res://assets/items/Items for UI/Sprite-IU-Scale Mail.png" id="6_408tu"]
-[ext_resource type="Texture2D" uid="uid://bxnw1qpaopw7b" path="res://assets/items/Items for UI/Sprite-IU-Coin.png" id="7_j83i4"]
-[ext_resource type="Texture2D" uid="uid://c7e5isgajpfu" path="res://assets/items/Items for UI/Sprite-IU-Statue.png" id="8_eqg6k"]
+[ext_resource type="Texture2D" uid="uid://cdiincqc762xo" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Knife.png" id="3_sddch"]
+[ext_resource type="Texture2D" uid="uid://dfv8jp36q1vit" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Pearl Amulett.png" id="4_drem0"]
+[ext_resource type="Texture2D" uid="uid://cqi3to0w42oqt" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Glove.png" id="5_yj2ag"]
+[ext_resource type="Texture2D" uid="uid://cxakrwna5y1u1" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Scale Mail.png" id="6_408tu"]
+[ext_resource type="Texture2D" uid="uid://bxnw1qpaopw7b" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Coin.png" id="7_j83i4"]
+[ext_resource type="Texture2D" uid="uid://c7e5isgajpfu" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Statue.png" id="8_eqg6k"]
 
 [sub_resource type="Curve" id="Curve_mag0o"]
 _data = [Vector2(0, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]

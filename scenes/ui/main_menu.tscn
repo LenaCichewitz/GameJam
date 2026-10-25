@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy40qer85l50f" path="res://scenes/ui/main_menu.gd" id="1_06t4h"]
 [ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://b8igka8qnek1w" path="res://assets/UI Element Art/Title_Screen_Art.png" id="2_q85j6"]
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://hm1ulo3creqw" path="res://graphics/button1.svg" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://c1850uphsyx2x" path="res://graphics/button3.svg" id="4_0k4wn"]
@@ -11,6 +12,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvsfe"]
+texture = ExtResource("2_q85j6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_nlkkf")
@@ -47,6 +51,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+
+[node name="Art" type="Panel" parent="Background" unique_id=1952179233]
+layout_mode = 0
+offset_left = 419.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qvsfe")
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=289026315]
 layout_mode = 0

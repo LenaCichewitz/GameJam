@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ciayramfv37ub"]
 
-[ext_resource type="Texture2D" uid="uid://3b6yh1bctfuf" path="res://assets/items/Items for UI/Sprite-IU-Empty Item slot.png" id="1_hmih2"]
+[ext_resource type="Texture2D" uid="uid://3b6yh1bctfuf" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Empty Item slot.png" id="1_hmih2"]
 [ext_resource type="Script" uid="uid://b6hygjfire2kc" path="res://scenes/ui/components/item_list.gd" id="1_ifvt0"]
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_pv73a"]
 

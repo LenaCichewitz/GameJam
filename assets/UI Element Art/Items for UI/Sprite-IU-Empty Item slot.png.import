@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7e5isgajpfu"
-path="res://.godot/imported/Sprite-IU-Statue.png-4078e8936116c4d841e2894ba2c3909f.ctex"
+uid="uid://3b6yh1bctfuf"
+path="res://.godot/imported/Sprite-IU-Empty Item slot.png-5acebf9d8d7a36b694ccb8763d1a54e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Statue.png"
-dest_files=["res://.godot/imported/Sprite-IU-Statue.png-4078e8936116c4d841e2894ba2c3909f.ctex"]
+source_file="res://assets/UI Element Art/Items for UI/Sprite-IU-Empty Item slot.png"
+dest_files=["res://.godot/imported/Sprite-IU-Empty Item slot.png-5acebf9d8d7a36b694ccb8763d1a54e9.ctex"]
 
 [params]
 
