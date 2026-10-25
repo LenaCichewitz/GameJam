@@ -10,6 +10,8 @@ var quest_to_mermaid_mapping: Dictionary
 
 
 func _ready() -> void:
+	SaveManager.register("quest_manager",self)
+	
 	for quest in _get_all_quests():
 		if not quest.quest_started.is_connected(_on_quest_started):
 			quest.quest_started.connect(_on_quest_started)
