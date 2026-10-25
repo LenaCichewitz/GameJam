@@ -26,10 +26,12 @@ extends Control
 
 
 @onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
-@onready var quest_list_item: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer/QuestListItem
+
 #endregion
 
 var item_list_ui = load("res://scenes/ui/components/item_list.tscn").instantiate()
+var pending_quest_outcomes: Array[Dictionary] = []
+var showing_quest_outcome: bool = false
 
 func _ready() -> void:
 	add_mermaids()
@@ -38,13 +40,95 @@ func _ready() -> void:
 	itembar.hide()
 	quest_outcome.hide()
 	item_list_ui.item_list_pressed.connect(equip_item)
+	if quest_manager:
+		if not quest_manager.reporting_quest_outcome.is_connected(
+			_on_quest_outcome_reported
+		):
+			quest_manager.reporting_quest_outcome.connect(_on_quest_outcome_reported)
 
 func _on_management_root_requesting_all_recruited_mermaids() -> Array:
 	if not mermaid_manager:
 		return []
 	
 	return mermaid_manager._get_all_recruited_mermaids()
+	
+func _on_quest_outcome_reported(
+	quest_id: int,
+	mermaid_id: int,
+	outcome: EnumConstants.QuestCompletionState
+) -> void:
+	pending_quest_outcomes.append({
+		"quest_id": quest_id,
+		"mermaid_id": mermaid_id,
+		"outcome": outcome
+	})
 
+	_refresh_quest_list()
+	_show_next_quest_outcome()
+
+
+func _show_next_quest_outcome() -> void:
+	if pending_quest_outcomes.is_empty():
+		showing_quest_outcome = false
+		quest_outcome.hide()
+
+		var systems = get_tree().current_scene.get_node_or_null("Systems")
+		if systems:
+			systems._time_paused = false
+
+		return
+
+	showing_quest_outcome = true
+
+	var outcome_list: VBoxContainer = quest_outcome.get_node(
+		"MarginContainer/VBoxContainer/Body/QuestOutcomeList"
+	)
+
+	for child in outcome_list.get_children():
+		outcome_list.remove_child(child)
+		child.queue_free()
+
+	for result in pending_quest_outcomes:
+		var quest = quest_manager.get_quest_for_id(result["quest_id"])
+
+		if quest == null:
+			push_warning(
+				"Quest mit ID %s für das Ergebnisfenster nicht gefunden."
+				% result["quest_id"]
+			)
+			continue
+
+		var mermaid = mermaid_manager.get_mermaid_for_id(
+			result["mermaid_id"]
+		)
+
+		var item: Node = null
+
+		if quest.rewards_item:
+			item = item_manager.get_item_for_id(quest.reward_item_id)
+
+		var outcome_entry = load(
+			"res://scenes/ui/components/quest_outcome_list.tscn"
+		).instantiate()
+
+		outcome_list.add_child(outcome_entry)
+
+		outcome_entry.setup(
+			quest,
+			result["outcome"],
+			mermaid,
+			item
+		)
+
+	quest_outcome.show()
+
+func _refresh_quest_list() -> void:
+	for child in quest_list_container.get_children():
+		quest_list_container.remove_child(child)
+		child.queue_free()
+
+	add_quest()
+	
 func _on_management_root_requesting_quest() -> Array:
 	if not quest_manager:
 		return []
@@ -157,9 +241,17 @@ func _on_done_item_pressed() -> void:
 	itembar.hide()
 
 func _on_quest_send_pressed() -> void:
+	if not quest_manager:
+		return
+
 	quest_manager.start_all_quests()
-	quest_outcome.show()
 
 func _on_outcome_button_pressed() -> void:
+	pending_quest_outcomes.clear()
+	showing_quest_outcome = false
 	quest_outcome.hide()
+
+	var systems = get_tree().current_scene.get_node_or_null("Systems")
+	if systems:
+		systems._time_paused = false
 #endregion

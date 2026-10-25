@@ -3,30 +3,6 @@
 [ext_resource type="Script" uid="uid://dgb8nsxhd06ro" path="res://scenes/quests/quest_manager.gd" id="1_4a2l1"]
 [ext_resource type="PackedScene" uid="uid://cmcge61w3y8mo" path="res://scenes/quests/quest.tscn" id="2_7xuob"]
 
-[sub_resource type="Curve" id="Curve_7xuob"]
-_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_7i4vb"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_wmh3v"]
-_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_f01sv"]
-_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_cex6b"]
-_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.8), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_4nf4c"]
-_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0.9), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_lgvmb"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -203,19 +179,6 @@ point_count = 2
 script = ExtResource("1_4a2l1")
 
 [node name="AvailableQuests" type="Node" parent="." unique_id=1542190288]
-
-[node name="PlaceholderQuest#1" parent="AvailableQuests" unique_id=528668185 instance=ExtResource("2_7xuob")]
-quest_name = "Placeholder Quest #1"
-
-[node name="StatsToClear" parent="AvailableQuests/PlaceholderQuest#1" index="0" unique_id=329966221]
-_agility = SubResource("Curve_7xuob")
-_combat = SubResource("Curve_7i4vb")
-_awareness = SubResource("Curve_wmh3v")
-_eldritch_knowledge = SubResource("Curve_f01sv")
-_map_layout_knowledge = SubResource("Curve_cex6b")
-_mental_clarity = SubResource("Curve_4nf4c")
-
-[node name="Quest" parent="AvailableQuests/PlaceholderQuest#1" unique_id=569622021 instance=ExtResource("2_7xuob")]
 
 [node name="Find Help" parent="AvailableQuests" unique_id=1488423929 instance=ExtResource("2_7xuob")]
 quest_id = 1
@@ -489,10 +452,6 @@ _map_layout_knowledge = SubResource("Curve_588e0")
 
 [node name="CompletedQuests" type="Node" parent="." unique_id=568808815]
 
-[connection signal="quest_completed" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_quest_completed"]
-[connection signal="requesting_mermaid_data" from="AvailableQuests/PlaceholderQuest#1" to="." method="_on_requesting_mermaid_data"]
-
-[editable path="AvailableQuests/PlaceholderQuest#1"]
 [editable path="AvailableQuests/Find Help"]
 [editable path="AvailableQuests/An Artifact of War"]
 [editable path="AvailableQuests/Ancient Knowledge"]

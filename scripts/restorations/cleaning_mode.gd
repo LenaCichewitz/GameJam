@@ -111,11 +111,7 @@ func start_cleaning(data: ItemData) -> void:
 	if total_dirt_pixels == 0:
 		finish_cleaning()
 		
-	print("Uncleaned Sprite: ", item_layer.texture)
-	print("Dirt Texture: ", current_item.dirt_texture)
-	print("Dirt Image Größe: ", dirt_image.get_size())
-	print("Dirt Layer Größe: ", dirt_layer.size)
-	print("Dirt Pixel mit Alpha: ", total_dirt_pixels)
+
 
 func _clean_at_position(drag_position: Vector2) -> void:
 	print("Reinigungsposition: ", drag_position, " | Dirt Layer: ", dirt_layer.size)

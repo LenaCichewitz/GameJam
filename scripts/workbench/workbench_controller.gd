@@ -87,7 +87,6 @@ func open_cleaning_mode(data: ItemData) -> void:
 	print("OPEN CLEANING MODE AUFGERUFEN")
 
 	if data == null or not data.needs_cleaning:
-		print("Reinigung übersprungen: Item null oder bereits sauber")
 		return
 	if active_restoration_mode != null:
 		if active_cleaning_mode != null:
@@ -141,9 +140,6 @@ func open_cleaning_mode(data: ItemData) -> void:
 
 	active_cleaning_mode.position = Vector2.ZERO
 	active_cleaning_mode.size = restoration_container.size
-	print("Restoration-Container Größe: ", restoration_container.size)
-	print("Reinigungsmodus Größe: ", active_cleaning_mode.size)
-	print("Dirt Texture vor Start: ", data.dirt_texture)
 	active_cleaning_mode.call_deferred("start_cleaning", data)
 
 func _on_cleaning_finished(data: ItemData) -> void:
@@ -185,10 +181,7 @@ func open_puzzling_mode(data: ItemData) -> void:
 
 	target_box.hide_item()
 	puzzling_mode.start_puzzling(data)
-	print("Puzzle-Modus sichtbar: ", puzzling_mode.is_visible_in_tree())
-	print("Reinigungsmodus aktiv: ", active_cleaning_mode != null)
-	print("Restoration-Container: ", restoration_container.get_children())
-
+	
 func _on_puzzling_finished(data: ItemData) -> void:
 	if data == null:
 		return
@@ -212,11 +205,6 @@ func _restore_item_after_puzzling(data: ItemData) -> void:
 	restoration_container.hide()
 	toolbox.show()
 	item_bar.show()
-
-	print("Zurück zur Werkbank: ", data.item_name)
-	print("Puzzle erledigt: ", not data.needs_puzzling)
-	print("Reinigung erforderlich: ", data.needs_cleaning)
-	print("Hämmern erforderlich: ", data.needs_punding)
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 

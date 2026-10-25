@@ -97,9 +97,12 @@ func _get_quest(quest_id: int) -> Node:
 
 #region item actions
 func obtain_item(item_id: int) -> void:
+	print(item_id)
 	var item = _find_item_with_id(item_id)
 	if item:
 		_obtain(item)
+	else:
+		print("No item with Id ", item_id)
 
 
 func repair_item(item_id: int) -> void:
@@ -226,6 +229,7 @@ func _on_quest_manager_reporting_quest_outcome(quest_id: int, mermaid_id: int, o
 		EnumConstants.QuestCompletionState.SUCCESS, EnumConstants.QuestCompletionState.FINAL_SUCCESS:
 			_reclaim_lost_items(quest)
 			if quest.rewards_item:
+				print("obtain_item()")
 				obtain_item(quest.reward_item_id)
 
 

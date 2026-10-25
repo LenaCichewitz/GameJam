@@ -28,7 +28,8 @@ script = ExtResource("2_gameloop")
 mermaid_manager = NodePath("../MermaidManager")
 quest_manager = NodePath("../QuestManager")
 
-[node name="QuestManager" parent="Systems" unique_id=1796667383 instance=ExtResource("1_7ykc4")]
+[node name="QuestManager" parent="Systems" unique_id=1796667383 node_paths=PackedStringArray("item_manager") instance=ExtResource("1_7ykc4")]
+item_manager = NodePath("../ItemManager")
 
 [node name="MermaidManager" parent="Systems" unique_id=836053267 node_paths=PackedStringArray("quest_manager") instance=ExtResource("3_gubc5")]
 quest_manager = NodePath("../QuestManager")

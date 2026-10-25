@@ -109,5 +109,5 @@ func save() -> Dictionary:
 
 func load_data(data: Dictionary) -> void:
 	current_day = int(data.get("current_day", first_day))
-	current_phase = int(data.get("current_phase", Phase.DAY))
+	current_phase = data.get("current_phase", Phase.DAY) as Phase
 	_visual_novel_running = bool(data.get("visual_novel_running", false))
