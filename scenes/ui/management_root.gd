@@ -100,7 +100,7 @@ func import_mermaid_by_id(id:int) -> void:
 	mermaid_information.get_node("MarginContainer/VBoxContainer/body/second child/MarginContainer/Story/VBoxContainer/RichTextLabel").text = mermaid.mermaid_description
 	mermaid_information.get_node("MarginContainer/VBoxContainer/body/third child/ProgressBar").value = mermaid.corruption_increase_per_increment
 	for item_equiped in items_equiped:
-		if index >=item_slots:
+		if index >= item_slots.size():
 			break
 			
 		var slot = item_slots[index]
