@@ -447,6 +447,9 @@ text = "Stats"
 [node name="ProgressBar" type="ProgressBar" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/third child" unique_id=425343053]
 layout_mode = 2
 
+[node name="MermaidID" type="Label" parent="Mermaid_Information/MarginContainer/VBoxContainer" unique_id=793710890]
+layout_mode = 2
+
 [node name="Itembar" type="Control" parent="." unique_id=1871631386]
 visible = false
 layout_mode = 1
