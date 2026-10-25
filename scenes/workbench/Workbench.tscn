@@ -31,6 +31,7 @@ item_name = "glove"
 [sub_resource type="Resource" id="Resource_4xnl0"]
 script = ExtResource("2_np7mg")
 required_pounding_hits = 50
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
 
 [sub_resource type="Resource" id="Resource_xbp4l"]
 script = ExtResource("2_np7mg")
@@ -39,6 +40,7 @@ needs_cleaning = false
 dirt_texture = ExtResource("4_pkvyr")
 closed_texture = ExtResource("5_np7mg")
 required_pounding_hits = 10
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
 
 [sub_resource type="Resource" id="Resource_bppl8"]
 script = ExtResource("2_np7mg")
@@ -50,6 +52,7 @@ puzzle_pieces = Array[Texture2D]([ExtResource("7_rqx6s"), ExtResource("8_6rxmn")
 puzzle_target_positions = Array[Vector2]([Vector2(150, 170), Vector2(410, 170), Vector2(150, 430), Vector2(410, 430)])
 unfinished_puzzle = ExtResource("5_wgaic")
 needs_punding = false
+metadata/_custom_type_script = "uid://jgty4wgqjvjg"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
@@ -187,7 +190,6 @@ layout_mode = 2
 icon = ExtResource("5_np7mg")
 
 [node name="ItemFinished" type="Panel" parent="." unique_id=593024418]
-visible = false
 layout_mode = 0
 offset_left = 174.0
 offset_top = 74.0
