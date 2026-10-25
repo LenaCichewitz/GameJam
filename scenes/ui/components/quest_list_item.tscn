@@ -15,6 +15,9 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_6rgs3"]
 font_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
+bg_color = Color(0.024192141, 0.109331205, 0.08879381, 1)
+
 [node name="QuestListItem" type="VBoxContainer" unique_id=7110428]
 anchors_preset = -1
 anchor_right = 1.0
@@ -131,21 +134,42 @@ label_settings = SubResource("LabelSettings_6rgs3")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="DropFrame" type="PanelContainer" parent="Body/Margins/Content/Data/Row" unique_id=1297156029]
+[node name="Mermaid" type="TextureButton" parent="Body/Margins/Content/Data/Row" unique_id=24631054]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+texture_normal = ExtResource("7_tm2j7")
 
-[node name="TextureRect" type="TextureRect" parent="Body/Margins/Content/Data/Row/DropFrame" unique_id=1005844761]
+[node name="QuestId" type="Label" parent="Body/Margins/Content/Data/Row" unique_id=1095616550]
 layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("7_tm2j7")
 
 [node name="Overlay" type="Control" parent="Body" unique_id=495523894]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
-[node name="TBD_StatShowcase" type="Control" parent="Body/Overlay" unique_id=301154092]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="Body/Overlay" unique_id=793922347]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="SelectMermaid" type="VBoxContainer" parent="Body/Overlay/MarginContainer" unique_id=337188005]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Body/Overlay/MarginContainer" unique_id=1326870588]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unrva")
 
 [connection signal="pressed" from="Header" to="." method="_on_header_pressed"]
+[connection signal="pressed" from="Body/Margins/Content/Data/Row/Mermaid" to="." method="_on_select_mermaid_pressed"]

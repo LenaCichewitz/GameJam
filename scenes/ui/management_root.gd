@@ -23,8 +23,11 @@ extends Control
 @onready var items_list: HBoxContainer = $Itembar/Panel/HBoxContainer/ScrollContainer/ItemsList
 
 @onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
+@onready var quest_list_item: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer/QuestListItem
 #endregion
+
 var item_list_ui = load("res://scenes/ui/components/item_list.tscn").instantiate()
+
 func _ready() -> void:
 	add_mermaids()
 	add_quest()
@@ -75,11 +78,13 @@ func add_mermaids() ->void:
 func add_quest() -> void:
 	var quests = _on_management_root_requesting_quest()
 	var quest_scene = load("res://scenes/ui/components/quest_list_item.tscn")
+	var availiable_mermaids = _on_management_root_requesting_all_recruited_mermaids()
 	
 	for quest in quests:
 		var quest_ui = quest_scene.instantiate()
 		quest_list_container.add_child(quest_ui)
 		quest_ui.setup(quest)
+		quest_ui.select_mermaid(availiable_mermaids)
 
 func import_mermaid_by_id(id:int) -> void:
 	if not mermaid_manager:
