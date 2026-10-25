@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dgb8nsxhd06ro" path="res://scenes/quests/quest_manager.gd" id="1_4a2l1"]
 [ext_resource type="PackedScene" uid="uid://cmcge61w3y8mo" path="res://scenes/quests/quest.tscn" id="2_7xuob"]
 
+[sub_resource type="Curve" id="Curve_7xuob"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_lgvmb"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -190,6 +194,9 @@ quest_success_outcome = "The only ones willing to assist us in this endeavor are
 quest_neutral_outcome = "Try as she might, Mae just does not have it in her to play the Diplomatic games necessary to succeed here. A timeloss this early stings we have to Focus up!
 "
 quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
+
+[node name="StatsToClear" parent="AvailableQuests/Find Help" index="0" unique_id=329966221]
+_agility = SubResource("Curve_7xuob")
 
 [node name="An Artifact of War" parent="AvailableQuests" unique_id=1706432302 instance=ExtResource("2_7xuob")]
 quest_id = 2
