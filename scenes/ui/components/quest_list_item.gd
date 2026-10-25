@@ -8,8 +8,9 @@ extends VBoxContainer
 @onready var overlay: Control = $Body/Overlay
 @onready var selecting_mermaid: VBoxContainer = $Body/Overlay/MarginContainer/SelectMermaid
 @onready var mermaid_button: TextureButton = $Body/Margins/Content/Data/Row/Mermaid
-@onready var mermaid_id: Label = $Body/Margins/Content/Data/Row/MermaidId
 
+
+signal mermaid_assigned_to_quest (quest, mermaid_id)
 
 func _ready() -> void:
 	body.hide()
@@ -42,9 +43,8 @@ func _on_select_mermaid_pressed() -> void:
 	overlay.show()
 
 func _on_mermaid_button_pressed(mermaid: Node) -> void:
-	var choosen_mermaid_id = str(mermaid.mermaid_id)
+	var mermaid_id = mermaid.mermaid_id
 	var mermaid_icon = mermaid.mermaid_icon
 	mermaid_button.texture_normal = mermaid_icon
-	mermaid_id.text = choosen_mermaid_id
-	mermaid_id.hide()
+	mermaid_assigned_to_quest.emit(quest_id.text.to_int(), mermaid_id)
 	overlay.hide()
