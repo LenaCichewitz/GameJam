@@ -179,7 +179,15 @@ func start_all_quests() -> void:
 
 func increment_progress():
 	var quests = _get_all_active_quests()
+
+	print("Aktive Quests: ", quests.size())
+
 	for quest in quests:
+		print(
+			"Quest: ", quest.quest_name,
+			" | aktiv: ", quest.is_active,
+			" | verbleibende Dauer: ", quest.remaining_duration
+		)
 		quest.increment_progress()
 
 

@@ -114,14 +114,13 @@ func are_requirements_met(
 	item_manager: Node,
 	mermaid_stats: Dictionary
 ) -> bool:
-		# Voraussetzungen durch vorherige Quests prüfen.
+
 	for required_id in required_quest_ids:
 		var required_quest = quest_manager.get_quest_for_id(required_id)
 
 		if required_quest == null or not required_quest.completed:
 			return false
 
-	# Benötigte Gegenstände prüfen.
 	for required_id in required_item_ids:
 		var item = item_manager.get_item_for_id(required_id)
 
@@ -131,31 +130,42 @@ func are_requirements_met(
 		if required_items_repaired and not item.is_repaired:
 			return false
 
-	# Mindestwerte prüfen.
 	for stat_name in minimum_stats:
 		if float(mermaid_stats.get(stat_name, -1.0)) < float(minimum_stats[stat_name]):
 			return false
 
-	# Mindestkorruption prüfen, sofern konfiguriert.
 	var corruption := float(mermaid_stats.get("corruption", 0.0))
 
 	if minimum_corruption >= 0.0 and corruption < minimum_corruption:
 		return false
 
-	# Höchstkorruption prüfen, sofern konfiguriert.
 	if maximum_corruption >= 0.0 and corruption > maximum_corruption:
 		return false
 
 	return true
 #region quest progression loop
-func start_quest():
+func start_quest() -> void:
 	if assigned_mermaid_id < 0:
 		return
-	remaining_duration = remaining_duration if is_active else float(total_duration)
+
+	remaining_duration = 0.0
 	is_active = true
 	quest_started.emit(quest_id, assigned_mermaid_id)
+	call_deferred("_complete_immediately")
 
+func _complete_immediately() -> void:
+	if not is_active:
+		return
 
+	is_active = false
+
+	var outcome := _calculate_success()
+	quest_completed.emit(quest_id, outcome)
+
+	assigned_mermaid_id = -1
+	assigned_mermaid_stats.clear()
+	
+	
 func _calculate_success() -> EnumConstants.QuestCompletionState:
 	if assigned_mermaid_stats.is_empty():
 		push_error("[quest success calculation]: No mermaid stats at quest completion.")
@@ -175,13 +185,12 @@ func _calculate_success() -> EnumConstants.QuestCompletionState:
 	return EnumConstants.QuestCompletionState.NEUTRAL
 
 
-func increment_progress():
+func increment_progress() -> void:
 	if not is_active:
 		return
+
 	remaining_duration -= duration_decrement_step_size
-	if remaining_duration <= 0:
-		is_active = false
-		quest_completed.emit(quest_id, _calculate_success())
-		assigned_mermaid_id = -1
-		assigned_mermaid_stats.clear()
+
+	if remaining_duration <= 0.0:
+		_complete_immediately()
 #endregion

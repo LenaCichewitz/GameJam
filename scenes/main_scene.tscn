@@ -20,6 +20,7 @@ process_mode = 3
 [node name="Systems" type="Node" parent="." unique_id=1282027253]
 process_mode = 3
 script = ExtResource("1_rt2n2")
+tick_interval = null
 
 [node name="GameLoop" type="Node" parent="Systems" unique_id=1604704571]
 script = ExtResource("2_gameloop")

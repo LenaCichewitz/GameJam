@@ -105,7 +105,8 @@ func _show_next_quest_outcome() -> void:
 		var item: Node = null
 
 		if quest.rewards_item:
-			item = item_manager.get_item_for_id(quest.reward_item_id)
+			if item_manager != null:
+				item = item_manager.get_item_for_id(quest.reward_item_id)
 
 		var outcome_entry = load(
 			"res://scenes/ui/components/quest_outcome_list.tscn"
@@ -241,18 +242,22 @@ func _on_done_item_pressed() -> void:
 	itembar.hide()
 
 func _on_quest_send_pressed() -> void:
-	if not quest_manager:
+	var systems = get_tree().current_scene.get_node_or_null("Systems")
+
+	if systems == null:
 		return
 
-	quest_manager.start_all_quests()
+	systems.start_round()
 
 func _on_outcome_button_pressed() -> void:
 	pending_quest_outcomes.clear()
 	showing_quest_outcome = false
+	quest_outcome.hide()
+
 	var systems = get_tree().current_scene.get_node_or_null("Systems")
 	if systems:
-		systems._time_paused = false
-	quest_outcome.hide() 
+		systems.finish_quest_outcomes()
+
 
 func _on_back_to_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
