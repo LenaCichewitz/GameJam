@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="4_gg24t"]
 [ext_resource type="Texture2D" uid="uid://14uupu5hjaqp" path="res://graphics/icons/icon_skull.svg" id="4_ic3jt"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_ic3jt"]
+[ext_resource type="Texture2D" uid="uid://c52u4w6kctfo4" path="res://assets/UI Element Art/Stats_anzeigen.svg" id="7_so8rn"]
 [ext_resource type="Texture2D" uid="uid://dd37je7ubv01d" path="res://graphics/rahmen.svg" id="7_tm2j7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
@@ -14,10 +15,14 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_6rgs3"]
 font_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unrva"]
+bg_color = Color(0.024192141, 0.109331205, 0.08879381, 1)
+
 [node name="QuestListItem" type="VBoxContainer" unique_id=7110428]
-anchors_preset = 10
+anchors_preset = -1
 anchor_right = 1.0
-offset_bottom = 350.0
+anchor_bottom = 0.54
+offset_bottom = 0.07998657
 grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -26,7 +31,6 @@ script = ExtResource("1_qmdcg")
 [node name="Header" type="Button" parent="." unique_id=735170469]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-toggle_mode = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Header" unique_id=372699285]
 layout_mode = 1
@@ -35,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 0
@@ -42,6 +47,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer" unique_id=821026240]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 8
 
 [node name="ToggledIndicator" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=7364097]
@@ -50,6 +56,7 @@ layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
 offset_transform_rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("2_lpkqt")
 expand_mode = 3
 
@@ -63,23 +70,26 @@ label_settings = SubResource("LabelSettings_77ro6")
 [node name="LostMermaidsIcon" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=723569211]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_ic3jt")
 expand_mode = 3
 stretch_mode = 5
 
 [node name="Body" type="PanelContainer" parent="." unique_id=1765888300]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Margins" type="MarginContainer" parent="Body" unique_id=995166297]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="Content" type="HBoxContainer" parent="Body/Margins" unique_id=2002305566]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Description" type="RichTextLabel" parent="Body/Margins/Content" unique_id=239535548]
 layout_mode = 2
@@ -95,12 +105,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
+[node name="TextureRect" type="TextureRect" parent="Body/Margins/Content/Data" unique_id=1110287488]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_so8rn")
+stretch_mode = 5
+
 [node name="Row" type="HBoxContainer" parent="Body/Margins/Content/Data" unique_id=483955483]
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Body/Margins/Content/Data/Row" unique_id=520863696]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_right = 15
@@ -117,21 +134,42 @@ label_settings = SubResource("LabelSettings_6rgs3")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="DropFrame" type="PanelContainer" parent="Body/Margins/Content/Data/Row" unique_id=1297156029]
+[node name="Mermaid" type="TextureButton" parent="Body/Margins/Content/Data/Row" unique_id=24631054]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+texture_normal = ExtResource("7_tm2j7")
 
-[node name="TextureRect" type="TextureRect" parent="Body/Margins/Content/Data/Row/DropFrame" unique_id=1005844761]
+[node name="QuestId" type="Label" parent="Body/Margins/Content/Data/Row" unique_id=1095616550]
 layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("7_tm2j7")
 
 [node name="Overlay" type="Control" parent="Body" unique_id=495523894]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
-[node name="TBD_StatShowcase" type="Control" parent="Body/Overlay" unique_id=301154092]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="Body/Overlay" unique_id=793922347]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="SelectMermaid" type="VBoxContainer" parent="Body/Overlay/MarginContainer" unique_id=337188005]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Body/Overlay/MarginContainer" unique_id=1326870588]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_unrva")
 
 [connection signal="pressed" from="Header" to="." method="_on_header_pressed"]
+[connection signal="pressed" from="Body/Margins/Content/Data/Row/Mermaid" to="." method="_on_select_mermaid_pressed"]

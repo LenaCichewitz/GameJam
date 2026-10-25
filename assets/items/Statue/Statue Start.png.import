@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqi3to0w42oqt"
-path="res://.godot/imported/Sprite-IU-Glove.png-5cf98c6c3ecb5c0b8c1a26ae350c2444.ctex"
+uid="uid://dvidiwf81unfp"
+path="res://.godot/imported/Statue Start.png-30c6cfaddbb6224430f5e26f3e0bbe2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Glove.png"
-dest_files=["res://.godot/imported/Sprite-IU-Glove.png-5cf98c6c3ecb5c0b8c1a26ae350c2444.ctex"]
+source_file="res://assets/items/Statue/Statue Start.png"
+dest_files=["res://.godot/imported/Statue Start.png-30c6cfaddbb6224430f5e26f3e0bbe2e.ctex"]
 
 [params]
 

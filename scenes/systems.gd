@@ -28,11 +28,6 @@ func start_round() -> void:   # the future button
 func finish_visual_novel() -> void:
 	game_loop.finish_visual_novel()
 
-
-#func skip_night() -> void:
-	#game_loop.skip_night()
-
-
 func _tick() -> void:
 	$QuestManager.increment_progress()
 	$MermaidManager.increment_progress()

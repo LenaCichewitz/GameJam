@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfv8jp36q1vit"
-path="res://.godot/imported/Sprite-IU-Pearl Amulett.png-680682d8c189ef754256d39c616d0370.ctex"
+uid="uid://c3o5vjygtd61i"
+path="res://.godot/imported/Jellyfish_Mini_Mermaid_Icon.png-0d05abe4c3a1fde1480a050cac8df2e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Pearl Amulett.png"
-dest_files=["res://.godot/imported/Sprite-IU-Pearl Amulett.png-680682d8c189ef754256d39c616d0370.ctex"]
+source_file="res://assets/Mermaids/Jellyfish_Mini_Mermaid_Icon.png"
+dest_files=["res://.godot/imported/Jellyfish_Mini_Mermaid_Icon.png-0d05abe4c3a1fde1480a050cac8df2e4.ctex"]
 
 [params]
 

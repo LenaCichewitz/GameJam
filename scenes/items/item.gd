@@ -6,6 +6,7 @@ signal reequip_to_lost_quest(item_id: int, quest_id: int)
 
 @export var item_id: int = 0
 @export var item_name: String
+@export var item_picture: Texture2D
 @export_multiline var item_description: String
 @export var use_corruption_for_stat_changes: bool = false
 @export var is_repaired: bool = false
@@ -17,6 +18,8 @@ var _lost_on_quest_id: int = -1
 
 #region save/load
 func save() -> ItemSaveData:
+	SaveManager.register("item", self)
+	
 	return ItemSaveData.new(item_id, is_repaired, is_obtained, _assigned_mermaid_id, _lost_on_quest_id)
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdiincqc762xo"
-path="res://.godot/imported/Sprite-IU-Knife.png-03770b76fc62e6dd4e0bd78f120e3854.ctex"
+uid="uid://cn0efe85sab6f"
+path="res://.godot/imported/Dirt Amulett.png-5995b2ef0a65ee45725ae596b85d58fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Knife.png"
-dest_files=["res://.godot/imported/Sprite-IU-Knife.png-03770b76fc62e6dd4e0bd78f120e3854.ctex"]
+source_file="res://assets/items/Dirt/Dirt Amulett.png"
+dest_files=["res://.godot/imported/Dirt Amulett.png-5995b2ef0a65ee45725ae596b85d58fe.ctex"]
 
 [params]
 

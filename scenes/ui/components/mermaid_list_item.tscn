@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ckxc40gxc606o" path="res://assets/Mermaids/Sprite-IU-Mermaid-Portrait_Empty.png" id="1_k8xct"]
 [ext_resource type="Script" uid="uid://dnd3dpks6dq15" path="res://scenes/ui/components/mermaid_list_item.gd" id="1_mm3fk"]
-[ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_q5u5i"]
 [ext_resource type="Texture2D" uid="uid://htg28i7jvorj" path="res://graphics/IU-Mermaid-Nameplate.svg" id="3_k8xct"]
+[ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_mm3fk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnqdw"]
 texture = ExtResource("3_k8xct")
@@ -38,7 +38,7 @@ custom_minimum_size = Vector2(0, 55)
 custom_maximum_size = Vector2(190, 75)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
-theme_override_fonts/font = ExtResource("1_q5u5i")
+theme_override_fonts/font = ExtResource("3_mm3fk")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_rnqdw")
 text = "Name"

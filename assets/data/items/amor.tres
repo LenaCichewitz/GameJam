@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://diquujidyi5jq"]
+
+[ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="1_nfbmb"]
+[ext_resource type="Texture2D" uid="uid://cslm6unqai6jc" path="res://assets/items/Scale Mail/Scale Mail with Rocks.png" id="1_reowf"]
+[ext_resource type="Texture2D" uid="uid://cqdl3wh54hehy" path="res://assets/items/Scale Mail/Scale Mail Finish.png" id="2_p024t"]
+
+[resource]
+script = ExtResource("1_nfbmb")
+final_sprite = ExtResource("2_p024t")
+needs_cleaning = false
+closed_texture = ExtResource("1_reowf")
+metadata/_custom_type_script = "uid://c2si4kp50ke6h"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxnw1qpaopw7b"
-path="res://.godot/imported/Sprite-IU-Coin.png-e4ce8083a469538e117f81ced8ed6d45.ctex"
+uid="uid://dbn7henhmiylr"
+path="res://.godot/imported/Amulett Empty.png-592bcaf842f952520b5d74590d0fc844.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Coin.png"
-dest_files=["res://.godot/imported/Sprite-IU-Coin.png-e4ce8083a469538e117f81ced8ed6d45.ctex"]
+source_file="res://assets/items/Pearl Amulett/Amulett Empty.png"
+dest_files=["res://.godot/imported/Amulett Empty.png-592bcaf842f952520b5d74590d0fc844.ctex"]
 
 [params]
 

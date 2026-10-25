@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7e5isgajpfu"
-path="res://.godot/imported/Sprite-IU-Statue.png-4078e8936116c4d841e2894ba2c3909f.ctex"
+uid="uid://behjatpfdst4u"
+path="res://.godot/imported/Lionfish_Mini_Mermaid_Icon.png-d1056ca43ae75cd38e0fbecbc94bd631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Statue.png"
-dest_files=["res://.godot/imported/Sprite-IU-Statue.png-4078e8936116c4d841e2894ba2c3909f.ctex"]
+source_file="res://assets/Mermaids/Lionfish_Mini_Mermaid_Icon.png"
+dest_files=["res://.godot/imported/Lionfish_Mini_Mermaid_Icon.png-d1056ca43ae75cd38e0fbecbc94bd631.ctex"]
 
 [params]
 

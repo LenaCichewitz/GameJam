@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dympqs6d8tguu"]
 
+[ext_resource type="Texture2D" uid="uid://c283w4tt3j6ph" path="res://assets/items/Knife/With Rocks.png" id="1_f7l6t"]
 [ext_resource type="Texture2D" uid="uid://b0inwuk8svfb0" path="res://assets/items/Dirt/Dirt.png" id="1_gti1v"]
 [ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="1_ow4ld"]
 [ext_resource type="Texture2D" uid="uid://d80alg68usme" path="res://assets/items/Knife/Knife Finished.png" id="2_m437a"]
@@ -10,10 +11,11 @@
 [resource]
 script = ExtResource("1_ow4ld")
 final_sprite = ExtResource("2_m437a")
+needs_cleaning = false
 dirt_texture = ExtResource("1_gti1v")
 needs_puzzling = true
 puzzle_pieces = Array[Texture2D]([ExtResource("3_n13x1"), ExtResource("4_qr5q8")])
 puzzle_target_positions = Array[Vector2]([Vector2(170, 170), Vector2(0, 170)])
 unfinished_puzzle = ExtResource("6_4m2gk")
-needs_punding = false
+closed_texture = ExtResource("1_f7l6t")
 metadata/_custom_type_script = "uid://c2si4kp50ke6h"

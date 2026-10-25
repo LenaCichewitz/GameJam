@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxakrwna5y1u1"
-path="res://.godot/imported/Sprite-IU-Scale Mail.png-06a8000ee661946d29a46ff8f520ebba.ctex"
+uid="uid://bxnw1qpaopw7b"
+path="res://.godot/imported/Sprite-IU-Coin.png-85dcdb7dae44e3763eccbd71323ee224.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/Items for UI/Sprite-IU-Scale Mail.png"
-dest_files=["res://.godot/imported/Sprite-IU-Scale Mail.png-06a8000ee661946d29a46ff8f520ebba.ctex"]
+source_file="res://assets/UI Element Art/Items for UI/Sprite-IU-Coin.png"
+dest_files=["res://.godot/imported/Sprite-IU-Coin.png-85dcdb7dae44e3763eccbd71323ee224.ctex"]
 
 [params]
 

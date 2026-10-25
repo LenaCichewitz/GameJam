@@ -2,10 +2,12 @@
 extends Control
 
 @export var available_items: Array[ItemData] = []
-var selected_tool: ToolData = null
-var pounding_hits: Dictionary = {}
+
 @onready var item_bar: HBoxContainer = $MainLayout/ItemBar
 @onready var target_box = $MainLayout/WorkArea/TargetBox
+
+var selected_tool: ToolData = null
+var pounding_hits: Dictionary = {}
 
 const CLEANING_MODE_SCENE: PackedScene = preload(
     "res://scenes/restorations/cleaning/cleaning_mode.tscn"
@@ -108,6 +110,8 @@ func open_cleaning_mode(data: ItemData) -> void:
 	active_cleaning_mode.call_deferred("start_cleaning", data)
 
 
+
+
 func _on_item_dropped(data: ItemData) -> void:
 	item_bar.visible = false
 	if data.needs_puzzling:
@@ -176,7 +180,7 @@ func _restore_item_after_puzzling(data: ItemData) -> void:
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
-
+	
 func _on_tool_selected(tool_data: ToolData, _position: Vector2) -> void:
 	selected_tool = tool_data
 

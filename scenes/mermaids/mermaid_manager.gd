@@ -8,6 +8,8 @@ signal mermaid_lost_to_corruption(mermaid_id: int)
 
 
 func _ready() -> void:
+	SaveManager.register("mermaid_manager", self)
+	
 	for mermaid in _get_all_mermaids():
 		if not mermaid.mermaid_capped_corruption.is_connected(_on_mermaid_reporting_corruption_capped):
 			mermaid.mermaid_capped_corruption.connect(_on_mermaid_reporting_corruption_capped)
