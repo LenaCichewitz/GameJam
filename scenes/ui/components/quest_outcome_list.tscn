@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dyqvnvdmuq4xj"]
+
+[ext_resource type="Texture2D" uid="uid://bm3kposd37016" path="res://graphics/icons/icon_downArrow.svg" id="1_8j5p4"]
+[ext_resource type="Script" uid="uid://dleh0qvkn54kp" path="res://scenes/ui/components/quest_outcome_list.gd" id="1_apdcx"]
+[ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_ia0vw"]
+[ext_resource type="Texture2D" uid="uid://3b6yh1bctfuf" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Empty Item slot.png" id="3_e3pyf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="QuestOutcomeList" type="VBoxContainer" unique_id=764206736]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 307.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+script = ExtResource("1_apdcx")
+
+[node name="Header" type="Button" parent="." unique_id=1128460365]
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(-1, 70)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Header" unique_id=963684272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer" unique_id=1432143290]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Header/MarginContainer/HBoxContainer" unique_id=21573145]
+layout_mode = 2
+texture = ExtResource("1_8j5p4")
+expand_mode = 3
+
+[node name="QuestTitel" type="Label" parent="Header/MarginContainer/HBoxContainer" unique_id=1824589701]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_ia0vw")
+text = "Quest Titel"
+
+[node name="Sucess" type="Label" parent="Header/MarginContainer/HBoxContainer" unique_id=1383007593]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_ia0vw")
+text = "[Success]"
+
+[node name="Failure" type="Label" parent="Header/MarginContainer/HBoxContainer" unique_id=1225474108]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("2_ia0vw")
+text = "[Failure]"
+
+[node name="body" type="Panel" parent="." unique_id=1539897119]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8y12")
+
+[node name="MarginContainer" type="MarginContainer" parent="body" unique_id=1374878538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="Body" type="HBoxContainer" parent="body/MarginContainer" unique_id=1373791505]
+layout_mode = 2
+
+[node name="FlavorText" type="RichTextLabel" parent="body/MarginContainer/Body" unique_id=1411285809]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/normal_font = ExtResource("2_ia0vw")
+text = "sxdfghj"
+
+[node name="MarginContainer" type="MarginContainer" parent="body/MarginContainer/Body" unique_id=353556066]
+layout_mode = 2
+
+[node name="Reward" type="VBoxContainer" parent="body/MarginContainer/Body/MarginContainer" unique_id=1534465058]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="body/MarginContainer/Body/MarginContainer/Reward" unique_id=683603478]
+layout_mode = 2
+text = "Reward
+"
+
+[node name="reward" type="HBoxContainer" parent="body/MarginContainer/Body/MarginContainer/Reward" unique_id=2003151329]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemBox" type="VBoxContainer" parent="body/MarginContainer/Body/MarginContainer/Reward/reward" unique_id=1594804003]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/ItemBox" unique_id=991611199]
+layout_mode = 2
+texture = ExtResource("3_e3pyf")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/ItemBox" unique_id=601227913]
+layout_mode = 2
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="ItemBox2" type="VBoxContainer" parent="body/MarginContainer/Body/MarginContainer/Reward/reward" unique_id=1326046967]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/ItemBox2" unique_id=582320840]
+layout_mode = 2
+texture = ExtResource("3_e3pyf")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/ItemBox2" unique_id=976624519]
+layout_mode = 2
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="MermaidBox" type="VBoxContainer" parent="body/MarginContainer/Body/MarginContainer/Reward/reward" unique_id=1528915751]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/MermaidBox" unique_id=1442305697]
+layout_mode = 2
+texture = ExtResource("3_e3pyf")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="body/MarginContainer/Body/MarginContainer/Reward/reward/MermaidBox" unique_id=566304956]
+layout_mode = 2
+text = "Mermaid Name"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Header" to="." method="_on_header_pressed"]
