@@ -10,14 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://bpvrdm7pfe24r" path="res://assets/items/cuntysponge.png" id="5_wgaic"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Texture2D" uid="uid://7bucpvn27s21" path="res://assets/items/puzzle_done.png" id="6_p1glv"]
-[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/knife.tres" id="7_367to"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="7_367to"]
 [ext_resource type="Texture2D" uid="uid://crr87upl82wse" path="res://assets/items/puzzle_pice1.png" id="7_rqx6s"]
 [ext_resource type="Texture2D" uid="uid://cou0p4asiirm7" path="res://assets/items/puzzle_pice2.png" id="8_6rxmn"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
 [ext_resource type="Texture2D" uid="uid://bgn8e2ncqcpd2" path="res://assets/items/puzzle_pice3.png" id="9_j3ytv"]
 [ext_resource type="Texture2D" uid="uid://bwmouavh5cesl" path="res://assets/items/puzzle_pice4.png" id="10_53ejp"]
 [ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://assets/data/tools/sponge.tres" id="12_367to"]
+[ext_resource type="Texture2D" uid="uid://dt1p5qrpydcay" path="res://assets/UI Element Art/PopUpBackground.png" id="13_wgaic"]
 [ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="14_rqx6s"]
+[ext_resource type="Texture2D" uid="uid://crd36k40u02n2" path="res://graphics/button2.svg" id="15_6rxmn"]
+[ext_resource type="Texture2D" uid="uid://d80alg68usme" path="res://assets/items/Knife/Knife Finished.png" id="22_j3ytv"]
+[ext_resource type="Texture2D" uid="uid://htg28i7jvorj" path="res://graphics/IU-Mermaid-Nameplate.svg" id="23_53ejp"]
 
 [sub_resource type="Resource" id="Resource_mklxv"]
 script = ExtResource("2_np7mg")
@@ -54,6 +59,15 @@ bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
 texture = ExtResource("4_0my5e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvsfe"]
+texture = ExtResource("13_wgaic")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4a5w8"]
+texture = ExtResource("15_6rxmn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6x11"]
+texture = ExtResource("23_53ejp")
 
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
@@ -175,5 +189,92 @@ theme_override_constants/margin_top = 4
 layout_mode = 2
 icon = ExtResource("5_np7mg")
 
+[node name="ItemFinished" type="Panel" parent="." unique_id=593024418]
+visible = false
+layout_mode = 0
+offset_left = 174.0
+offset_top = 74.0
+offset_right = 968.0
+offset_bottom = 603.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qvsfe")
+
+[node name="Back" type="Button" parent="ItemFinished" unique_id=260024473]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 432.0
+offset_right = 329.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("14_rqx6s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_4a5w8")
+text = "Back To Restauration"
+
+[node name="Done" type="Button" parent="ItemFinished" unique_id=1661752819]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 432.0
+offset_right = 653.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("14_rqx6s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_4a5w8")
+text = "Done"
+
+[node name="Item" type="TextureRect" parent="ItemFinished" unique_id=1587587159]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 42.0
+offset_right = 409.0
+offset_bottom = 280.0
+texture = ExtResource("22_j3ytv")
+expand_mode = 1
+
+[node name="Item Name" type="Label" parent="ItemFinished" unique_id=1139415419]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -44.0
+offset_right = 568.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("14_rqx6s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_o6x11")
+text = "                      
+        Item Name Beispiel"
+
+[node name="Stats" type="Label" parent="ItemFinished" unique_id=1874419187]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 107.0
+offset_right = 754.0
+offset_bottom = 388.0
+theme_override_fonts/font = ExtResource("14_rqx6s")
+theme_override_font_sizes/font_size = 29
+text = "Agility: 10
+Agility: 10
+Agility: 10
+Agility: 10
+Agility: 10
+Agility: 10"
+
+[node name="Description" type="Label" parent="ItemFinished" unique_id=741719365]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 260.0
+offset_right = 529.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("14_rqx6s")
+theme_override_font_sizes/font_size = 17
+text = "Even in pieces this weapon feels as if it could end a life within
+ minutes. Putting it back together will significantly sharpen
+our offence. 
+Just holding this blade makes one steeled for battle. All 
+thought not focused on the fight seem suppressed 
+when holding it
+"
+
 [connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]
 [connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ItemFinished/Back" to="." method="_on_back_to_restauration_button_pressed"]
+[connection signal="pressed" from="ItemFinished/Done" to="." method="_on_done_button_pressed"]
