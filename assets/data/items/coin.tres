@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_hr0rq")
+item_id = 5
 final_sprite = ExtResource("1_tupon")
 needs_punding = false
 metadata/_custom_type_script = "uid://c2si4kp50ke6h"

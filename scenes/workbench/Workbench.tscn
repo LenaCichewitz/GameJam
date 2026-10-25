@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bpvrdm7pfe24r" path="res://assets/items/cuntysponge.png" id="5_wgaic"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
 [ext_resource type="Texture2D" uid="uid://7bucpvn27s21" path="res://assets/items/puzzle_done.png" id="6_p1glv"]
-[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/knife.tres" id="7_367to"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="7_367to"]
 [ext_resource type="Texture2D" uid="uid://crr87upl82wse" path="res://assets/items/puzzle_pice1.png" id="7_rqx6s"]
 [ext_resource type="Texture2D" uid="uid://cou0p4asiirm7" path="res://assets/items/puzzle_pice2.png" id="8_6rxmn"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
