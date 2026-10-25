@@ -18,9 +18,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ItemIcon" type="TextureRect" parent="VBoxContainer" unique_id=1363794124]
+[node name="ItemIcon" type="TextureButton" parent="VBoxContainer" unique_id=1748710254]
 layout_mode = 2
-texture = ExtResource("1_hmih2")
+texture_normal = ExtResource("1_hmih2")
 
 [node name="ItemName" type="Label" parent="VBoxContainer" unique_id=1406204685]
 layout_mode = 2
@@ -29,3 +29,8 @@ theme_override_fonts/font = ExtResource("2_pv73a")
 text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ItemId" type="Label" parent="VBoxContainer" unique_id=1429172257]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/ItemIcon" to="." method="_on_item_icon_pressed"]
