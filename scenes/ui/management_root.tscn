@@ -316,6 +316,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Button" type="Button" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header" unique_id=796972389]
+visible = false
 layout_mode = 2
 theme_override_icons/icon = ExtResource("10_kf5xn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_e5ll0")
@@ -340,6 +341,7 @@ text = "Name"
 horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/first child/Header" unique_id=727244059]
+visible = false
 layout_mode = 2
 icon = ExtResource("10_kf5xn")
 
@@ -366,7 +368,7 @@ size_flags_horizontal = 3
 [node name="MarginContainer" type="MarginContainer" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child" unique_id=1530186679]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_top = 84
+theme_override_constants/margin_top = 62
 
 [node name="Panel" type="Panel" parent="Mermaid_Information/MarginContainer/VBoxContainer/body/second child/MarginContainer" unique_id=777635621]
 layout_mode = 2
@@ -446,6 +448,7 @@ text = "Stats"
 layout_mode = 2
 
 [node name="Itembar" type="Control" parent="." unique_id=1871631386]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
