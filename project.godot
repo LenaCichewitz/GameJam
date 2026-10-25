@@ -13,7 +13,7 @@ config_version=5
 config/name="GameJamMermaid"
 run/main_scene="uid://d23dwxoktmbuj"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://b22ur34vcnlff"
 
 [autoload]
 
