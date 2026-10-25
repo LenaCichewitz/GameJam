@@ -247,18 +247,13 @@ func _on_quest_send_pressed() -> void:
 	quest_manager.start_all_quests()
 
 func _on_outcome_button_pressed() -> void:
-<<<<<<< HEAD
 	pending_quest_outcomes.clear()
 	showing_quest_outcome = false
-	quest_outcome.hide()
-
 	var systems = get_tree().current_scene.get_node_or_null("Systems")
 	if systems:
 		systems._time_paused = false
-=======
 	quest_outcome.hide() 
 
 func _on_back_to_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
->>>>>>> f23b3db44dee6f1e9cc368a6eefeb8c034a04226
 #endregion
