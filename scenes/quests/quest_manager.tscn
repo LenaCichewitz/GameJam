@@ -226,6 +226,7 @@ quest_success_outcome = "The only ones willing to assist us in this endeavor are
 "
 quest_neutral_outcome = "Try as she might, Mae just does not have it in her to play the Diplomatic games necessary to succeed here. A timeloss this early stings we have to Focus up!
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 
 [node name="An Artifact of War" parent="AvailableQuests" unique_id=1706432302 instance=ExtResource("2_7xuob")]
 quest_id = 2
@@ -236,7 +237,10 @@ quest_success_outcome = "While the Kopis has certainly seen better times the Pow
 "
 quest_neutral_outcome = "Once the Kopis was grasped a Host of Spirits sprung up. With fast thinking and actions just as swift we might have secured the relic but this time it had to be left behind to secure escape.
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 1
+rewards_item = true
+reward_item_id = 1
 
 [node name="StatsToClear" parent="AvailableQuests/An Artifact of War" index="0" unique_id=329966221]
 _agility = SubResource("Curve_lgvmb")
@@ -251,6 +255,7 @@ quest_success_outcome = "Ancient texts reveal the locations of powerful Artifact
 "
 quest_neutral_outcome = "Searching the library revealed much but nothing of use to us. A deeper knowledge of the ancient customs may be necessary to find exactly what we need.
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 1
 rewards_corruption_reduction = true
 reward_corruption_reduction = 10.0
@@ -267,6 +272,7 @@ quest_success_outcome = "A hard fought battle clears not only the path into the 
 "
 quest_neutral_outcome = "Despite a valiant effort the guardian proves to be a steep wall to climb indeed. Precious time has been lost but no life was forfeit today. We must return with a more experienced fighter or better equipment
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 1
 rewards_corruption_reduction = true
 reward_corruption_reduction = -20.0
@@ -283,7 +289,10 @@ quest_success_outcome = "Among the overflowing mass lay the abomination of a cla
 "
 quest_neutral_outcome = "Despite hours of looking, the clam evades us still. Perceptive eyes and a feeling for the otherworldly may yet help us locate it within the chaos
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 2
+rewards_item = true
+reward_item_id = 2
 
 [node name="StatsToClear" parent="AvailableQuests/Combing the Fields" index="0" unique_id=329966221]
 _awareness = SubResource("Curve_8up6o")
@@ -298,7 +307,10 @@ quest_success_outcome = "Navigation these streets was difficult but fruitful, as
 "
 quest_neutral_outcome = "Returning from this hell at all is admirable, even empty handed as it is. We will need to brave it again however and this time nerves of steel and eyes like a sea-hawk must prevail. 
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 2
+rewards_item = true
+reward_item_id = 3
 
 [node name="StatsToClear" parent="AvailableQuests/Winding ways #2" index="0" unique_id=329966221]
 _awareness = SubResource("Curve_j63pw")
@@ -313,7 +325,10 @@ quest_success_outcome = "With fresh blood on our hands and immense power in our 
 "
 quest_neutral_outcome = "A bloodied return is a return nonetheless. They seem not to know what it is we were searching for so we may yet have a shot. Speed and power are of utmost import if we are to attempt another attack
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 2
+rewards_item = true
+reward_item_id = 4
 
 [node name="StatsToClear" parent="AvailableQuests/A grab for power" index="0" unique_id=329966221]
 _agility = SubResource("Curve_7c7fg")
@@ -328,6 +343,7 @@ quest_success_outcome = "Tho the scholar expired some moons ago his research not
 "
 quest_neutral_outcome = "What these tunnels contain can not be described and there is no shame in returning unsuccessful. Yet still we must brave these depths again in hopes of a way forward. 
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 2
 rewards_corruption_reduction = true
 reward_corruption_reduction = -50.0
@@ -346,7 +362,10 @@ quest_success_outcome = "As the spell fizzles into the deep waters the coin now 
 "
 quest_neutral_outcome = "Stepping out of the spell empty handed was expected, having no memory of the ordeal was not. Whatever magic animates the arena can only be of godly origin but refusing such power is simply not an option.
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 3
+rewards_item = true
+reward_item_id = 5
 
 [node name="StatsToClear" parent="AvailableQuests/Bread and Games" index="0" unique_id=329966221]
 _agility = SubResource("Curve_hfgdr")
@@ -365,7 +384,9 @@ quest_success_outcome = "The god's power emanating from the statue feels almost 
 "
 quest_neutral_outcome = "Barely holding on to life, the thought of returning to face the beast again seems towering. Yet still this is the reality we are in. If this beast can not be felled the curse shall subsume us entirely. 
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 3
+reward_item_id = 6
 
 [node name="StatsToClear" parent="AvailableQuests/Poseidon\'s Secrets" index="0" unique_id=329966221]
 _combat = SubResource("Curve_njkix")
@@ -381,6 +402,7 @@ quest_success_outcome = "Even the best armor has a weakness somewhere and now we
 "
 quest_neutral_outcome = "Still feeling watched, at the end of the day we feel no wiser than in the morrow. Another trip to the curse steeped streets feels daunting but the luxury of choice is not ours,
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 3
 rewards_corruption_reduction = true
 reward_corruption_reduction = 10.0
@@ -399,6 +421,7 @@ quest_success_outcome = "As the barrier lifts even greater horrors lie beyond. D
 "
 quest_neutral_outcome = "It is simply too much, holding onto the ritual while defending ourselves against all manner of attacks. Still the barrier must fall and hoisting a new attack against it is inevitable. 
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 quest_group = 3
 rewards_corruption_reduction = true
 reward_corruption_reduction = -40.0
@@ -416,6 +439,7 @@ quest_description = "The most direct way to the goal is simple: just go straight
 "
 quest_neutral_outcome = "The colors, the sounds and the overpowering feeling of dread, the experience within the core was indescribable and horrific. Imagining what it takes to succeed in this hell seems impossible and a dread fills the air with every breath taken
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 is_final_quest = true
 quest_group = 4
 
@@ -434,6 +458,7 @@ quest_description = "The tunnels below the city will invariably lead to the core
 "
 quest_neutral_outcome = "No plan survives contact with the Enemy. Between winding paths, constant attacks and horrors whose pure existent proofs taxing its impossible to stay crafty. The sheer experience was overwhelming in a way nothing else has ever been. To go there again is pure madness…
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 is_final_quest = true
 quest_group = 4
 
@@ -450,6 +475,7 @@ quest_description = "We are not the first to attack this being, though none ever
 "
 quest_neutral_outcome = "As the magic dissipates into the vast waters one must imagine that every single brick on these roads was but a trap. Being focused on a spell so incredibly complex leaves one invariably open and one single unfocused second spells the end. Can a plan this obvious ever be successful? 
 "
+quest_failure_outcome = "The curse takes hold of one of our own and they disappear into the depths, never to be seen again. This was expected, altho that only lightly eases the pain."
 is_final_quest = true
 quest_group = 4
 
