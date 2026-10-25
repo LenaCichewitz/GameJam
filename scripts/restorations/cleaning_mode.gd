@@ -3,6 +3,7 @@ extends Control
 
 @onready var dirt_layer: TextureRect = $dirt_layer
 @onready var completion_popup: AcceptDialog = $completion_popup
+@onready var item_layer: TextureRect = $item_layer
 
 var current_item: ItemData
 var dirt_image: Image
@@ -17,6 +18,15 @@ var is_tool_dragging: bool = false
 
 func _ready() -> void:
 	dirt_layer.mouse_filter = Control.MOUSE_FILTER_STOP
+	dirt_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dirt_layer.offset_left = 0
+	dirt_layer.offset_top = 0
+	dirt_layer.offset_right = 0
+	dirt_layer.offset_bottom = 0
+
+	dirt_layer.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	dirt_layer.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+
 	completion_popup.dialog_text = "CLEAN!"
 
 
@@ -47,7 +57,7 @@ func on_tool_drag_moved(
 		dirt_layer.get_global_transform().affine_inverse()
 		* drag_global_position
 	)
-
+	print("Werkzeug bewegt: ", tool_data.tool_id, " | Position: ", local_position)
 	_clean_at_position(local_position)
 
 
@@ -59,19 +69,30 @@ func on_tool_drag_ended(
 
 
 func start_cleaning(data: ItemData) -> void:
+	print("Uncleaned Sprite: ", item_layer.texture)
+	print("Dirt Layer Stretch: ", dirt_layer.stretch_mode)
 
 	if data == null:
-		push_warning("Wo Itemr?")
+		push_warning("Kein Item zum Reinigen.")
 		return
+
 	if data.dirt_texture == null:
-		push_warning("Item ist sauber")
+		push_warning("Keine Schmutztextur zugewiesen.")
 		return
-		
+	print("Dirt Texture: ", data.dirt_texture)
 	current_item = data
 	cleaning_finished = false
+	is_tool_dragging = false
 	removed_dirt_pixels = 0
 	total_dirt_pixels = 0
 
+	# Das ungereinigte Grundbild anzeigen.
+	if data.uncleaned_sprite != null:
+		item_layer.texture = data.uncleaned_sprite
+	else:
+		item_layer.texture = data.final_sprite
+
+	# Schmutztextur für das Entfernen vorbereiten.
 	dirt_image = data.dirt_texture.get_image()
 
 	for y in range(dirt_image.get_height()):
@@ -79,29 +100,37 @@ func start_cleaning(data: ItemData) -> void:
 			if dirt_image.get_pixel(x, y).a > 0.0:
 				total_dirt_pixels += 1
 
-	dirt_layer.texture = data.dirt_texture
+	dirt_image_texture = ImageTexture.create_from_image(dirt_image)
+	dirt_layer.texture = dirt_image_texture
+
 	completion_popup.hide()
 
 	if total_dirt_pixels == 0:
 		finish_cleaning()
-		return
-
-	dirt_image_texture = ImageTexture.create_from_image(dirt_image)
-	dirt_layer.texture = dirt_image_texture
-
+		
+	print("Uncleaned Sprite: ", item_layer.texture)
+	print("Dirt Texture: ", current_item.dirt_texture)
+	print("Dirt Image Größe: ", dirt_image.get_size())
+	print("Dirt Layer Größe: ", dirt_layer.size)
+	print("Dirt Pixel mit Alpha: ", total_dirt_pixels)
 
 func _clean_at_position(drag_position: Vector2) -> void:
+	print("Reinigungsposition: ", drag_position, " | Dirt Layer: ", dirt_layer.size)
 	if dirt_image == null or dirt_image_texture == null:
 		return
 
 	if dirt_layer.size.x <= 0.0 or dirt_layer.size.y <= 0.0:
 		return
 
+	var texture_size := Vector2(
+		dirt_image.get_width(),
+		dirt_image.get_height()
+	)
 	var pixel_x := int(
-		drag_position.x / dirt_layer.size.x * dirt_image.get_width()
+		floor(drag_position.x / dirt_layer.size.x * texture_size.x)
 	)
 	var pixel_y := int(
-		drag_position.y / dirt_layer.size.y * dirt_image.get_height()
+		floor(drag_position.y / dirt_layer.size.y * texture_size.y)
 	)
 
 	if (

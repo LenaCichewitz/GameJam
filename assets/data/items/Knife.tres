@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b0inwuk8svfb0" path="res://assets/items/Dirt/Dirt.png" id="1_gti1v"]
 [ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="1_ow4ld"]
 [ext_resource type="Texture2D" uid="uid://d80alg68usme" path="res://assets/items/Knife/Knife Finished.png" id="2_m437a"]
-[ext_resource type="Texture2D" uid="uid://cign4t7hbeglj" path="res://assets/items/Knife/Blade.png" id="3_n13x1"]
-[ext_resource type="Texture2D" uid="uid://b3n0atqxc0q5h" path="res://assets/items/Knife/Handle.png" id="4_qr5q8"]
+[ext_resource type="Texture2D" uid="uid://wcl1ijdpeegx" path="res://assets/items/Knife/Blade.png" id="3_n13x1"]
+[ext_resource type="Texture2D" uid="uid://bosj8qcffgxla" path="res://assets/items/Knife/Handle.png" id="4_qr5q8"]
 [ext_resource type="Texture2D" uid="uid://byv1s05ptcucq" path="res://assets/items/Knife/Handle and Blade.png" id="6_4m2gk"]
 
 [resource]

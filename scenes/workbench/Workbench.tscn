@@ -96,6 +96,8 @@ mouse_filter = 2
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ItemButton" type="MarginContainer" parent="MainLayout" unique_id=2021871834]
 layout_mode = 2

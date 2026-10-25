@@ -7,6 +7,7 @@ extends Resource
 @export_group("Tasks")
 @export var needs_cleaning: bool = true
 @export var dirt_texture: Texture2D 
+@export var uncleaned_sprite: Texture2D
 
 @export var needs_puzzling: bool = false
 @export var puzzle_pieces: Array[Texture2D] = []

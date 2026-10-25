@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5y5yqofq8il2"]
 
-[ext_resource type="Script" uid="uid://disjn8l31ve4k" path="res://scripts/workbench/target_box.gd" id="1_5kkyc"]
+[ext_resource type="Script" uid="uid://t7haa6r382yn" path="res://scripts/workbench/target_box.gd" id="1_5kkyc"]
 
 [node name="TargetBox" type="PanelContainer" unique_id=1313226884]
 script = ExtResource("1_5kkyc")

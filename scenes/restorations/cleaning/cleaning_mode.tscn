@@ -7,14 +7,25 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_48dsi")
 
-[node name="dirt_layer" type="TextureRect" parent="." unique_id=1345160754]
+[node name="item_layer" type="TextureRect" parent="." unique_id=808217331]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="dirt_layer" type="TextureRect" parent="." unique_id=545201251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="completion_popup" type="AcceptDialog" parent="." unique_id=1857434767]
 oversampling_override = 1.0
