@@ -7,6 +7,8 @@ extends Control
 #region import... stuffy... thingies(idk)
 @onready var management_root: Control = $"."
 
+@onready var quest_outcome: Panel = $QuestOutcome
+
 @onready var mermaid_information: Panel = $Mermaid_Information
 @onready var mermaid_id: Label = $Mermaid_Information/MarginContainer/VBoxContainer/MermaidID
 
@@ -22,6 +24,7 @@ extends Control
 @onready var itembar: Control = $Itembar
 @onready var items_list: HBoxContainer = $Itembar/Panel/HBoxContainer/ScrollContainer/ItemsList
 
+
 @onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
 @onready var quest_list_item: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer/QuestListItem
 #endregion
@@ -33,6 +36,7 @@ func _ready() -> void:
 	add_quest()
 	mermaid_information.hide()
 	itembar.hide()
+	quest_outcome.hide()
 	item_list_ui.item_list_pressed.connect(equip_item)
 
 func _on_management_root_requesting_all_recruited_mermaids() -> Array:
@@ -85,6 +89,8 @@ func add_quest() -> void:
 		quest_list_container.add_child(quest_ui)
 		quest_ui.setup(quest)
 		quest_ui.select_mermaid(availiable_mermaids)
+		
+		quest_ui.mermaid_assigned_to_quest.connect(assign_mermaid_to_quest)
 
 func import_mermaid_by_id(id:int) -> void:
 	if not mermaid_manager:
@@ -116,6 +122,9 @@ func equip_item(item_id) -> void:
 	
 	item_manager.equip_item(item_id, current_mermaid_id) 
 
+func assign_mermaid_to_quest(quest_id, assigned_mermaid_id) -> void: 
+	quest_manager.assign_mermaid_to_quest(quest_id, assigned_mermaid_id) 
+
 #region buttons
 func _on_restauration_button_pressed() -> void:
 	management_root.hide()
@@ -146,4 +155,11 @@ func _on_texture_button_2_pressed() -> void:
 
 func _on_done_item_pressed() -> void:
 	itembar.hide()
+
+func _on_quest_send_pressed() -> void:
+	quest_manager.start_all_quests()
+	quest_outcome.show()
+
+func _on_outcome_button_pressed() -> void:
+	quest_outcome.hide()
 #endregion
