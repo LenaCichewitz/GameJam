@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_new_game_button_pressed() -> void:
@@ -29,6 +29,7 @@ func _on_setting_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
 
 
 func _on_exit_button_pressed() -> void:

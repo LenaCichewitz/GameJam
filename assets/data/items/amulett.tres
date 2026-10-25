@@ -9,6 +9,7 @@
 
 [resource]
 script = ExtResource("1_p0qyr")
+item_id = 2
 final_sprite = ExtResource("3_1pvfi")
 dirt_texture = ExtResource("2_1pvfi")
 needs_puzzling = true

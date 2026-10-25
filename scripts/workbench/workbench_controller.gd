@@ -5,6 +5,7 @@ extends Control
 
 @onready var item_bar: HBoxContainer = $MainLayout/ItemBar
 @onready var target_box = $MainLayout/WorkArea/TargetBox
+@onready var item_manager = get_node("/root/MainScene/Systems/ItemManager")
 
  
 var selected_tool: ToolData = null
@@ -27,33 +28,66 @@ var item_slot_scene: PackedScene = preload(
 
 
 func _ready() -> void:
+	_refresh_restoration_bar()
+
+	target_box.connect("item_dropped", _on_item_dropped)
+	target_box.item_clicked.connect(_on_target_item_clicked)
+	toolbox.tool_drag_started.connect(_on_tool_selected)
+	if item_manager != null:
+		item_manager.item_obtained.connect(
+			_on_item_obtained
+		)
+
+func _on_item_obtained(_item_id: int) -> void:
+		_refresh_restoration_bar()
 	
+func _on_item_selected(data: ItemData) -> void:
+	target_box.call("display_item", data)
+
+func _refresh_restoration_bar() -> void:
+	# Vorhandene Slots entfernen
+	for child in item_bar.get_children():
+		child.queue_free()
+
+	if item_manager == null:
+		push_warning("ItemManager nicht gefunden.")
+		return
+
+	# Nur gesammelte, noch nicht reparierte Items abrufen
+	var unrepaired_items: Array[Node] = item_manager.get_unrepaired_items()
+
+	for inventory_item in unrepaired_items:
+		if not inventory_item.is_obtained or inventory_item.is_repaired:
+			continue
+
+		# Passende ItemData anhand der bereits vorhandenen ID-Zuordnung finden
+		var data: ItemData = _get_restoration_data_for_id(inventory_item.item_id)
+
+		if data == null:
+			push_warning(
+                "Keine ItemData für Inventar-Item %d gefunden."
+				% inventory_item.item_id
+			)
+			continue
+
+		var slot: WorkbenchItemSlot = item_slot_scene.instantiate()
+		item_bar.add_child(slot)
+		slot.setup(data)
+		slot.item_selected.connect(_on_item_selected)
+
+func _get_restoration_data_for_id(item_id: int) -> ItemData:
 	for data in available_items:
 		if data == null:
 			continue
 
-		var slot = item_slot_scene.instantiate()
-		item_bar.add_child(slot)
-
-		slot.call("setup", data)
-		slot.connect(
-			"item_selected",
-			_on_item_selected
-		)
-	target_box.connect("item_dropped", _on_item_dropped)
-	target_box.item_clicked.connect(_on_target_item_clicked)
-	toolbox.tool_drag_started.connect(_on_tool_selected)
-
-func _on_item_selected(data: ItemData) -> void:
-	target_box.call("display_item", data)
-
-
+		if data.item_id == item_id:
+			return data
+	return null
 
 func open_cleaning_mode(data: ItemData) -> void:
 	print("OPEN CLEANING MODE AUFGERUFEN")
 
 	if data == null or not data.needs_cleaning:
-		print("Reinigung übersprungen: Item null oder bereits sauber")
 		return
 	if active_restoration_mode != null:
 		if active_cleaning_mode != null:
@@ -85,7 +119,9 @@ func open_cleaning_mode(data: ItemData) -> void:
 	active_cleaning_mode = CLEANING_MODE_SCENE.instantiate()
 	active_restoration_mode = active_cleaning_mode
 	restoration_container.add_child(active_cleaning_mode)
-
+	active_cleaning_mode.cleaning_finished.connect(
+	_on_cleaning_finished
+	)
 	toolbox.tool_drag_started.connect(
 		active_cleaning_mode.on_tool_drag_started
 	)
@@ -105,12 +141,10 @@ func open_cleaning_mode(data: ItemData) -> void:
 
 	active_cleaning_mode.position = Vector2.ZERO
 	active_cleaning_mode.size = restoration_container.size
-	print("Restoration-Container Größe: ", restoration_container.size)
-	print("Reinigungsmodus Größe: ", active_cleaning_mode.size)
-	print("Dirt Texture vor Start: ", data.dirt_texture)
 	active_cleaning_mode.call_deferred("start_cleaning", data)
 
-
+func _on_cleaning_finished(data: ItemData) -> void:
+	_check_restoration_complete(data)
 
 
 func _on_item_dropped(data: ItemData) -> void:
@@ -148,14 +182,11 @@ func open_puzzling_mode(data: ItemData) -> void:
 
 	target_box.hide_item()
 	puzzling_mode.start_puzzling(data)
-	print("Puzzle-Modus sichtbar: ", puzzling_mode.is_visible_in_tree())
-	print("Reinigungsmodus aktiv: ", active_cleaning_mode != null)
-	print("Restoration-Container: ", restoration_container.get_children())
-
+	
 func _on_puzzling_finished(data: ItemData) -> void:
 	if data == null:
 		return
-
+	_check_restoration_complete(data)
 	active_restoration_mode = null
 	active_cleaning_mode = null
 
@@ -175,11 +206,6 @@ func _restore_item_after_puzzling(data: ItemData) -> void:
 	restoration_container.hide()
 	toolbox.show()
 	item_bar.show()
-
-	print("Zurück zur Werkbank: ", data.item_name)
-	print("Puzzle erledigt: ", not data.needs_puzzling)
-	print("Reinigung erforderlich: ", data.needs_cleaning)
-	print("Hämmern erforderlich: ", data.needs_punding)
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 
@@ -205,6 +231,7 @@ func _on_target_item_clicked(data: ItemData) -> void:
 		target_box.finish_pounding()
 		pounding_hits.erase(item_key)
 		print("Removed Shell", data.item_name)
+		_check_restoration_complete(data)
 
 
 
@@ -222,3 +249,28 @@ func _on_done_button_pressed() -> void:
 
 func _on_back_to_restauration_button_pressed() -> void:
 	$ItemFinished.hide()
+
+
+func _check_restoration_complete(data: ItemData) -> void:
+	if data == null:
+		return
+
+	if not data.is_fully_restored():
+		return
+
+	if item_manager == null:
+		push_warning("ItemManager wurde nicht unter /root/MainScene/Systems/ItemManager gefunden.")
+		return
+
+	var inventory_item = item_manager.get_item_for_id(data.item_id)
+	if inventory_item == null:
+		push_warning(
+			"Kein Inventar-Item mit ID %d gefunden." % data.item_id
+		)
+		return
+
+	if inventory_item.is_repaired:
+		return
+
+	item_manager.repair_item(data.item_id)
+	print("Item vollständig restauriert und repariert: ", data.item_name)

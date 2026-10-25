@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cw88yy8x6b340" path="res://scenes/ui/management_root.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://01r313regslk" path="res://scenes/ui/main_menu.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://b07oomibpr07k" path="res://scenes/workbench/Workbench.tscn" id="5_c16ls"]
+[ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="7_4w45t"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="8_r6p65"]
+[ext_resource type="Resource" uid="uid://d0c6ngihk5lmn" path="res://assets/data/items/amulett.tres" id="9_si52b"]
+[ext_resource type="Resource" uid="uid://bvh0a2fdc6et4" path="res://assets/data/items/coin.tres" id="10_01n6w"]
+[ext_resource type="Resource" uid="uid://b3m6ub67683c8" path="res://assets/data/items/statue.tres" id="11_6u1mn"]
 
 [node name="MainScene" type="Node" unique_id=577158869]
 process_mode = 3
@@ -23,7 +28,8 @@ script = ExtResource("2_gameloop")
 mermaid_manager = NodePath("../MermaidManager")
 quest_manager = NodePath("../QuestManager")
 
-[node name="QuestManager" parent="Systems" unique_id=1796667383 instance=ExtResource("1_7ykc4")]
+[node name="QuestManager" parent="Systems" unique_id=1796667383 node_paths=PackedStringArray("item_manager") instance=ExtResource("1_7ykc4")]
+item_manager = NodePath("../ItemManager")
 
 [node name="MermaidManager" parent="Systems" unique_id=836053267 node_paths=PackedStringArray("quest_manager") instance=ExtResource("3_gubc5")]
 quest_manager = NodePath("../QuestManager")
@@ -36,15 +42,15 @@ process_mode = 1
 layer = 10
 
 [node name="Workbench" parent="RenovationHudLayer" unique_id=1896145299 instance=ExtResource("5_c16ls")]
+available_items = Array[ExtResource("7_4w45t")]([ExtResource("8_r6p65"), ExtResource("9_si52b"), ExtResource("10_01n6w"), ExtResource("11_6u1mn")])
 
 [node name="ManagementGuiLayer" type="CanvasLayer" parent="." unique_id=1055195146]
 process_mode = 1
 layer = 20
 
-[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 node_paths=PackedStringArray("mermaid_manager", "quest_manager", "item_manager") instance=ExtResource("3_pu3yx")]
+[node name="ManagementRoot" parent="ManagementGuiLayer" unique_id=1842124898 node_paths=PackedStringArray("mermaid_manager", "quest_manager") instance=ExtResource("3_pu3yx")]
 mermaid_manager = NodePath("../../Systems/MermaidManager")
 quest_manager = NodePath("../../Systems/QuestManager")
-item_manager = NodePath("../../Systems/ItemManager")
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1804570916]
 process_mode = 2

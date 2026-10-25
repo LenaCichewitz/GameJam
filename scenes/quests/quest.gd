@@ -28,6 +28,14 @@ signal requesting_mermaid_data(quest_id: int, mermaid_id: int)
 @export var reward_item_id: int = -1
 @export var rewards_corruption_reduction: bool = false
 @export_range(-100, 100) var reward_corruption_reduction: float = 0.0
+
+@export_group("Requirements")
+@export var required_quest_ids: Array[int] = []
+@export var required_item_ids: Array[int] = []
+@export var required_items_repaired: bool = false
+@export var minimum_stats: Dictionary = {}
+@export_range(-1, 100) var minimum_corruption: float = -1.0
+@export_range(-1, 100) var maximum_corruption: float = -1.0
 #endregion
 
 var is_active: bool = false
@@ -101,7 +109,44 @@ func were_mermaids_lost_on_quest() -> bool:
 func has_reward() -> bool:
 	return rewards_item || rewards_corruption_reduction
 #endregion
+func are_requirements_met(
+	quest_manager: Node,
+	item_manager: Node,
+	mermaid_stats: Dictionary
+) -> bool:
+		# Voraussetzungen durch vorherige Quests prüfen.
+	for required_id in required_quest_ids:
+		var required_quest = quest_manager.get_quest_for_id(required_id)
 
+		if required_quest == null or not required_quest.completed:
+			return false
+
+	# Benötigte Gegenstände prüfen.
+	for required_id in required_item_ids:
+		var item = item_manager.get_item_for_id(required_id)
+
+		if item == null or not item.is_obtained:
+			return false
+
+		if required_items_repaired and not item.is_repaired:
+			return false
+
+	# Mindestwerte prüfen.
+	for stat_name in minimum_stats:
+		if float(mermaid_stats.get(stat_name, -1.0)) < float(minimum_stats[stat_name]):
+			return false
+
+	# Mindestkorruption prüfen, sofern konfiguriert.
+	var corruption := float(mermaid_stats.get("corruption", 0.0))
+
+	if minimum_corruption >= 0.0 and corruption < minimum_corruption:
+		return false
+
+	# Höchstkorruption prüfen, sofern konfiguriert.
+	if maximum_corruption >= 0.0 and corruption > maximum_corruption:
+		return false
+
+	return true
 #region quest progression loop
 func start_quest():
 	if assigned_mermaid_id < 0:

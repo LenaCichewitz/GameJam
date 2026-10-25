@@ -6,6 +6,8 @@ signal reporting_quest_outcome(quest_id: int, mermaid_id: int, outcome: EnumCons
 signal reporting_mermaid_as_exploring(mermaid_id: int)
 signal final_quest_completed()
 
+@export var item_manager: Node
+
 var quest_to_mermaid_mapping: Dictionary
 
 
@@ -57,7 +59,13 @@ func is_action_available() -> bool:
 
 func has_startable_quests() -> bool:
 	for quest in get_all_available_quests():
-		if quest.assigned_mermaid_id >= 0:
+		if quest.assigned_mermaid_id < 0:
+			continue
+
+		if quest.are_requirements_met(
+		self,
+		item_manager,
+		quest.assigned_mermaid_stats):
 			return true
 	return false
 
@@ -149,10 +157,24 @@ func _find_quest_with_id(quest_id: int) -> Node:
 #endregion
 
 
-func start_all_quests():
-	var available_quests = get_all_available_quests()
+func start_all_quests() -> void:
+	var available_quests := get_all_available_quests()
+	var started_any := false
+
 	for quest in available_quests:
+		if quest.assigned_mermaid_id < 0:
+			continue
+
+		if not quest.are_requirements_met(
+		self,
+		item_manager,
+		quest.assigned_mermaid_stats
+		):
+			continue
+
+		print("quest starting", quest.quest_name)
 		quest.start_quest()
+		started_any = true
 
 
 func increment_progress():
