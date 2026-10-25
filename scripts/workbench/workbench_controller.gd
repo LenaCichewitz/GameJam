@@ -150,7 +150,6 @@ func open_puzzling_mode(data: ItemData) -> void:
 	print("Puzzle-Modus sichtbar: ", puzzling_mode.is_visible_in_tree())
 	print("Reinigungsmodus aktiv: ", active_cleaning_mode != null)
 	print("Restoration-Container: ", restoration_container.get_children())
-	
 
 func _on_puzzling_finished(data: ItemData) -> void:
 	if data == null:
@@ -166,17 +165,20 @@ func _restore_item_after_puzzling(data: ItemData) -> void:
 	if data == null:
 		return
 
+	# Zusammengesetztes Objekt wieder auf der Werkbank anzeigen
 	target_box.display_item(data)
 	target_box.show_item()
-	target_box.visible = true
-	#restoration_container.hide()
+	target_box.show()
+	
+	# Zurück in den normalen Werkbank-Modus
+	restoration_container.hide()
+	toolbox.show()
+	item_bar.show()
 
-
-	print("TargetBox sichtbar: ", target_box.is_visible_in_tree())
-	print("ItemPreview sichtbar: ", target_box.item_preview.is_visible_in_tree())
-	print("ItemPreview Größe: ", target_box.item_preview.size)
-	print("ItemPreview Textur: ", target_box.item_preview.texture)
-	print("TargetBox Größe: ", target_box.size)
+	print("Zurück zur Werkbank: ", data.item_name)
+	print("Puzzle erledigt: ", not data.needs_puzzling)
+	print("Reinigung erforderlich: ", data.needs_cleaning)
+	print("Hämmern erforderlich: ", data.needs_punding)
 
 func _on_exit_button_pressed() -> void:
 	pass #TODO: show manager_root again 

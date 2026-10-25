@@ -25,8 +25,6 @@ func display_item(data: ItemData) -> void:
 	current_item = data
 	_update_item_display()
 
-
-
 func _update_item_display() -> void:
 	if current_item == null:
 		item_preview.texture = null
@@ -38,6 +36,7 @@ func _update_item_display() -> void:
 		item_preview.texture = current_item.uncleaned_sprite
 	else:
 		item_preview.texture = current_item.final_sprite
+
 
 func _on_item_preview_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
