@@ -15,6 +15,8 @@
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="13_f7xhn"]
 [ext_resource type="Texture2D" uid="uid://b8itwu23l1ahl" path="res://assets/Mermaids/RainbowTrout_Mermaid_FullArt.png" id="14_e5ll0"]
 [ext_resource type="Texture2D" uid="uid://3b6yh1bctfuf" path="res://assets/UI Element Art/Items for UI/Sprite-IU-Empty Item slot.png" id="15_f7xhn"]
+[ext_resource type="Texture2D" uid="uid://dt1p5qrpydcay" path="res://assets/UI Element Art/PopUpBackground.png" id="16_rsull"]
+[ext_resource type="FontFile" uid="uid://crn665n4v4ku3" path="res://Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="17_wwc3t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
 bg_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
@@ -78,6 +80,12 @@ bg_color = Color(0.18431373, 0.34117648, 0.3254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7xhn"]
 bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rw5rx"]
+texture = ExtResource("16_rsull")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd7s7"]
+texture = ExtResource("5_nk5b7")
 
 [node name="ManagementRoot" type="Control" unique_id=1842124898]
 layout_mode = 3
@@ -545,6 +553,54 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "Confire"
 
+[node name="GameOver" type="Panel" parent="." unique_id=434650423]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_right = 0.15185547
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rw5rx")
+
+[node name="Gameover" type="Label" parent="GameOver" unique_id=827801673]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 96.0
+offset_right = 775.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("17_wwc3t")
+theme_override_font_sizes/font_size = 86
+text = "Game Over"
+
+[node name="Text" type="Label" parent="GameOver" unique_id=385285655]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 294.0
+offset_right = 1102.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("17_wwc3t")
+theme_override_font_sizes/font_size = 24
+text = "This breath feels like the first you ever took, both refreshing and deeply disturbing. 
+None of the mermaids yet remain so the magic on you wanes. Finally back to your senses 
+only darkness and every dwindling oxygen greets you within these steel walls.
+ Freedom has never felt worse, knowing that only a watery grave waits for you now."
+
+[node name="Button" type="Button" parent="GameOver" unique_id=807196202]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 456.0
+offset_right = 689.0
+offset_bottom = 556.0
+theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("17_wwc3t")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_dd7s7")
+text = "Back To Main Menu
+"
+
 [connection signal="pressed" from="Mermaid_Management/QuestInterface/VBoxContainer/Footer/QuestSend" to="." method="_on_quest_send_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem" to="." method="_on_mermaid_list_item_mermaid_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2" to="." method="_on_mermaid_list_item_2_mermaid_pressed"]
@@ -557,3 +613,4 @@ text = "Confire"
 [connection signal="pressed" from="Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Itembar/Panel/HBoxContainer/MarginContainer/Button" to="." method="_on_done_item_pressed"]
 [connection signal="pressed" from="QuestOutcome/MarginContainer/VBoxContainer/Button" to="." method="_on_outcome_button_pressed"]
+[connection signal="pressed" from="GameOver/Button" to="." method="_on_back_to_menu_button_pressed"]
