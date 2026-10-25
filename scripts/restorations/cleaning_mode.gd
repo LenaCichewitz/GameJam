@@ -1,5 +1,7 @@
 
-extends Control
+extends Control 
+
+signal cleaning_finished(data: ItemData)
 
 @onready var dirt_layer: TextureRect = $dirt_layer
 @onready var completion_popup: AcceptDialog = $completion_popup
@@ -12,8 +14,9 @@ var dirt_image_texture: ImageTexture
 var total_dirt_pixels: int = 0
 var removed_dirt_pixels: int = 0
 var brush_radius: int = 22
-var cleaning_finished: bool = false
+var is_cleaning_finished: bool = false
 var is_tool_dragging: bool = false
+
 
 
 func _ready() -> void:
@@ -81,7 +84,7 @@ func start_cleaning(data: ItemData) -> void:
 		return
 	print("Dirt Texture: ", data.dirt_texture)
 	current_item = data
-	cleaning_finished = false
+	is_cleaning_finished = false
 	is_tool_dragging = false
 	removed_dirt_pixels = 0
 	total_dirt_pixels = 0
@@ -170,12 +173,13 @@ func _clean_at_position(drag_position: Vector2) -> void:
 
 
 func finish_cleaning() -> void:
-	if cleaning_finished:
+	if is_cleaning_finished:
 		return
 
-	cleaning_finished = true
+	is_cleaning_finished = true
 
 	if current_item != null:
 		current_item.needs_cleaning = false
+		cleaning_finished.emit(current_item)
 
 	completion_popup.popup_centered()

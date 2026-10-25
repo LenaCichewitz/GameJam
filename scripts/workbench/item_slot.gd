@@ -18,7 +18,8 @@ func setup(data: ItemData) -> void:
 	tooltip_text = data.item_name
 	_update_preview()
 
-
+func refresh_preview() -> void:
+	_update_preview()
 
 func _update_preview() -> void:
 	if item_data == null:
