@@ -518,7 +518,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="QuestOutcome/MarginContainer" unique_id=1878817874]
 layout_mode = 2
@@ -534,8 +534,11 @@ text = "Quest Outcome"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="QuestOutcome/MarginContainer/VBoxContainer/Body" unique_id=1833871941]
+[node name="QuestOutcomeList" type="VBoxContainer" parent="QuestOutcome/MarginContainer/VBoxContainer/Body" unique_id=1833871941]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
 
 [node name="Button" type="Button" parent="QuestOutcome/MarginContainer/VBoxContainer" unique_id=72736680]
 layout_mode = 2
