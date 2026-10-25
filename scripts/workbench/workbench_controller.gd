@@ -37,6 +37,7 @@ func _ready() -> void:
 			_on_item_selected
 		)
 	target_box.connect("item_dropped", _on_item_dropped)
+	SaveManager.save_game()
 
 func _on_item_selected(data: ItemData) -> void:
 	target_box.call("display_item", data)

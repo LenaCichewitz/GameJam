@@ -13,6 +13,8 @@ signal items_reclaimed_from_quest(quest_id: int)
 
 
 func _ready() -> void:
+	SaveManager.register("item_manager",self)
+	
 	for item in _get_all_items():
 		_connect_item_signals(item)
 
