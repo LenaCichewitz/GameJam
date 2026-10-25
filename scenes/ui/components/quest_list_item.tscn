@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cyu056i3h3g3i" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="4_gg24t"]
 [ext_resource type="Texture2D" uid="uid://14uupu5hjaqp" path="res://graphics/icons/icon_skull.svg" id="4_ic3jt"]
 [ext_resource type="FontFile" uid="uid://bwgkwulj2e4wq" path="res://Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_ic3jt"]
+[ext_resource type="Texture2D" uid="uid://c52u4w6kctfo4" path="res://assets/UI Element Art/Stats_anzeigen.svg" id="7_so8rn"]
 [ext_resource type="Texture2D" uid="uid://dd37je7ubv01d" path="res://graphics/rahmen.svg" id="7_tm2j7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_77ro6"]
@@ -100,12 +101,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
+[node name="TextureRect" type="TextureRect" parent="Body/Margins/Content/Data" unique_id=1110287488]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_so8rn")
+stretch_mode = 5
+
 [node name="Row" type="HBoxContainer" parent="Body/Margins/Content/Data" unique_id=483955483]
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Body/Margins/Content/Data/Row" unique_id=520863696]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_right = 15
