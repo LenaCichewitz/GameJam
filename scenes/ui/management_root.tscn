@@ -161,7 +161,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
-[node name="Button" type="Button" parent="Mermaid_Management/QuestInterface/VBoxContainer/Footer" unique_id=858489717]
+[node name="QuestSend" type="Button" parent="Mermaid_Management/QuestInterface/VBoxContainer/Footer" unique_id=858489717]
 custom_minimum_size = Vector2(200, 75)
 custom_maximum_size = Vector2(200, 50)
 layout_mode = 2
@@ -496,6 +496,12 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Done"
 
+[node name="QuestOutcome" type="Panel" parent="." unique_id=1826984748]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Mermaid_Management/QuestInterface/VBoxContainer/Footer/QuestSend" to="." method="_on_quest_send_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem" to="." method="_on_mermaid_list_item_mermaid_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem2" to="." method="_on_mermaid_list_item_2_mermaid_pressed"]
 [connection signal="mermaid_pressed" from="Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row1/MermaidListItem3" to="." method="_on_mermaid_list_item_3_mermaid_pressed"]

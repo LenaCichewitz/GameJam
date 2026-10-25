@@ -7,6 +7,8 @@ extends Control
 #region import... stuffy... thingies(idk)
 @onready var management_root: Control = $"."
 
+@onready var quest_outcome: Panel = $QuestOutcome
+
 @onready var mermaid_information: Panel = $Mermaid_Information
 @onready var mermaid_id: Label = $Mermaid_Information/MarginContainer/VBoxContainer/MermaidID
 
@@ -22,6 +24,7 @@ extends Control
 @onready var itembar: Control = $Itembar
 @onready var items_list: HBoxContainer = $Itembar/Panel/HBoxContainer/ScrollContainer/ItemsList
 
+
 @onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
 @onready var quest_list_item: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer/QuestListItem
 #endregion
@@ -33,6 +36,7 @@ func _ready() -> void:
 	add_quest()
 	mermaid_information.hide()
 	itembar.hide()
+	quest_outcome.hide()
 	item_list_ui.item_list_pressed.connect(equip_item)
 
 func _on_management_root_requesting_all_recruited_mermaids() -> Array:
@@ -151,4 +155,8 @@ func _on_texture_button_2_pressed() -> void:
 
 func _on_done_item_pressed() -> void:
 	itembar.hide()
+
+func _on_quest_send_pressed() -> void:
+	#TODO: get all Mermaid_Id und Quest_Id und send die ans BE
+	quest_outcome.show()
 #endregion

@@ -142,6 +142,9 @@ texture_normal = ExtResource("7_tm2j7")
 [node name="QuestId" type="Label" parent="Body/Margins/Content/Data/Row" unique_id=1095616550]
 layout_mode = 2
 
+[node name="MermaidId" type="Label" parent="Body/Margins/Content/Data/Row" unique_id=1438971542]
+layout_mode = 2
+
 [node name="Overlay" type="Control" parent="Body" unique_id=495523894]
 layout_mode = 2
 size_flags_horizontal = 8
