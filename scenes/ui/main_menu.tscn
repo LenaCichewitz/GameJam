@@ -49,7 +49,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=289026315]
-visible = false
 layout_mode = 0
 offset_left = 75.0
 offset_top = 318.0
@@ -123,7 +122,6 @@ text = "Exit
 "
 
 [node name="Titel" type="Label" parent="." unique_id=267296171]
-visible = false
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 0
 offset_left = 52.0
@@ -133,12 +131,13 @@ offset_bottom = 297.0
 theme_override_colors/font_color = Color(0.57254905, 0.9098039, 0.7529412, 1)
 theme_override_fonts/font = SubResource("FontVariation_7vrkn")
 theme_override_font_sizes/font_size = 64
-text = "Unnamed Mermaid Game"
+text = "Trinkets of Atlantis"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Options" type="Panel" parent="." unique_id=1933918887]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0

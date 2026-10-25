@@ -2,6 +2,9 @@ extends Control
 
 @export var mermaid_manager : Node
 @export var quest_manager: Node
+@export var item_manager: Node
+
+#region import... stuffy... thingies(idk)
 @onready var management_root: Control = $"."
 
 @onready var mermaid_information: Panel = $Mermaid_Information
@@ -12,10 +15,20 @@ extends Control
 @onready var mermaid_list_item_4: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem4"
 @onready var mermaid_list_item_5: Control = $"Mermaid_Management/MermaidDetailsRoot/Panel/VBoxContainer/Mermaids/Mermaid List Row2/MermaidListItem5"
 
+@onready var item_button: TextureButton = $"Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton"
+@onready var item_button_2: TextureButton = $"Mermaid_Information/MarginContainer/VBoxContainer/body/third child/Items/TextureButton2"
+
+@onready var itembar: Control = $Itembar
+@onready var items_list: HBoxContainer = $Itembar/Panel/HBoxContainer/ScrollContainer/ItemsList
+
+@onready var quest_list_container: VBoxContainer = $Mermaid_Management/QuestInterface/VBoxContainer/MarginContainer2/ScrollContainer/QuestListContainer
+#endregion
 
 func _ready() -> void:
 	_on_management_root_requesting_all_recruited_mermaids()
+	add_quest()
 	mermaid_information.hide()
+	itembar.hide()
 
 func _on_management_root_requesting_all_recruited_mermaids() -> void:
 	if not mermaid_manager:
@@ -31,25 +44,90 @@ func _on_management_root_requesting_all_recruited_mermaids() -> void:
 		if index >= ListItem.size():
 			break
 		var item = ListItem[index]
-		var mermaid_id = mermaid.mermaid_id
-		var mermaid_name = mermaid.mermaid_name
-		var mermaid_icon = mermaid.mermaid_head_shot
 		
-		item.get_node("VBoxContainer/MermaidName").text = mermaid_name
-		item.get_node("VBoxContainer/MermaidIcon").texture_normal = mermaid_icon
-		item.get_node("VBoxContainer/MermaidID").text = str(mermaid_id)
+		item.get_node("VBoxContainer/MermaidName").text = mermaid.mermaid_name
+		item.get_node("VBoxContainer/MermaidIcon").texture_normal = mermaid.mermaid_head_shot
+		item.get_node("VBoxContainer/MermaidID").text = str(mermaid.mermaid_id)
 		item.visible = true
 		
 		index += 1
 
-func _on_management_root_requesting_quest() -> void:
+func _on_management_root_requesting_quest() -> Array:
 	if not quest_manager:
+		return []
+	var quest:Array = quest_manager.get_all_available_quests()
+	return quest
+
+func _on_management_root_get_all_unequied_items()->void:
+	if not item_manager:
 		return
 	
-	var quest:Array = quest_manager.get_all_available_quests()
+	var items:Array = item_manager.get_unequipped_items()
+	
+	for item in items:
+		var item_iu =load("res://scenes/ui/components/item_list.tscn").instantiate()
+		items_list.add_child(item_iu)
+		item_iu.setup(item)
 
+func add_quest() -> void:
+	var quests = _on_management_root_requesting_quest()
+	var quest_scene = load("res://scenes/ui/components/quest_list_item.tscn")
+	
+	for quest in quests:
+		var quest_ui = quest_scene.instantiate()
+		quest_list_container.add_child(quest_ui)
+		quest_ui.setup(quest)
+
+func import_mermaid_by_id(id:int) -> void:
+	if not mermaid_manager:
+		return
+	var index= 0
+	var item_slots = [item_button, item_button_2]
+	
+	var mermaid = mermaid_manager.get_mermaid_for_id(id)
+	var items_equiped: Array = mermaid_manager.get_all_equipped_items()
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/first child/Header/MarginContainer/Name").text = mermaid.mermaid_name
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/first child/MarginContainer/Mermaid_Picture").texture = mermaid.mermaid_full_body
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/second child/MarginContainer/Story/VBoxContainer/RichTextLabel").text = mermaid.mermaid_description
+	mermaid_information.get_node("MarginContainer/VBoxContainer/body/third child/ProgressBar").value = mermaid.corruption_increase_per_increment
+	for item_equiped in items_equiped:
+		if index >=item_slots:
+			break
+			
+		var slot = item_slots[index]
+		slot.texture = item_equiped.item_picture
+		index += 1
+	
+	mermaid_information.show()
+
+#region buttons
 func _on_restauration_button_pressed() -> void:
 	management_root.hide()
 
 func _on_close_button_mermaid_info_pressed() -> void:
 	mermaid_information.hide()
+
+func _on_mermaid_list_item_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_2_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_3_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_4_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_mermaid_list_item_5_mermaid_pressed(id: int) -> void:
+	import_mermaid_by_id(id)
+
+func _on_texture_button_pressed() -> void:
+	itembar.show()
+
+func _on_texture_button_2_pressed() -> void:
+	itembar.show()
+
+func _on_done_item_pressed() -> void:
+	itembar.hide()
+#endregion

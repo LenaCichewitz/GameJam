@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cou0p4asiirm7" path="res://assets/items/puzzle_pice2.png" id="2_h17qt"]
 [ext_resource type="Texture2D" uid="uid://bgn8e2ncqcpd2" path="res://assets/items/puzzle_pice3.png" id="3_favj0"]
 [ext_resource type="Texture2D" uid="uid://bwmouavh5cesl" path="res://assets/items/puzzle_pice4.png" id="4_haxpi"]
+[ext_resource type="Texture2D" uid="uid://b2vrn2tl7jkas" path="res://assets/items/cuntysponge.png" id="7_favj0"]
 
 [resource]
 script = ExtResource("1_gkvr6")
@@ -15,5 +16,6 @@ needs_cleaning = false
 needs_puzzling = true
 puzzle_pieces = Array[Texture2D]([ExtResource("1_k5cuw"), ExtResource("2_h17qt"), ExtResource("3_favj0"), ExtResource("4_haxpi")])
 puzzle_target_positions = Array[Vector2]([Vector2(150, 170), Vector2(410, 170), Vector2(150, 430), Vector2(410, 430)])
+unfinished_puzzle = ExtResource("7_favj0")
 needs_punding = false
 metadata/_custom_type_script = "uid://jgty4wgqjvjg"

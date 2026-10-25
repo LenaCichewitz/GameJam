@@ -4,7 +4,10 @@ extends Button
 
 signal item_selected(item_data: ItemData)
 
-@onready var item_icon: TextureRect = $ItemIcon
+
+@onready var base_image: TextureRect = $PreviewContainer/BaseImage
+@onready var dirt_image: TextureRect = $PreviewContainer/DirtImage
+@onready var puzzle_image: TextureRect = $PreviewContainer/PuzzleImage
 
 var item_data: ItemData
 
@@ -12,15 +15,38 @@ var item_data: ItemData
 func setup(data: ItemData) -> void:
 	item_data = data
 	text = data.item_name
-	item_icon.texture = data.final_sprite
 	tooltip_text = data.item_name
+	_update_preview()
+
+
+
+func _update_preview() -> void:
+	if item_data == null:
+		return
+
+	base_image.texture = null
+	dirt_image.texture = null
+	puzzle_image.texture = null
+
+	if item_data.needs_puzzling:
+		puzzle_image.texture = item_data.unfinished_puzzle
+		return
+
+	if item_data.needs_punding:
+		base_image.texture = item_data.closed_texture
+	else:
+		base_image.texture = item_data.final_sprite
+
+	if item_data.needs_cleaning:
+		dirt_image.texture = item_data.dirt_texture
+
 
 
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 	if item_data != null:
-		item_icon.texture = item_data.final_sprite
+		_update_preview()
 		tooltip_text = item_data.item_name
 
 

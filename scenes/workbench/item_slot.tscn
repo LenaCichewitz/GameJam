@@ -6,12 +6,44 @@
 custom_minimum_size = Vector2(100, 100)
 script = ExtResource("1_nnk8x")
 
-[node name="ItemIcon" type="TextureRect" parent="." unique_id=1321210902]
-custom_minimum_size = Vector2(100, 100)
+[node name="PreviewContainer" type="Control" parent="." unique_id=1338941512]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="BaseImage" type="TextureRect" parent="PreviewContainer" unique_id=1288453772]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DirtImage" type="TextureRect" parent="PreviewContainer" unique_id=624785898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuzzleImage" type="TextureRect" parent="PreviewContainer" unique_id=172773123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
 stretch_mode = 5

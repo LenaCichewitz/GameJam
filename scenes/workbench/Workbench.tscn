@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b07oomibpr07k"]
 
 [ext_resource type="PackedScene" uid="uid://b5y5yqofq8il2" path="res://scenes/workbench/target_box.tscn" id="1_ct72h"]
-[ext_resource type="Script" uid="uid://bovjx5mspl7uc" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
-[ext_resource type="Script" uid="uid://jgty4wgqjvjg" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
+[ext_resource type="Script" uid="uid://dwq7s867jeg23" path="res://scripts/workbench/workbench_controller.gd" id="1_d5ce4"]
+[ext_resource type="Script" uid="uid://c2si4kp50ke6h" path="res://scripts/data/ItemData.gd" id="2_np7mg"]
 [ext_resource type="Resource" uid="uid://c33axwssrqbuv" path="res://assets/data/items/perle.tres" id="3_wlhxc"]
 [ext_resource type="Texture2D" uid="uid://cyfu88wt2nd5d" path="res://graphics/Table.svg" id="4_0my5e"]
 [ext_resource type="Resource" uid="uid://cn4mpjdbabie0" path="res://assets/data/items/mirror.tres" id="4_1ykue"]
@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dvksxvbflrtju" path="res://graphics/icons/icon_close_button.svg" id="5_np7mg"]
 [ext_resource type="Resource" uid="uid://cpsjsjb5qbqb0" path="res://assets/data/items/puzzle.tres" id="6_arus1"]
 [ext_resource type="Script" uid="uid://b6dkoc8wcr287" path="res://scripts/data/ToolData.gd" id="6_kxv2g"]
+[ext_resource type="Resource" uid="uid://dympqs6d8tguu" path="res://assets/data/items/Knife.tres" id="7_367to"]
 [ext_resource type="Resource" uid="uid://b2gnyamli5w6w" path="res://assets/data/tools/hammer.tres" id="8_hammer"]
-[ext_resource type="Texture2D" uid="uid://dfkjrk5iy7p6s" path="res://assets/items/perle.svg" id="11_aduu8"]
+[ext_resource type="Resource" uid="uid://cbyk4aiuvjjhk" path="res://assets/data/tools/sponge.tres" id="12_367to"]
 [ext_resource type="Resource" uid="uid://c2o7yfitiluwc" path="res://assets/data/tools/glue.tres" id="14_6kk7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8y12"]
@@ -20,16 +21,6 @@ bg_color = Color(0.105882354, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf8qy"]
 texture = ExtResource("4_0my5e")
-
-[sub_resource type="Resource" id="Resource_arus1"]
-script = ExtResource("6_kxv2g")
-tool_id = "sponge"
-tool_name = "sponge"
-tool_icon = ExtResource("11_aduu8")
-metadata/_custom_type_script = "uid://b6dkoc8wcr287"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8qy"]
-bg_color = Color(0.46666667, 0.36078432, 0.30980393, 1)
 
 [node name="Workbench" type="Control" unique_id=1896145299]
 layout_mode = 3
@@ -39,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d5ce4")
-available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1")])
+available_items = Array[ExtResource("2_np7mg")]([ExtResource("5_aduu8"), ExtResource("4_1ykue"), ExtResource("3_wlhxc"), ExtResource("6_arus1"), ExtResource("7_367to")])
 
 [node name="Panel" type="Panel" parent="." unique_id=1016554758]
 layout_mode = 1
@@ -58,17 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_gf8qy")
-
-[node name="Exit Button" type="MarginContainer" parent="." unique_id=1535465085]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-
-[node name="Exit Button" type="Button" parent="Exit Button" unique_id=1370288555]
-layout_mode = 2
-icon = ExtResource("5_np7mg")
 
 [node name="MainLayout" type="VBoxContainer" parent="." unique_id=1745677948]
 layout_mode = 1
@@ -131,7 +111,7 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 grow_vertical = 2
-available_tools = Array[ExtResource("6_kxv2g")]([SubResource("Resource_arus1"), ExtResource("8_hammer"), ExtResource("14_6kk7q")])
+available_tools = Array[ExtResource("6_kxv2g")]([ExtResource("12_367to"), ExtResource("8_hammer"), ExtResource("14_6kk7q")])
 
 [node name="MarginContainer" type="MarginContainer" parent="toolbox" unique_id=631215965]
 layout_mode = 1
@@ -148,25 +128,17 @@ theme_override_constants/margin_top = 46
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Panel" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1445375781]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+[node name="Exit Button" type="MarginContainer" parent="." unique_id=1535465085]
+visible = false
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 76.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
 
-[node name="Panel2" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=981012928]
+[node name="Exit Button" type="Button" parent="Exit Button" unique_id=1370288555]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
+icon = ExtResource("5_np7mg")
 
-[node name="Panel3" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=1154336]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
-
-[node name="Panel4" type="Panel" parent="toolbox/MarginContainer/Toolbox" unique_id=23830621]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf8qy")
-
-[connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MainLayout/ItemButton/Button" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="Exit Button/Exit Button" to="." method="_on_exit_button_pressed"]

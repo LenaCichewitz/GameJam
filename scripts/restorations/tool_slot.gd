@@ -20,6 +20,11 @@ func setup(data: ToolData) -> void:
 	
 	var icon_node := get_node("tool_icon") as TextureRect
 	icon_node.texture = data.tool_icon
+	icon_node.set_anchors_and_offsets_preset(
+		Control.PRESET_FULL_RECT
+	)
+	icon_node.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon_node.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	icon_node.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
